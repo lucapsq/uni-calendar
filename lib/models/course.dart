@@ -4,9 +4,10 @@ class Course {
   List<String> yearsList = []; // inglese b1, francese b1
   Map<String, String> valuesMap = {};
 
-  Course(
-      {required this.id,
-      required this.name,
-      required this.yearsList,
-      required this.valuesMap});
+  Course({
+    required this.id,
+    required this.name,
+    required this.yearsList,
+    required this.valuesMap,
+  });
 }

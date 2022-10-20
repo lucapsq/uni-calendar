@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:intl/intl.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import './models/course.dart';
-import './models/teaching.dart';
 import './widgets/dropdown_choice.dart';
-import './main.dart';
 
 class ConfigurationPage extends StatefulWidget {
+  const ConfigurationPage({super.key});
+
   @override
   State<ConfigurationPage> createState() => _ConfigurationPageState();
 }
@@ -56,7 +54,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text("UniVR Calendar"),
+        title: const Text("UniVR Calendar"),
         centerTitle: true,
       ),
       body: FutureBuilder(
@@ -70,9 +68,9 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                 padding: const EdgeInsets.all(40.0),
                 child: Column(
                   children: [
-                    Container(
+                    SizedBox(
                       width: MediaQuery.of(context).size.width * 0.5,
-                      child: Image(
+                      child: const Image(
                         image: AssetImage('assets/student.png'),
                         fit: BoxFit.fitWidth,
                       ),
@@ -85,7 +83,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                 ),
               );
             }
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }),
     );
   }
