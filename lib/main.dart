@@ -29,31 +29,6 @@ class _HomepageState extends State<Homepage> {
   SharedPreferences? sharedPreferences;
 
   Future<Map> fetchCalendar() async {
-    // print("start");
-    // if (prefs.getString('courseCode') == null) {
-    //   Navigator.push(
-    //     context,
-    //     MaterialPageRoute(builder: (context) => const ConfigurationPage()),
-    //   ).then((value) async {
-    //     print("sono nel then");
-    //     if (value != null) {
-    //       print("sto leggendo le preferenze");
-    //       var prefs = await SharedPreferences.getInstance();
-
-    //       courseCode = prefs.getString('courseCode').toString();
-    //       courseYear = prefs.getString('courseYear').toString();
-    //       courseYearCode = prefs.getString('courseYearCode').toString();
-    //     }
-    //   });
-    // } else {
-    //   print("dati già presenti");
-
-    //   courseCode = prefs.getString('courseCode').toString();
-    //   courseYear = prefs.getString('courseYear').toString();
-    //   courseYearCode = prefs.getString('courseYearCode').toString();
-    // }
-
-    // print("ho letto: $courseCode, $courseYear");
     final now = DateTime.now();
     String today = DateFormat('d-M-y').format(now);
     String nextWeek =
