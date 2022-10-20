@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class DropdownChoice extends StatefulWidget {
   List<Course> courses;
   List<String> years;
-  DropdownChoice(this.courses, this.years);
+  DropdownChoice(this.courses, this.years, {super.key});
 
   @override
   State<DropdownChoice> createState() => _DropdownChoiceState();
@@ -25,7 +25,8 @@ class _DropdownChoiceState extends State<DropdownChoice> {
     });
   }
 
-  void savePreferences(String selectedCourse, String selectedYear) async {
+  Future<void> savePreferences(
+      String selectedCourse, String selectedYear) async {
     final prefs = await SharedPreferences.getInstance();
     for (var c in widget.courses) {
       if (c.name == selectedCourse) {
@@ -117,12 +118,12 @@ class _DropdownChoiceState extends State<DropdownChoice> {
             }).toList(),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         ElevatedButton(
-          onPressed: () {
-            savePreferences(selectedCourse, selectedYear);
+          onPressed: () async {
+            await savePreferences(selectedCourse, selectedYear);
             Navigator.pop(context, 'dummy');
           },
           child: Text("Salva"),

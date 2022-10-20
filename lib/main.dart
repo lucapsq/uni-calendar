@@ -1,20 +1,22 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:uni_calendar/utilities.dart';
 import 'package:uni_calendar/widgets/calendar_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 import './models/teaching.dart';
 import './configuration_page.dart';
 
 void main() {
-  runApp(MaterialApp(home: Homepage()));
+  runApp(
+    const MaterialApp(
+      home: Homepage(),
+    ),
+  );
 }
 
 class Homepage extends StatefulWidget {
+  const Homepage({super.key});
+
   @override
   State<Homepage> createState() => _HomepageState();
 }
@@ -24,39 +26,45 @@ class _HomepageState extends State<Homepage> {
   String courseYear = '';
   String courseYearCode = '';
 
+  SharedPreferences? sharedPreferences;
+
   Future<Map> fetchCalendar() async {
-    var prefs = await SharedPreferences.getInstance();
-    print("start");
-    if (prefs.getString('courseCode') == null) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => ConfigurationPage()),
-      ).then((value) async {
-        print("sono nel then");
-        if (value != null) {
-          print("sto leggendo le preferenze");
-          var prefs = await SharedPreferences.getInstance();
+    // print("start");
+    // if (prefs.getString('courseCode') == null) {
+    //   Navigator.push(
+    //     context,
+    //     MaterialPageRoute(builder: (context) => const ConfigurationPage()),
+    //   ).then((value) async {
+    //     print("sono nel then");
+    //     if (value != null) {
+    //       print("sto leggendo le preferenze");
+    //       var prefs = await SharedPreferences.getInstance();
 
-          courseCode = prefs.getString('courseCode').toString();
-          courseYear = prefs.getString('courseYear').toString();
-          courseYearCode = prefs.getString('courseYearCode').toString();
-        }
-      });
-    } else {
-      print("dati già presenti");
+    //       courseCode = prefs.getString('courseCode').toString();
+    //       courseYear = prefs.getString('courseYear').toString();
+    //       courseYearCode = prefs.getString('courseYearCode').toString();
+    //     }
+    //   });
+    // } else {
+    //   print("dati già presenti");
 
-      courseCode = prefs.getString('courseCode').toString();
-      courseYear = prefs.getString('courseYear').toString();
-      courseYearCode = prefs.getString('courseYearCode').toString();
-    }
+    //   courseCode = prefs.getString('courseCode').toString();
+    //   courseYear = prefs.getString('courseYear').toString();
+    //   courseYearCode = prefs.getString('courseYearCode').toString();
+    // }
 
-    print("ho letto: $courseCode, $courseYear");
+    // print("ho letto: $courseCode, $courseYear");
     final now = DateTime.now();
     String today = DateFormat('d-M-y').format(now);
-    String nextWeek = DateFormat('d-M-y').format(now.add(Duration(days: 7)));
+    String nextWeek =
+        DateFormat('d-M-y').format(now.add(const Duration(days: 7)));
     List<Teaching> teachingsList = await getTeachingsList(
-            today, nextWeek, courseCode, courseYear, courseYearCode)
-        as List<Teaching>;
+      today,
+      nextWeek,
+      courseCode,
+      courseYear,
+      courseYearCode,
+    );
 
     String selectedDate = today;
     List<Teaching> dayTeachingList = [];
@@ -77,8 +85,50 @@ class _HomepageState extends State<Homepage> {
         selectedDate = c.date;
       }
     }
-    print("ho letto dopo: $courseCode, $courseYear");
+
     return teachingsMap;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initCourse();
+  }
+
+  selectCourse() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ConfigurationPage()),
+    ).then((value) async {
+      if (value != null) {
+        setState(() {
+          courseCode = sharedPreferences!.getString('courseCode').toString();
+          courseYear = sharedPreferences!.getString('courseYear').toString();
+          courseYearCode =
+              sharedPreferences!.getString('courseYearCode').toString();
+        });
+        fetchCalendar();
+      }
+    });
+  }
+
+  initCourse() async {
+    var prefs = await SharedPreferences.getInstance();
+    setState(() => sharedPreferences = prefs);
+
+    String? code = prefs.getString('courseCode');
+    if (code == null) {
+      selectCourse();
+    } else {
+      setState(() {
+        courseCode = sharedPreferences!.getString('courseCode').toString();
+        courseYear = sharedPreferences!.getString('courseYear').toString();
+        courseYearCode =
+            sharedPreferences!.getString('courseYearCode').toString();
+      });
+
+      fetchCalendar();
+    }
   }
 
   @override
@@ -87,28 +137,13 @@ class _HomepageState extends State<Homepage> {
       appBar: AppBar(
         actions: [
           IconButton(
-            onPressed: () async {
-              await Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ConfigurationPage()),
-              ).then((value) async {
-                if (value != null) {
-                  var prefs = await SharedPreferences.getInstance();
-                  print(value);
-
-                  print("sto risettando");
-                  courseCode = prefs.getString('courseCode').toString();
-                  courseYear = prefs.getString('courseYear').toString();
-                  courseYearCode = prefs.getString('courseYearCode').toString();
-                }
-              });
-            },
-            icon: Icon(Icons.settings),
+            onPressed: selectCourse,
+            icon: const Icon(Icons.settings),
           ),
         ],
         backgroundColor: Colors.blue,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "UniVR Calendar",
         ),
       ),
@@ -123,7 +158,7 @@ class _HomepageState extends State<Homepage> {
                 child: CalendarView(data!),
               );
             }
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }),
     );
   }
