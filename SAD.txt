@@ -1,0 +1,12 @@
+Inglese
+view=easycourse&form-type=corso&include=corso&txtcurr=1+-+Lingua+inglese+B1&anno=2022&corso=886&anno2%5B%5D=ING001B1%7C1&date=19-10-2022&periodo_didattico=&_lang=it&list=&week_grid_type=-1&ar_codes_=&ar_select_=&col_cells=0&empty_box=0&only_grid=0&highlighted_date=0&all_events=0&faculty_group=0&_lang=it&all_events=0&txtcurr=1 - Lingua inglese B1
+
+Informatica
+view=easycourse&form-type=corso&include=corso&txtcurr=1+-+UNICO&anno=2022&corso=420&anno2%5B%5D=999%7C1&date=19-10-2022&periodo_didattico=&_lang=it&list=&week_grid_type=-1&ar_codes_=&ar_select_=&col_cells=0&empty_box=0&only_grid=0&highlighted_date=0&all_events=0&faculty_group=0&_lang=it&all_events=0&txtcurr=1 - UNICO
+
+
+
+Lettere
+view=easycourse&form-type=corso&include=corso&txtcurr=1+-+LETTERARIO&anno=2022&corso=338&anno2%5B%5D=1042%7C1&date=19-10-2022&periodo_didattico=&_lang=it&list=&week_grid_type=-1&ar_codes_=&ar_select_=&col_cells=0&empty_box=0&only_grid=0&highlighted_date=0&all_events=0&faculty_group=0&_lang=it&all_events=0&txtcurr=1 - LETTERARIO
+
+

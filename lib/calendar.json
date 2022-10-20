@@ -1,0 +1,2362 @@
+{
+  "day": "1",
+  "data": "10-10-2022",
+  "data_timestamp": 1665352800,
+  "giorni": [
+    {
+      "label": "lunedì 10/10",
+      "valore": 1,
+      "data": "10-10-2022"
+    },
+    {
+      "label": "martedì 11/10",
+      "valore": 2,
+      "data": "11-10-2022"
+    },
+    {
+      "label": "mercoledì 12/10",
+      "valore": 3,
+      "data": "12-10-2022"
+    },
+    {
+      "label": "giovedì 13/10",
+      "valore": 4,
+      "data": "13-10-2022"
+    },
+    {
+      "label": "venerdì 14/10",
+      "valore": 5,
+      "data": "14-10-2022"
+    }
+  ],
+  "first_day": "10-10-2022",
+  "last_day": "16-10-2022",
+  "first_day_label": "10/10/2022",
+  "last_day_label": "15/10/2022",
+  "first_day_timestamp": 1665352800,
+  "last_day_timestamp": 1665871200,
+  "anno": "2022",
+  "fasce": [
+    {
+      "label": "08:00",
+      "valore": 1
+    },
+    {
+      "label": "08:10",
+      "valore": 2
+    },
+    {
+      "label": "08:20",
+      "valore": 3
+    },
+    {
+      "label": "08:30",
+      "valore": 4
+    },
+    {
+      "label": "08:40",
+      "valore": 5
+    },
+    {
+      "label": "08:50",
+      "valore": 6
+    },
+    {
+      "label": "09:00",
+      "valore": 7
+    },
+    {
+      "label": "09:10",
+      "valore": 8
+    },
+    {
+      "label": "09:20",
+      "valore": 9
+    },
+    {
+      "label": "09:30",
+      "valore": 10
+    },
+    {
+      "label": "09:40",
+      "valore": 11
+    },
+    {
+      "label": "09:50",
+      "valore": 12
+    },
+    {
+      "label": "10:00",
+      "valore": 13
+    },
+    {
+      "label": "10:10",
+      "valore": 14
+    },
+    {
+      "label": "10:20",
+      "valore": 15
+    },
+    {
+      "label": "10:30",
+      "valore": 16
+    },
+    {
+      "label": "10:40",
+      "valore": 17
+    },
+    {
+      "label": "10:50",
+      "valore": 18
+    },
+    {
+      "label": "11:00",
+      "valore": 19
+    },
+    {
+      "label": "11:10",
+      "valore": 20
+    },
+    {
+      "label": "11:20",
+      "valore": 21
+    },
+    {
+      "label": "11:30",
+      "valore": 22
+    },
+    {
+      "label": "11:40",
+      "valore": 23
+    },
+    {
+      "label": "11:50",
+      "valore": 24
+    },
+    {
+      "label": "12:00",
+      "valore": 25
+    },
+    {
+      "label": "12:10",
+      "valore": 26
+    },
+    {
+      "label": "12:20",
+      "valore": 27
+    },
+    {
+      "label": "12:30",
+      "valore": 28
+    },
+    {
+      "label": "12:40",
+      "valore": 29
+    },
+    {
+      "label": "12:50",
+      "valore": 30
+    },
+    {
+      "label": "13:00",
+      "valore": 31
+    },
+    {
+      "label": "13:10",
+      "valore": 32
+    },
+    {
+      "label": "13:20",
+      "valore": 33
+    },
+    {
+      "label": "13:30",
+      "valore": 34
+    },
+    {
+      "label": "13:40",
+      "valore": 35
+    },
+    {
+      "label": "13:50",
+      "valore": 36
+    },
+    {
+      "label": "14:00",
+      "valore": 37
+    },
+    {
+      "label": "14:10",
+      "valore": 38
+    },
+    {
+      "label": "14:20",
+      "valore": 39
+    },
+    {
+      "label": "14:30",
+      "valore": 40
+    },
+    {
+      "label": "14:40",
+      "valore": 41
+    },
+    {
+      "label": "14:50",
+      "valore": 42
+    },
+    {
+      "label": "15:00",
+      "valore": 43
+    },
+    {
+      "label": "15:10",
+      "valore": 44
+    },
+    {
+      "label": "15:20",
+      "valore": 45
+    },
+    {
+      "label": "15:30",
+      "valore": 46
+    },
+    {
+      "label": "15:40",
+      "valore": 47
+    },
+    {
+      "label": "15:50",
+      "valore": 48
+    },
+    {
+      "label": "16:00",
+      "valore": 49
+    },
+    {
+      "label": "16:10",
+      "valore": 50
+    },
+    {
+      "label": "16:20",
+      "valore": 51
+    },
+    {
+      "label": "16:30",
+      "valore": 52
+    },
+    {
+      "label": "16:40",
+      "valore": 53
+    },
+    {
+      "label": "16:50",
+      "valore": 54
+    },
+    {
+      "label": "17:00",
+      "valore": 55
+    },
+    {
+      "label": "17:10",
+      "valore": 56
+    },
+    {
+      "label": "17:20",
+      "valore": 57
+    },
+    {
+      "label": "17:30",
+      "valore": 58
+    },
+    {
+      "label": "17:40",
+      "valore": 59
+    },
+    {
+      "label": "17:50",
+      "valore": 60
+    },
+    {
+      "label": "18:00",
+      "valore": 61
+    },
+    {
+      "label": "18:10",
+      "valore": 62
+    },
+    {
+      "label": "18:20",
+      "valore": 63
+    },
+    {
+      "label": "18:30",
+      "valore": 64
+    }
+  ],
+  "granularita": "600",
+  "start_slot": "08:00:00",
+  "end_slot": "23:00:00",
+  "num_fasce": 91,
+  "num_giorni": 5,
+  "orario_tipo": 0,
+  "colori": [
+    "#FFFCB1",
+    "#FFE6BB",
+    "#B9F4FF",
+    "#F3BAF5",
+    "#F1D0D0",
+    "#D5FFA4",
+    "#FDCBFE",
+    "#A0F3A2",
+    "#FFE8A4",
+    "#FFC6A4",
+    "#EEC0C0",
+    "#A7C7D3",
+    "#80D886",
+    "#A6E2FF",
+    "#DDFF75",
+    "#FFBFCF",
+    "#8CB1FF",
+    "#FEE080",
+    "#FFB480",
+    "#A9F580",
+    "#A6F9A2",
+    "#C6DBE1",
+    "#F99ECD",
+    "#C5C6FC",
+    "#FDC100",
+    "#56C878",
+    "#E9D6B2",
+    "#FFA100",
+    "#DBBEC9",
+    "#DB7BAE",
+    "#FFFF72",
+    "#F2CDA5",
+    "#CABD00",
+    "#A9D8B9",
+    "#EBB2BB",
+    "#BFCFCF",
+    "#59B726",
+    "#DE7083",
+    "#68BBD9",
+    "#FF8147",
+    "#87D21E",
+    "#44D36F",
+    "#CA9D00",
+    "#5D94E1",
+    "#CB78CE",
+    "#00BD09",
+    "#4EC300",
+    "#F99A9A",
+    "#FFFF72",
+    "#C175D6",
+    "#6BBAFF",
+    "#FF8D01",
+    "#CAC300",
+    "#5AA800",
+    "#FF8F2E",
+    "#3EC1A7",
+    "#FF9C39",
+    "#E7698F",
+    "#D9AC1A",
+    "#3BCA8C",
+    "#E06E96",
+    "#E9AF5D",
+    "#6699CC",
+    "#FF99CC",
+    "#99CCFF",
+    "#DCB02C",
+    "#FF7F5B",
+    "#29D984",
+    "#99FF99",
+    "#9999FF",
+    "#47BAAD",
+    "#FF9FFA",
+    "#00C161",
+    "#B093FF",
+    "#57B3FF",
+    "#CAFF7A",
+    "#EDE053",
+    "#5ECCB1",
+    "#5AB8D2",
+    "#7A95FF",
+    "#FFD83D",
+    "#FF6A34",
+    "#5AE09B",
+    "#E4CA95",
+    "#66C5BA",
+    "#CC7E7E",
+    "#E6AFEE",
+    "#8DD7B1",
+    "#DE8EB6",
+    "#FFA3A3",
+    "#FFD1A3",
+    "#FFA3FF",
+    "#C5FFB1",
+    "#FFFCB1",
+    "#FFE6BB",
+    "#B9F4FF",
+    "#F3BAF5",
+    "#F1D0D0",
+    "#D5FFA4",
+    "#FDCBFE",
+    "#A0F3A2",
+    "#FFE8A4",
+    "#FFC6A4",
+    "#EEC0C0",
+    "#A7C7D3",
+    "#80D886",
+    "#A6E2FF",
+    "#DDFF75",
+    "#FFBFCF",
+    "#8CB1FF",
+    "#FEE080",
+    "#FFB480",
+    "#A9F580",
+    "#A6F9A2",
+    "#C6DBE1",
+    "#F99ECD",
+    "#C5C6FC",
+    "#FDC100",
+    "#56C878",
+    "#E9D6B2",
+    "#FFA100",
+    "#DBBEC9",
+    "#DB7BAE",
+    "#FFFF72",
+    "#F2CDA5",
+    "#CABD00",
+    "#A9D8B9",
+    "#EBB2BB",
+    "#BFCFCF",
+    "#59B726",
+    "#DE7083",
+    "#68BBD9",
+    "#FF8147",
+    "#87D21E",
+    "#44D36F",
+    "#CA9D00",
+    "#5D94E1",
+    "#CB78CE",
+    "#00BD09",
+    "#4EC300",
+    "#F99A9A",
+    "#FFFF72",
+    "#C175D6",
+    "#6BBAFF",
+    "#FF8D01",
+    "#CAC300",
+    "#5AA800",
+    "#FF8F2E",
+    "#3EC1A7",
+    "#FF9C39",
+    "#E7698F",
+    "#D9AC1A",
+    "#3BCA8C",
+    "#E06E96",
+    "#E9AF5D",
+    "#6699CC",
+    "#FF99CC",
+    "#99CCFF",
+    "#DCB02C",
+    "#FF7F5B",
+    "#29D984",
+    "#99FF99",
+    "#9999FF",
+    "#47BAAD",
+    "#FF9FFA",
+    "#00C161",
+    "#B093FF",
+    "#57B3FF",
+    "#CAFF7A",
+    "#EDE053",
+    "#5ECCB1",
+    "#5AB8D2",
+    "#7A95FF",
+    "#FFD83D",
+    "#FF6A34",
+    "#5AE09B",
+    "#E4CA95",
+    "#66C5BA",
+    "#CC7E7E",
+    "#E6AFEE",
+    "#8DD7B1",
+    "#DE8EB6",
+    "#FFA3A3",
+    "#FFD1A3",
+    "#FFA3FF",
+    "#C5FFB1",
+    "#FFFCB1",
+    "#FFE6BB",
+    "#B9F4FF",
+    "#F3BAF5",
+    "#F1D0D0",
+    "#D5FFA4",
+    "#FDCBFE",
+    "#A0F3A2",
+    "#FFE8A4",
+    "#FFC6A4",
+    "#EEC0C0",
+    "#A7C7D3",
+    "#80D886",
+    "#A6E2FF",
+    "#DDFF75",
+    "#FFBFCF",
+    "#8CB1FF",
+    "#FEE080",
+    "#FFB480",
+    "#A9F580",
+    "#A6F9A2",
+    "#C6DBE1",
+    "#F99ECD",
+    "#C5C6FC",
+    "#FDC100",
+    "#56C878",
+    "#E9D6B2",
+    "#FFA100",
+    "#DBBEC9",
+    "#DB7BAE",
+    "#FFFF72",
+    "#F2CDA5",
+    "#CABD00",
+    "#A9D8B9",
+    "#EBB2BB",
+    "#BFCFCF",
+    "#59B726",
+    "#DE7083",
+    "#68BBD9",
+    "#FF8147",
+    "#87D21E",
+    "#44D36F",
+    "#CA9D00",
+    "#5D94E1",
+    "#CB78CE",
+    "#00BD09",
+    "#4EC300",
+    "#F99A9A",
+    "#FFFF72",
+    "#C175D6",
+    "#6BBAFF",
+    "#FF8D01",
+    "#CAC300",
+    "#5AA800",
+    "#FF8F2E",
+    "#3EC1A7",
+    "#FF9C39",
+    "#E7698F",
+    "#D9AC1A",
+    "#3BCA8C",
+    "#E06E96",
+    "#E9AF5D",
+    "#6699CC",
+    "#FF99CC",
+    "#99CCFF",
+    "#DCB02C",
+    "#FF7F5B",
+    "#29D984",
+    "#99FF99",
+    "#9999FF",
+    "#47BAAD",
+    "#FF9FFA",
+    "#00C161",
+    "#B093FF",
+    "#57B3FF",
+    "#CAFF7A",
+    "#EDE053",
+    "#5ECCB1",
+    "#5AB8D2",
+    "#7A95FF",
+    "#FFD83D",
+    "#FF6A34",
+    "#5AE09B",
+    "#E4CA95",
+    "#66C5BA",
+    "#CC7E7E",
+    "#E6AFEE",
+    "#8DD7B1",
+    "#DE8EB6",
+    "#FFA3A3",
+    "#FFD1A3",
+    "#FFA3FF",
+    "#C5FFB1",
+    "#FFFCB1",
+    "#FFE6BB",
+    "#B9F4FF",
+    "#F3BAF5",
+    "#F1D0D0",
+    "#D5FFA4",
+    "#FDCBFE",
+    "#A0F3A2",
+    "#FFE8A4",
+    "#FFC6A4",
+    "#EEC0C0",
+    "#A7C7D3",
+    "#80D886",
+    "#A6E2FF",
+    "#DDFF75",
+    "#FFBFCF",
+    "#8CB1FF",
+    "#FEE080",
+    "#FFB480",
+    "#A9F580",
+    "#A6F9A2",
+    "#C6DBE1",
+    "#F99ECD",
+    "#C5C6FC",
+    "#FDC100",
+    "#56C878",
+    "#E9D6B2",
+    "#FFA100",
+    "#DBBEC9",
+    "#DB7BAE",
+    "#FFFF72",
+    "#F2CDA5",
+    "#CABD00",
+    "#A9D8B9",
+    "#EBB2BB",
+    "#BFCFCF",
+    "#59B726",
+    "#DE7083",
+    "#68BBD9",
+    "#FF8147",
+    "#87D21E",
+    "#44D36F",
+    "#CA9D00",
+    "#5D94E1",
+    "#CB78CE",
+    "#00BD09",
+    "#4EC300",
+    "#F99A9A",
+    "#FFFF72",
+    "#C175D6",
+    "#6BBAFF",
+    "#FF8D01",
+    "#CAC300",
+    "#5AA800",
+    "#FF8F2E",
+    "#3EC1A7",
+    "#FF9C39",
+    "#E7698F",
+    "#D9AC1A",
+    "#3BCA8C",
+    "#E06E96",
+    "#E9AF5D",
+    "#6699CC",
+    "#FF99CC",
+    "#99CCFF",
+    "#DCB02C",
+    "#FF7F5B",
+    "#29D984",
+    "#99FF99",
+    "#9999FF",
+    "#47BAAD",
+    "#FF9FFA",
+    "#00C161",
+    "#B093FF",
+    "#57B3FF",
+    "#CAFF7A",
+    "#EDE053",
+    "#5ECCB1",
+    "#5AB8D2",
+    "#7A95FF",
+    "#FFD83D",
+    "#FF6A34",
+    "#5AE09B",
+    "#E4CA95",
+    "#66C5BA",
+    "#CC7E7E",
+    "#E6AFEE",
+    "#8DD7B1",
+    "#DE8EB6",
+    "#FFA3A3",
+    "#FFD1A3",
+    "#FFA3FF"
+  ],
+  "lang": "it",
+  "tipo": "corso",
+  "aa": "2022",
+  "anno_accademico": "2022",
+  "cds": "420",
+  "anno2": [
+    "999|2"
+  ],
+  "curr_codes": [
+    "999|2"
+  ],
+  "docente": null,
+  "attivita": [
+    
+  ],
+  "celle": [
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": [
+            {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Sistemi operativi Teoria\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC168194&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Sistemi operativi Teoria\">Sistemi operativi Teoria</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Sistemi operativi Teoria",
+              "id": "titolo_corso"
+            }
+          ],
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Pravadelli Graziano\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=123&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Pravadelli Graziano\">Pravadelli Graziano</a><br /><a aria-label=\"Drago Nicola\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=33&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Drago Nicola\">Drago Nicola</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "lunedì 10 ottobre 2022<br>08:30 - 11:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"A\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&aula=26&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula A\">A</a><br><span style=\"font-weight:bold\">Capacità: </span>171<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 1\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 1\">Borgo Roma - Ca' Vignal 1</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC168194",
+      "nome_insegnamento": "Sistemi operativi Teoria",
+      "name_original": "Sistemi operativi Teoria",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1111339",
+      "timestamp": 1665383400,
+      "data": "10-10-2022",
+      "GiornoCompleto": "lunedì 10 ottobre 2022",
+      "codice_aula": "26",
+      "codice_sede": "1",
+      "aula": "A [Borgo Roma - Ca' Vignal 1]",
+      "orario": "08:30 - 11:30",
+      "tipo": "Lezione",
+      "giorno": "1",
+      "numero_giorno": "1",
+      "nome_giorno": "lunedì",
+      "ora_inizio": "08:30",
+      "ora_fine": "11:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "0",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Sistemi operativi Teoria",
+      "asterisk_str": "",
+      "codice_docente": "123, 33",
+      "docente": "Pravadelli Graziano, Drago Nicola",
+      "identifier_cell": 0,
+      "vertical_idx": 0
+    },
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": [
+            {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC168189&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria\">Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria",
+              "id": "titolo_corso"
+            }
+          ],
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Spoto Nicola Fausto\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=121&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Spoto Nicola Fausto\">Spoto Nicola Fausto</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "lunedì 10 ottobre 2022<br>11:30 - 12:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"A\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&aula=26&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula A\">A</a><br><span style=\"font-weight:bold\">Capacità: </span>171<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 1\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 1\">Borgo Roma - Ca' Vignal 1</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC168189",
+      "nome_insegnamento": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria",
+      "name_original": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1111280",
+      "timestamp": 1665394200,
+      "data": "10-10-2022",
+      "GiornoCompleto": "lunedì 10 ottobre 2022",
+      "codice_aula": "26",
+      "codice_sede": "1",
+      "aula": "A [Borgo Roma - Ca' Vignal 1]",
+      "orario": "11:30 - 12:30",
+      "tipo": "Lezione",
+      "giorno": "1",
+      "numero_giorno": "1",
+      "nome_giorno": "lunedì",
+      "ora_inizio": "11:30",
+      "ora_fine": "12:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "0",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria",
+      "asterisk_str": "",
+      "codice_docente": "121",
+      "docente": "Spoto Nicola Fausto",
+      "identifier_cell": 1,
+      "vertical_idx": 1
+    },
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": [
+            {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Sistemi operativi Teoria\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC168194&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Sistemi operativi Teoria\">Sistemi operativi Teoria</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Sistemi operativi Teoria",
+              "id": "titolo_corso"
+            }
+          ],
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Pravadelli Graziano\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=123&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Pravadelli Graziano\">Pravadelli Graziano</a><br /><a aria-label=\"Drago Nicola\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=33&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Drago Nicola\">Drago Nicola</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "martedì 11 ottobre 2022<br>08:30 - 11:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"A\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&aula=26&date=11-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula A\">A</a><br><span style=\"font-weight:bold\">Capacità: </span>171<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 1\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&date=11-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 1\">Borgo Roma - Ca' Vignal 1</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC168194",
+      "nome_insegnamento": "Sistemi operativi Teoria",
+      "name_original": "Sistemi operativi Teoria",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1111354",
+      "timestamp": 1665469800,
+      "data": "11-10-2022",
+      "GiornoCompleto": "martedì 11 ottobre 2022",
+      "codice_aula": "26",
+      "codice_sede": "1",
+      "aula": "A [Borgo Roma - Ca' Vignal 1]",
+      "orario": "08:30 - 11:30",
+      "tipo": "Lezione",
+      "giorno": "2",
+      "numero_giorno": "2",
+      "nome_giorno": "martedì",
+      "ora_inizio": "08:30",
+      "ora_fine": "11:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "0",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Sistemi operativi Teoria",
+      "asterisk_str": "",
+      "codice_docente": "123, 33",
+      "docente": "Pravadelli Graziano, Drago Nicola",
+      "identifier_cell": 2,
+      "vertical_idx": 0
+    },
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": [
+            {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Algoritmi\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC163945&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Algoritmi\">Algoritmi</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Algoritmi",
+              "id": "titolo_corso"
+            }
+          ],
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Segala Roberto\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=116&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Segala Roberto\">Segala Roberto</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "martedì 11 ottobre 2022<br>11:30 - 13:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"A\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&aula=26&date=11-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula A\">A</a><br><span style=\"font-weight:bold\">Capacità: </span>171<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 1\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&date=11-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 1\">Borgo Roma - Ca' Vignal 1</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC163945",
+      "nome_insegnamento": "Algoritmi",
+      "name_original": "Algoritmi",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1108424",
+      "timestamp": 1665480600,
+      "data": "11-10-2022",
+      "GiornoCompleto": "martedì 11 ottobre 2022",
+      "codice_aula": "26",
+      "codice_sede": "1",
+      "aula": "A [Borgo Roma - Ca' Vignal 1]",
+      "orario": "11:30 - 13:30",
+      "tipo": "Lezione",
+      "giorno": "2",
+      "numero_giorno": "2",
+      "nome_giorno": "martedì",
+      "ora_inizio": "11:30",
+      "ora_fine": "13:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "0",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Algoritmi",
+      "asterisk_str": "",
+      "codice_docente": "116",
+      "docente": "Segala Roberto",
+      "identifier_cell": 3,
+      "vertical_idx": 1
+    },
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": [
+            {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Analisi matematica II\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC163929&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Analisi matematica II\">Analisi matematica II</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Analisi matematica II",
+              "id": "titolo_corso"
+            }
+          ],
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Burato Alberto\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=31536&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Burato Alberto\">Burato Alberto</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "martedì 11 ottobre 2022<br>14:30 - 17:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"A\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&aula=26&date=11-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula A\">A</a><br><span style=\"font-weight:bold\">Capacità: </span>171<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 1\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&date=11-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 1\">Borgo Roma - Ca' Vignal 1</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC163929",
+      "nome_insegnamento": "Analisi matematica II",
+      "name_original": "Analisi matematica II",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1108294",
+      "timestamp": 1665491400,
+      "data": "11-10-2022",
+      "GiornoCompleto": "martedì 11 ottobre 2022",
+      "codice_aula": "26",
+      "codice_sede": "1",
+      "aula": "A [Borgo Roma - Ca' Vignal 1]",
+      "orario": "14:30 - 17:30",
+      "tipo": "Lezione",
+      "giorno": "2",
+      "numero_giorno": "2",
+      "nome_giorno": "martedì",
+      "ora_inizio": "14:30",
+      "ora_fine": "17:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "0",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Analisi matematica II",
+      "asterisk_str": "",
+      "codice_docente": "31536",
+      "docente": "Burato Alberto",
+      "identifier_cell": 4,
+      "vertical_idx": 2
+    },
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": [
+            {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Reti di calcolatori\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC163936&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Reti di calcolatori\">Reti di calcolatori</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Reti di calcolatori",
+              "id": "titolo_corso"
+            }
+          ],
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Carra Damiano\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=6412&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Carra Damiano\">Carra Damiano</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "mercoledì 12 ottobre 2022<br>08:30 - 11:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"A\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&aula=26&date=12-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula A\">A</a><br><span style=\"font-weight:bold\">Capacità: </span>171<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 1\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&date=12-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 1\">Borgo Roma - Ca' Vignal 1</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC163936",
+      "nome_insegnamento": "Reti di calcolatori",
+      "name_original": "Reti di calcolatori",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1108323",
+      "timestamp": 1665556200,
+      "data": "12-10-2022",
+      "GiornoCompleto": "mercoledì 12 ottobre 2022",
+      "codice_aula": "26",
+      "codice_sede": "1",
+      "aula": "A [Borgo Roma - Ca' Vignal 1]",
+      "orario": "08:30 - 11:30",
+      "tipo": "Lezione",
+      "giorno": "3",
+      "numero_giorno": "3",
+      "nome_giorno": "mercoledì",
+      "ora_inizio": "08:30",
+      "ora_fine": "11:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "0",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Reti di calcolatori",
+      "asterisk_str": "",
+      "codice_docente": "6412",
+      "docente": "Carra Damiano",
+      "identifier_cell": 5,
+      "vertical_idx": 0
+    },
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": [
+            {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC168189&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria\">Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria",
+              "id": "titolo_corso"
+            }
+          ],
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Spoto Nicola Fausto\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=121&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Spoto Nicola Fausto\">Spoto Nicola Fausto</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "mercoledì 12 ottobre 2022<br>11:30 - 13:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"A\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&aula=26&date=12-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula A\">A</a><br><span style=\"font-weight:bold\">Capacità: </span>171<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 1\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&date=12-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 1\">Borgo Roma - Ca' Vignal 1</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC168189",
+      "nome_insegnamento": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria",
+      "name_original": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1111295",
+      "timestamp": 1665567000,
+      "data": "12-10-2022",
+      "GiornoCompleto": "mercoledì 12 ottobre 2022",
+      "codice_aula": "26",
+      "codice_sede": "1",
+      "aula": "A [Borgo Roma - Ca' Vignal 1]",
+      "orario": "11:30 - 13:30",
+      "tipo": "Lezione",
+      "giorno": "3",
+      "numero_giorno": "3",
+      "nome_giorno": "mercoledì",
+      "ora_inizio": "11:30",
+      "ora_fine": "13:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "0",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria",
+      "asterisk_str": "",
+      "codice_docente": "121",
+      "docente": "Spoto Nicola Fausto",
+      "identifier_cell": 6,
+      "vertical_idx": 1
+    },
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": [
+            {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Algoritmi\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC163945&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Algoritmi\">Algoritmi</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Algoritmi",
+              "id": "titolo_corso"
+            }
+          ],
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Segala Roberto\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=116&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Segala Roberto\">Segala Roberto</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "giovedì 13 ottobre 2022<br>08:30 - 11:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"A\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&aula=26&date=13-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula A\">A</a><br><span style=\"font-weight:bold\">Capacità: </span>171<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 1\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&date=13-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 1\">Borgo Roma - Ca' Vignal 1</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC163945",
+      "nome_insegnamento": "Algoritmi",
+      "name_original": "Algoritmi",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1108438",
+      "timestamp": 1665642600,
+      "data": "13-10-2022",
+      "GiornoCompleto": "giovedì 13 ottobre 2022",
+      "codice_aula": "26",
+      "codice_sede": "1",
+      "aula": "A [Borgo Roma - Ca' Vignal 1]",
+      "orario": "08:30 - 11:30",
+      "tipo": "Lezione",
+      "giorno": "4",
+      "numero_giorno": "4",
+      "nome_giorno": "giovedì",
+      "ora_inizio": "08:30",
+      "ora_fine": "11:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "0",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Algoritmi",
+      "asterisk_str": "",
+      "codice_docente": "116",
+      "docente": "Segala Roberto",
+      "identifier_cell": 7,
+      "vertical_idx": 0
+    },
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": [
+            {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Programmazione II e ingegneria del software PROGRAMMAZIONE II Laboratorio\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC168188&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Programmazione II e ingegneria del software PROGRAMMAZIONE II Laboratorio\">Programmazione II e ingegneria del software PROGRAMMAZIONE II Laboratorio</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Laboratorio",
+              "id": "titolo_corso"
+            }
+          ],
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Spoto Nicola Fausto\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=121&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Spoto Nicola Fausto\">Spoto Nicola Fausto</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "giovedì 13 ottobre 2022<br>11:30 - 14:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"Delta\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=3&aula=219&date=13-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula Delta\">Delta</a><br><span style=\"font-weight:bold\">Capacità: </span>118<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 3 - Piramide\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=3&date=13-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 3 - Piramide\">Borgo Roma - Ca' Vignal 3 - Piramide</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC168188",
+      "nome_insegnamento": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Laboratorio",
+      "name_original": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Laboratorio",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1111266",
+      "timestamp": 1665653400,
+      "data": "13-10-2022",
+      "GiornoCompleto": "giovedì 13 ottobre 2022",
+      "codice_aula": "219",
+      "codice_sede": "3",
+      "aula": "Delta [Borgo Roma - Ca' Vignal 3 - Piramide]",
+      "orario": "11:30 - 14:30",
+      "tipo": "Lezione",
+      "giorno": "4",
+      "numero_giorno": "4",
+      "nome_giorno": "giovedì",
+      "ora_inizio": "11:30",
+      "ora_fine": "14:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "0",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Laboratorio",
+      "asterisk_str": "",
+      "codice_docente": "121",
+      "docente": "Spoto Nicola Fausto",
+      "identifier_cell": 8,
+      "vertical_idx": 1
+    },
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": [
+            {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Sistemi operativi Laboratorio Laboratorio 2\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC168193&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Sistemi operativi Laboratorio Laboratorio 2\">Sistemi operativi Laboratorio Laboratorio 2</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Sistemi operativi Laboratorio Laboratorio 2",
+              "id": "titolo_corso"
+            }
+          ],
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Visentin Francesco\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=7921&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Visentin Francesco\">Visentin Francesco</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "giovedì 13 ottobre 2022<br>15:30 - 18:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"Delta\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=3&aula=219&date=13-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula Delta\">Delta</a><br><span style=\"font-weight:bold\">Capacità: </span>118<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 3 - Piramide\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=3&date=13-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 3 - Piramide\">Borgo Roma - Ca' Vignal 3 - Piramide</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC168193",
+      "nome_insegnamento": "Sistemi operativi Laboratorio Laboratorio 2",
+      "name_original": "Sistemi operativi Laboratorio Laboratorio 2",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1111325",
+      "timestamp": 1665667800,
+      "data": "13-10-2022",
+      "GiornoCompleto": "giovedì 13 ottobre 2022",
+      "codice_aula": "219",
+      "codice_sede": "3",
+      "aula": "Delta [Borgo Roma - Ca' Vignal 3 - Piramide]",
+      "orario": "15:30 - 18:30",
+      "tipo": "Lezione",
+      "giorno": "4",
+      "numero_giorno": "4",
+      "nome_giorno": "giovedì",
+      "ora_inizio": "15:30",
+      "ora_fine": "18:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "0",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Sistemi operativi Laboratorio Laboratorio 2",
+      "asterisk_str": "",
+      "codice_docente": "7921",
+      "docente": "Visentin Francesco",
+      "identifier_cell": 9,
+      "vertical_idx": 2
+    },
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": {
+            "0": {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Sistemi operativi Laboratorio Laboratorio 1\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC168192&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Sistemi operativi Laboratorio Laboratorio 1\">Sistemi operativi Laboratorio Laboratorio 1</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            "1": {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Sistemi operativi Laboratorio Laboratorio 1",
+              "id": "titolo_corso"
+            },
+            "3": {
+              "intestazione": "",
+              "contenuto": "<span style=\"color:#a70808\">annullato</span>",
+              "id": "evento_annullato"
+            }
+          },
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Visentin Francesco\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=7921&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Visentin Francesco\">Visentin Francesco</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "venerdì 14 ottobre 2022<br>08:30 - 11:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"Delta\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=3&aula=219&date=14-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula Delta\">Delta</a><br><span style=\"font-weight:bold\">Capacità: </span>118<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 3 - Piramide\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=3&date=14-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 3 - Piramide\">Borgo Roma - Ca' Vignal 3 - Piramide</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC168192",
+      "nome_insegnamento": "Sistemi operativi Laboratorio Laboratorio 1",
+      "name_original": "Sistemi operativi Laboratorio Laboratorio 1",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1122107",
+      "timestamp": 1665729000,
+      "data": "14-10-2022",
+      "GiornoCompleto": "venerdì 14 ottobre 2022",
+      "codice_aula": "219",
+      "codice_sede": "3",
+      "aula": "Delta [Borgo Roma - Ca' Vignal 3 - Piramide]",
+      "orario": "08:30 - 11:30",
+      "tipo": "Lezione",
+      "giorno": "5",
+      "numero_giorno": "5",
+      "nome_giorno": "venerdì",
+      "ora_inizio": "08:30",
+      "ora_fine": "11:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "1",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Sistemi operativi Laboratorio Laboratorio 1",
+      "asterisk_str": "",
+      "codice_docente": "7921",
+      "docente": "Visentin Francesco",
+      "identifier_cell": 10,
+      "vertical_idx": 0
+    },
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": [
+            {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Reti di calcolatori\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC163936&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Reti di calcolatori\">Reti di calcolatori</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Reti di calcolatori",
+              "id": "titolo_corso"
+            }
+          ],
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Carra Damiano\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=6412&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Carra Damiano\">Carra Damiano</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "venerdì 14 ottobre 2022<br>14:30 - 16:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"A\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&aula=26&date=14-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula A\">A</a><br><span style=\"font-weight:bold\">Capacità: </span>171<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 1\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&date=14-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 1\">Borgo Roma - Ca' Vignal 1</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC163936",
+      "nome_insegnamento": "Reti di calcolatori",
+      "name_original": "Reti di calcolatori",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1108338",
+      "timestamp": 1665750600,
+      "data": "14-10-2022",
+      "GiornoCompleto": "venerdì 14 ottobre 2022",
+      "codice_aula": "26",
+      "codice_sede": "1",
+      "aula": "A [Borgo Roma - Ca' Vignal 1]",
+      "orario": "14:30 - 16:30",
+      "tipo": "Lezione",
+      "giorno": "5",
+      "numero_giorno": "5",
+      "nome_giorno": "venerdì",
+      "ora_inizio": "14:30",
+      "ora_fine": "16:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "0",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Reti di calcolatori",
+      "asterisk_str": "",
+      "codice_docente": "6412",
+      "docente": "Carra Damiano",
+      "identifier_cell": 11,
+      "vertical_idx": 1
+    },
+    {
+      "informazioni_lezione": {
+        "intestazione": "Dettagli",
+        "contenuto": {
+          "1": [
+            {
+              "intestazione": "Nome insegnamento",
+              "contenuto": "<a aria-label=\"Analisi matematica II\" href=\"index.php?view=easycourse&_lang=&include=attivita&anno=2022&attivita[]=EC163929&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Analisi matematica II\">Analisi matematica II</a>&nbsp;&nbsp;",
+              "id": "nome_corso"
+            },
+            {
+              "intestazione": "Argomento lezione",
+              "contenuto": "Analisi matematica II",
+              "id": "titolo_corso"
+            }
+          ],
+          "3": [
+            {
+              "intestazione": "Docenti",
+              "contenuto": "<a aria-label=\"Burato Alberto\" href=\"index.php?view=easycourse&_lang=&include=docente&anno=2022&docente=31536&visualizzazione_orario=cal&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Burato Alberto\">Burato Alberto</a>",
+              "id": "docenti"
+            }
+          ],
+          "4": [
+            {
+              "intestazione": "Data e Ora",
+              "contenuto": "venerdì 14 ottobre 2022<br>16:30 - 18:30",
+              "id": "data_ora_info"
+            }
+          ],
+          "5": [
+            {
+              "intestazione": "Aula",
+              "contenuto": "<span style=\"font-weight:bold\">Nome aula: </span><a aria-label=\"A\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&aula=26&date=14-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Aula A\">A</a><br><span style=\"font-weight:bold\">Capacità: </span>171<br><span style=\"font-weight:bold\">Sede: </span><a aria-label=\"Borgo Roma - Ca' Vignal 1\" href=\"index.php?view=rooms&include=rooms&_lang=&sede=1&date=14-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Borgo Roma - Ca' Vignal 1\">Borgo Roma - Ca' Vignal 1</a> [Strada Le Grazie, 15 - 37134 Verona]",
+              "id": "aula",
+              "label_maps": "Google Maps",
+              "label_loc_map": "Apri mappa",
+              "label_back": "Indietro",
+              "NoteAula": ""
+            }
+          ],
+          "7": [
+            {
+              "intestazione": "Percorso didattico",
+              "contenuto": "<a aria-label=\"Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\" href=\"index.php?view=easycourse&_lang=&include=corso&anno=2022&corso=420&anno2[]=999|2&date=10-10-2022\" target=\"_blank\" title=\"Apri un'altra TAB del browser per consultare l'orario di: Laurea in Informatica [420] Corsi di laurea - 2 - UNICO\">Laurea in Informatica [420] Corsi di laurea - 2 - UNICO</a>",
+              "id": "curriculum"
+            }
+          ],
+          "9": [
+            
+          ]
+        }
+      },
+      "mostra_aula": true,
+      "tipologia": "",
+      "display": [
+        "titolo_lezione",
+        "docente",
+        "aula",
+        "orario",
+        "tipo",
+        "link_lezione_online"
+      ],
+      "link_lezione_online": "",
+      "codice_insegnamento": "EC163929",
+      "nome_insegnamento": "Analisi matematica II",
+      "name_original": "Analisi matematica II",
+      "Streaming": {
+        "0": "0"
+      },
+      "link_corso": "",
+      "link_insegnamento": "",
+      "percorso_didattico": "Laurea in Informatica [420] Corsi di laurea - 2 - UNICO",
+      "id": "1108308",
+      "timestamp": 1665757800,
+      "data": "14-10-2022",
+      "GiornoCompleto": "venerdì 14 ottobre 2022",
+      "codice_aula": "26",
+      "codice_sede": "1",
+      "aula": "A [Borgo Roma - Ca' Vignal 1]",
+      "orario": "16:30 - 18:30",
+      "tipo": "Lezione",
+      "giorno": "5",
+      "numero_giorno": "5",
+      "nome_giorno": "venerdì",
+      "ora_inizio": "16:30",
+      "ora_fine": "18:30",
+      "notes": "",
+      "maps": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2801.274264360162!2d10.9953279!3d45.4038087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5fa577402819%3A0x204e7292c5866520!2sStr.+le+Grazie%2C+15%2C+37134+Verona+VR!5e0!3m2!1sit!2sit!4v1489050377689\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+      "loc_map": "",
+      "coordX": "",
+      "coordY": "",
+      "NoteAula": "",
+      "NoteSettimanali": "",
+      "Annullato": "0",
+      "insegnamento_tipo": [
+        "Obbligatorio"
+      ],
+      "link_aula": [
+        ""
+      ],
+      "highlighted": 0,
+      "from_esterno": 0,
+      "titolo_lezione": "Analisi matematica II",
+      "asterisk_str": "",
+      "codice_docente": "31536",
+      "docente": "Burato Alberto",
+      "identifier_cell": 12,
+      "vertical_idx": 2
+    }
+  ],
+  "legenda": [
+    {
+      "codice": "EC163945",
+      "nome": "Algoritmi",
+      "spunta": "1",
+      "tipo": "Obbligatorio"
+    },
+    {
+      "codice": "EC163929",
+      "nome": "Analisi matematica II",
+      "spunta": "1",
+      "tipo": "Obbligatorio"
+    },
+    {
+      "codice": "EC168188",
+      "nome": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Laboratorio",
+      "spunta": "1",
+      "tipo": "Obbligatorio"
+    },
+    {
+      "codice": "EC168189",
+      "nome": "Programmazione II e ingegneria del software PROGRAMMAZIONE II Teoria",
+      "spunta": "1",
+      "tipo": "Obbligatorio"
+    },
+    {
+      "codice": "EC163936",
+      "nome": "Reti di calcolatori",
+      "spunta": "1",
+      "tipo": "Obbligatorio"
+    },
+    {
+      "codice": "EC168192",
+      "nome": "Sistemi operativi Laboratorio Laboratorio 1",
+      "spunta": "1",
+      "tipo": "Obbligatorio"
+    },
+    {
+      "codice": "EC168193",
+      "nome": "Sistemi operativi Laboratorio Laboratorio 2",
+      "spunta": "1",
+      "tipo": "Obbligatorio"
+    },
+    {
+      "codice": "EC168194",
+      "nome": "Sistemi operativi Teoria",
+      "spunta": "1",
+      "tipo": "Obbligatorio"
+    }
+  ],
+  "note_generali": [
+    {
+      "timestamp": {
+        "0": "1665402302"
+      },
+      "nota": ""
+    },
+    {
+      "timestamp": {
+        "0": "1665402303"
+      },
+      "nota": ""
+    },
+    {
+      "timestamp": {
+        "0": "1665402316"
+      },
+      "nota": ""
+    },
+    {
+      "timestamp": {
+        "0": "1665402316"
+      },
+      "nota": ""
+    },
+    {
+      "timestamp": {
+        "0": "1665402316"
+      },
+      "nota": ""
+    },
+    {
+      "timestamp": {
+        "0": "1665402317"
+      },
+      "nota": ""
+    },
+    {
+      "timestamp": {
+        "0": "1665402317"
+      },
+      "nota": ""
+    },
+    {
+      "timestamp": {
+        "0": "1665402317"
+      },
+      "nota": ""
+    }
+  ],
+  "date_inizio_fine_curriculum": [
+    {
+      "timestamp": {
+        "0": "1665402302"
+      },
+      "date": {
+        "2": {
+          "AnnoCorso": "2",
+          "DataInizio": "03-10-2022",
+          "DataFine": "27-01-2023"
+        }
+      }
+    },
+    {
+      "timestamp": {
+        "0": "1665402303"
+      },
+      "date": {
+        "2": {
+          "AnnoCorso": "2",
+          "DataInizio": "03-10-2022",
+          "DataFine": "27-01-2023"
+        }
+      }
+    },
+    {
+      "timestamp": {
+        "0": "1665402316"
+      },
+      "date": {
+        "2": {
+          "AnnoCorso": "2",
+          "DataInizio": "03-10-2022",
+          "DataFine": "27-01-2023"
+        }
+      }
+    },
+    {
+      "timestamp": {
+        "0": "1665402316"
+      },
+      "date": {
+        "2": {
+          "AnnoCorso": "2",
+          "DataInizio": "03-10-2022",
+          "DataFine": "27-01-2023"
+        }
+      }
+    },
+    {
+      "timestamp": {
+        "0": "1665402316"
+      },
+      "date": {
+        "2": {
+          "AnnoCorso": "2",
+          "DataInizio": "03-10-2022",
+          "DataFine": "27-01-2023"
+        }
+      }
+    },
+    {
+      "timestamp": {
+        "0": "1665402317"
+      },
+      "date": {
+        "2": {
+          "AnnoCorso": "2",
+          "DataInizio": "03-10-2022",
+          "DataFine": "27-01-2023"
+        }
+      }
+    },
+    {
+      "timestamp": {
+        "0": "1665402317"
+      },
+      "date": {
+        "2": {
+          "AnnoCorso": "2",
+          "DataInizio": "03-10-2022",
+          "DataFine": "27-01-2023"
+        }
+      }
+    },
+    {
+      "timestamp": {
+        "0": "1665402317"
+      },
+      "date": {
+        "2": {
+          "AnnoCorso": "2",
+          "DataInizio": "03-10-2022",
+          "DataFine": "27-01-2023"
+        }
+      }
+    }
+  ],
+  "nota_cdl": [
+    
+  ],
+  "curricula_course": "",
+  "now_timestamp": 1665402804,
+  "file_timestamp": 1665402317,
+  "file_date": "10-10-2022 13:45",
+  "file_date_txt": "<span style=\"font-weight:bold\">Ultimo aggiornamento:</span> 10-10-2022 alle 13:45",
+  "all_events": 0,
+  "max_num_events_in_a_day": 3,
+  "contains_data": 13,
+  "matrix_mask_orizontal_grid": {
+    "1": [
+      0,
+      1
+    ],
+    "2": [
+      2,
+      3,
+      4
+    ],
+    "3": [
+      5,
+      6
+    ],
+    "4": [
+      7,
+      8,
+      9
+    ],
+    "5": [
+      10,
+      11,
+      12
+    ]
+  }
+}
