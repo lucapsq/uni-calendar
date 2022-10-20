@@ -1,12 +1,9 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:uni_calendar/utilities.dart';
 import 'package:uni_calendar/widgets/calendar_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:uni_calendar/widgets/room_availability.dart';
 import './models/teaching.dart';
 import './configuration_page.dart';
 
@@ -53,7 +50,8 @@ class _HomepageState extends State<Homepage> {
     print("ho letto: $courseCode, $courseYear");
     final now = DateTime.now();
     String today = DateFormat('d-M-y').format(now);
-    String nextWeek = DateFormat('d-M-y').format(now.add(Duration(days: 7)));
+    String nextWeek =
+        DateFormat('d-M-y').format(now.add(const Duration(days: 7)));
     List<Teaching> teachingsList = await getTeachingsList(
             today, nextWeek, courseCode, courseYear, courseYearCode)
         as List<Teaching>;
@@ -103,14 +101,19 @@ class _HomepageState extends State<Homepage> {
                 }
               });
             },
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
           ),
         ],
         backgroundColor: Colors.blue,
         centerTitle: true,
-        title: Text(
-          "UniVR Calendar",
-        ),
+        title: const Text("UniVR Calendar"),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(context, RoomAvailability.route());
+        },
+        label: const Text('Aule libere'),
+        icon: const Icon(Icons.meeting_room_rounded),
       ),
       body: FutureBuilder(
           future: fetchCalendar(),
@@ -123,7 +126,7 @@ class _HomepageState extends State<Homepage> {
                 child: CalendarView(data!),
               );
             }
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }),
     );
   }
