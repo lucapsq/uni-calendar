@@ -7,14 +7,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:uni_calendar/widgets/calendar_view.dart';
-
-import 'package:uni_calendar/main.dart';
+import 'package:uni_calendar/lessons_calendar.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(Homepage());
+    await tester.pumpWidget(LessonsCalendar());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

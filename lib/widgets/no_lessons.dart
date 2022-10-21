@@ -25,15 +25,6 @@ class NoLessons extends StatelessWidget {
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
         ),
-        ElevatedButton(
-            onPressed: () async {
-              final prefs = await SharedPreferences.getInstance();
-
-              await prefs.remove('courseCode');
-              await prefs.remove('courseYear');
-              await prefs.remove('courseYearCode');
-            },
-            child: Text("Cancella"))
       ],
     );
   }

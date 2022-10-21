@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:uni_calendar/utilities.dart';
-import 'package:uni_calendar/widgets/calendar_view.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import './models/teaching.dart';
-import './configuration_page.dart';
+import 'package:uni_calendar/widgets/room_availability.dart';
+import 'configuration_page.dart';
+import 'lessons_calendar.dart';
+import 'settings_page.dart';
 
 void main() {
   runApp(
@@ -22,119 +20,83 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  String courseCode = '';
-  String courseYear = '';
-  String courseYearCode = '';
-
-  SharedPreferences? sharedPreferences;
-
-  Future<Map> fetchCalendar() async {
-    final now = DateTime.now();
-    String today = DateFormat('d-M-y').format(now);
-    String nextWeek =
-        DateFormat('d-M-y').format(now.add(const Duration(days: 7)));
-    List<Teaching> teachingsList = await getTeachingsList(
-      today,
-      nextWeek,
-      courseCode,
-      courseYear,
-      courseYearCode,
-    );
-
-    String selectedDate = today;
-    List<Teaching> dayTeachingList = [];
-    Map teachingsMap = <String, List<Teaching>>{};
-
-    for (var c in teachingsList) {
-      if (c.date == selectedDate) {
-        dayTeachingList.add(c);
-      }
-
-      if (c.date != selectedDate) {
-        final dayTeaching = <String, List<Teaching>>{
-          selectedDate: dayTeachingList,
-        };
-        teachingsMap.addEntries(dayTeaching.entries);
-        dayTeachingList = [];
-        dayTeachingList.add(c);
-        selectedDate = c.date;
-      }
-    }
-
-    return teachingsMap;
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    initCourse();
-  }
-
-  selectCourse() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const ConfigurationPage()),
-    ).then((value) async {
-      if (value != null) {
-        setState(() {
-          courseCode = sharedPreferences!.getString('courseCode').toString();
-          courseYear = sharedPreferences!.getString('courseYear').toString();
-          courseYearCode =
-              sharedPreferences!.getString('courseYearCode').toString();
-        });
-        fetchCalendar();
-      }
-    });
-  }
-
-  initCourse() async {
-    var prefs = await SharedPreferences.getInstance();
-    setState(() => sharedPreferences = prefs);
-
-    String? code = prefs.getString('courseCode');
-    if (code == null) {
-      selectCourse();
-    } else {
-      setState(() {
-        courseCode = sharedPreferences!.getString('courseCode').toString();
-        courseYear = sharedPreferences!.getString('courseYear').toString();
-        courseYearCode =
-            sharedPreferences!.getString('courseYearCode').toString();
-      });
-
-      fetchCalendar();
-    }
-  }
+  var selectedPage = 0;
+  var selectedColor = Colors.blue;
+  var unselectedColor = Colors.grey[700];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: selectCourse,
-            icon: const Icon(Icons.settings),
-          ),
-        ],
-        backgroundColor: Colors.blue,
-        centerTitle: true,
-        title: const Text(
-          "UniVR Calendar",
+        title: Text("UniVR Calendar"),
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(
+                height: MediaQuery.of(context).size.height * 0.75,
+                child: selectedPage == 0
+                    ? LessonsCalendar()
+                    : selectedPage == 1
+                        ? RoomAvailability()
+                        : SettingsPage()),
+            Expanded(
+              child: Container(
+                color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    TextButton(
+                        onPressed: () {},
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.calendar_today,
+                              size: 37,
+                            ),
+                            Text(
+                              selectedPage == 0 ? "Lezioni" : "",
+                              style: TextStyle(fontSize: 20),
+                            )
+                          ],
+                        )),
+                    /*IconButton(
+                      onPressed: () {
+                        setState(() {
+                          selectedPage = 0;
+                        });
+                      },
+                      icon: Icon(Icons.calendar_today),
+                      color: selectedPage == 0 ? Colors.blue : Colors.grey[700],
+                      iconSize: 37,
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          selectedPage = 1;
+                        });
+                      },
+                      icon: Icon(Icons.room),
+                      color: selectedPage == 1 ? Colors.blue : Colors.grey[700],
+                      iconSize: 37,
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          selectedPage = 2;
+                        });
+                      },
+                      icon: Icon(Icons.settings),
+                      color: selectedPage == 2 ? Colors.blue : Colors.grey[700],
+                      iconSize: 37,
+                    ),*/
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
-      body: FutureBuilder(
-          future: fetchCalendar(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              Map? data = snapshot.data;
-
-              return Container(
-                color: Colors.grey[300],
-                child: CalendarView(data!),
-              );
-            }
-            return const Center(child: CircularProgressIndicator());
-          }),
     );
   }
 }

@@ -76,11 +76,6 @@ class _RoomAvailabilityState extends State<RoomAvailability> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        centerTitle: true,
-        title: const Text("Aule libere"),
-      ),
       body: SafeArea(
         child: ListView.builder(
           itemBuilder: (context, i) => Padding(
