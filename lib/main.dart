@@ -35,7 +35,7 @@ class _HomepageState extends State<Homepage> {
         child: Column(
           children: [
             SizedBox(
-                height: MediaQuery.of(context).size.height * 0.75,
+                height: MediaQuery.of(context).size.height * 0.76,
                 child: selectedPage == 0
                     ? LessonsCalendar()
                     : selectedPage == 1

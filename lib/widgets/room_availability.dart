@@ -75,30 +75,41 @@ class _RoomAvailabilityState extends State<RoomAvailability> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Card(
-          child: ListView.builder(
-            itemBuilder: (context, i) => Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-              child: Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color:
-                        isRoomAvailable(rooms[i]) ? Colors.green : Colors.red,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        elevation: 7,
+        child: ListView.builder(
+          itemBuilder: (context, i) =>
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    rooms[i],
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
                   ),
-                ),
-                child: Row(
-                  children: [
-                    Text(rooms[i]),
-                  ],
-                ),
+                  Text(
+                    "10:30",
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
               ),
             ),
-            itemCount: rooms.length,
-          ),
+            Container(
+              height: 0.5,
+              color: Colors.grey[700],
+            )
+          ]),
+          itemCount: rooms.length,
         ),
       ),
     );
