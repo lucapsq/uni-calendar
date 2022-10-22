@@ -77,25 +77,28 @@ class _RoomAvailabilityState extends State<RoomAvailability> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ListView.builder(
-          itemBuilder: (context, i) => Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-            child: Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: isRoomAvailable(rooms[i]) ? Colors.green : Colors.red,
+        child: Card(
+          child: ListView.builder(
+            itemBuilder: (context, i) => Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              child: Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color:
+                        isRoomAvailable(rooms[i]) ? Colors.green : Colors.red,
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    Text(rooms[i]),
+                  ],
                 ),
               ),
-              child: Row(
-                children: [
-                  Text(rooms[i]),
-                ],
-              ),
             ),
+            itemCount: rooms.length,
           ),
-          itemCount: rooms.length,
         ),
       ),
     );

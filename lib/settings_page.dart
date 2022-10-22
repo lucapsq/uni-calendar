@@ -15,6 +15,13 @@ class SettingsPage extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
             ),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.7,
+              child: Image(image: AssetImage('assets/setting-preference.png')),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.05,
+            ),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(

@@ -29,6 +29,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("UniVR Calendar"),
+        centerTitle: true,
       ),
       body: SafeArea(
         child: Column(
@@ -47,49 +48,62 @@ class _HomepageState extends State<Homepage> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            selectedPage = 0;
+                          });
+                        },
                         child: Row(
                           children: [
-                            Icon(
-                              Icons.calendar_today,
-                              size: 37,
-                            ),
+                            Icon(Icons.calendar_today,
+                                size: 37,
+                                color: selectedPage == 0
+                                    ? selectedColor
+                                    : unselectedColor),
                             Text(
                               selectedPage == 0 ? "Lezioni" : "",
                               style: TextStyle(fontSize: 20),
                             )
                           ],
                         )),
-                    /*IconButton(
-                      onPressed: () {
-                        setState(() {
-                          selectedPage = 0;
-                        });
-                      },
-                      icon: Icon(Icons.calendar_today),
-                      color: selectedPage == 0 ? Colors.blue : Colors.grey[700],
-                      iconSize: 37,
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        setState(() {
-                          selectedPage = 1;
-                        });
-                      },
-                      icon: Icon(Icons.room),
-                      color: selectedPage == 1 ? Colors.blue : Colors.grey[700],
-                      iconSize: 37,
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        setState(() {
-                          selectedPage = 2;
-                        });
-                      },
-                      icon: Icon(Icons.settings),
-                      color: selectedPage == 2 ? Colors.blue : Colors.grey[700],
-                      iconSize: 37,
-                    ),*/
+                    TextButton(
+                        onPressed: () {
+                          setState(() {
+                            selectedPage = 1;
+                          });
+                        },
+                        child: Row(
+                          children: [
+                            Icon(Icons.room,
+                                size: 37,
+                                color: selectedPage == 1
+                                    ? selectedColor
+                                    : unselectedColor),
+                            Text(
+                              selectedPage == 1 ? "Aule" : "",
+                              style: TextStyle(fontSize: 20),
+                            )
+                          ],
+                        )),
+                    TextButton(
+                        onPressed: () {
+                          setState(() {
+                            selectedPage = 3;
+                          });
+                        },
+                        child: Row(
+                          children: [
+                            Icon(Icons.settings,
+                                size: 37,
+                                color: selectedPage == 3
+                                    ? selectedColor
+                                    : unselectedColor),
+                            Text(
+                              selectedPage == 3 ? "Impostazioni" : "",
+                              style: TextStyle(fontSize: 20),
+                            )
+                          ],
+                        )),
                   ],
                 ),
               ),
