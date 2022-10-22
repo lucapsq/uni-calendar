@@ -100,33 +100,18 @@ class _LessonsCalendarState extends State<LessonsCalendar> {
 
   @override
   Widget build(BuildContext context) {
-    return /*Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: selectCourse,
-            icon: const Icon(Icons.settings),
-          ),
-        ],
-        backgroundColor: Colors.blue,
-        centerTitle: true,
-        title: const Text(
-          "UniVR Calendar",
-        ),
-      ),
-      body: */
-        FutureBuilder(
-            future: fetchCalendar(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                Map? data = snapshot.data;
+    return FutureBuilder(
+        future: fetchCalendar(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            Map? data = snapshot.data;
 
-                return Container(
-                  color: Colors.grey[300],
-                  child: CalendarView(data!),
-                );
-              }
-              return const Center(child: CircularProgressIndicator());
-            });
+            return Container(
+              color: Colors.grey[300],
+              child: CalendarView(data!),
+            );
+          }
+          return const Center(child: CircularProgressIndicator());
+        });
   }
 }

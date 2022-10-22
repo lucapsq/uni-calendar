@@ -8,8 +8,9 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
+    return Container(
+      color: Colors.grey[300],
+      child: Center(
         child: Column(
           children: [
             SizedBox(

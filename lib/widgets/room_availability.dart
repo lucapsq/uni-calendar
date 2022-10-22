@@ -75,7 +75,8 @@ class _RoomAvailabilityState extends State<RoomAvailability> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      color: Colors.grey[300],
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       child: Card(
         shape: RoundedRectangleBorder(

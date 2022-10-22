@@ -21,8 +21,12 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   var selectedPage = 0;
-  var selectedColor = Colors.blue;
-  var unselectedColor = Colors.grey[700];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      selectedPage = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,84 +36,32 @@ class _HomepageState extends State<Homepage> {
         centerTitle: true,
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            SizedBox(
-                height: MediaQuery.of(context).size.height * 0.76,
-                child: selectedPage == 0
-                    ? LessonsCalendar()
-                    : selectedPage == 1
-                        ? RoomAvailability()
-                        : SettingsPage()),
-            Expanded(
-              child: Container(
-                color: Colors.white,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    TextButton(
-                        onPressed: () {
-                          setState(() {
-                            selectedPage = 0;
-                          });
-                        },
-                        child: Row(
-                          children: [
-                            Icon(Icons.calendar_today,
-                                size: 37,
-                                color: selectedPage == 0
-                                    ? selectedColor
-                                    : unselectedColor),
-                            Text(
-                              selectedPage == 0 ? "Lezioni" : "",
-                              style: TextStyle(fontSize: 20),
-                            )
-                          ],
-                        )),
-                    TextButton(
-                        onPressed: () {
-                          setState(() {
-                            selectedPage = 1;
-                          });
-                        },
-                        child: Row(
-                          children: [
-                            Icon(Icons.room,
-                                size: 37,
-                                color: selectedPage == 1
-                                    ? selectedColor
-                                    : unselectedColor),
-                            Text(
-                              selectedPage == 1 ? "Aule" : "",
-                              style: TextStyle(fontSize: 20),
-                            )
-                          ],
-                        )),
-                    TextButton(
-                        onPressed: () {
-                          setState(() {
-                            selectedPage = 3;
-                          });
-                        },
-                        child: Row(
-                          children: [
-                            Icon(Icons.settings,
-                                size: 37,
-                                color: selectedPage == 3
-                                    ? selectedColor
-                                    : unselectedColor),
-                            Text(
-                              selectedPage == 3 ? "Impostazioni" : "",
-                              style: TextStyle(fontSize: 20),
-                            )
-                          ],
-                        )),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+          child: selectedPage == 0
+              ? LessonsCalendar()
+              : selectedPage == 1
+                  ? RoomAvailability()
+                  : SettingsPage()),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedIconTheme: IconThemeData(size: 35),
+        iconSize: 28,
+        selectedFontSize: 17,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today),
+            label: 'Lezioni',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Aule',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Impostazioni',
+          ),
+        ],
+        currentIndex: selectedPage,
+        selectedItemColor: Colors.blue,
+        onTap: _onItemTapped,
       ),
     );
   }
