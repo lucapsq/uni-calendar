@@ -19,7 +19,6 @@ class _CalendarViewState extends State<CalendarView> {
   initState() {
     nolessonImage = Image(
       image: AssetImage('assets/happy.png'),
-      fit: BoxFit.fitWidth,
     );
   }
 

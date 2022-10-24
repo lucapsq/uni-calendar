@@ -18,11 +18,20 @@ class _CourseSelectionPageState extends State<CourseSelectionPage> {
   List<Course> courses = [];
 
   late Image studentImage;
+  late Image yearSelectionImage;
 
   @override
   void initState() {
     super.initState();
     studentImage = Image.asset("assets/student.png");
+    yearSelectionImage = Image.asset("assets/year-select.png");
+  }
+
+  @override
+  void didChangeDependencies() {
+    precacheImage(studentImage.image, context);
+    precacheImage(yearSelectionImage.image, context);
+    super.didChangeDependencies();
   }
 
   Future<List<Course>> fetchCourses() async {
@@ -76,13 +85,11 @@ class _CourseSelectionPageState extends State<CourseSelectionPage> {
                 padding: const EdgeInsets.all(40.0),
                 child: Column(
                   children: [
-                    SizedBox(
+                    Container(
+                        margin: EdgeInsets.fromLTRB(0, 20, 0, 50),
                         width: MediaQuery.of(context).size.width * 0.5,
                         child: studentImage),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.width * 0.07,
-                    ),
-                    CourseSelection(courses, years),
+                    CourseSelection(courses, years, yearSelectionImage),
                   ],
                 ),
               );

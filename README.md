@@ -1,6 +1,6 @@
-# uni_calendar
+# UniCalendar
 
-A new Flutter project.
+UniCalendar is a useful app for keeping track of class schedules related, for now, only to the University of Verona.
 
 ## Getting Started
 
@@ -14,3 +14,11 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## About
+bla
+
+## Features
+
+## Screenshots
+

@@ -42,7 +42,7 @@ class SettingsPage extends StatelessWidget {
                         builder: (context) => const CourseSelectionPage()),
                   );
                 },
-                child: Text("Cambia corso")),
+                child: Text("Modifica corso")),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(

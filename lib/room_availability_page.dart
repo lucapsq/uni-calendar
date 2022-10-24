@@ -96,7 +96,7 @@ class _RoomAvailabilityState extends State<RoomAvailability> {
             ),
           ),
           SizedBox(
-            height: 200,
+            height: MediaQuery.of(context).size.height * 0.6,
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),

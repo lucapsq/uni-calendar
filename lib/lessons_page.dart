@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:uni_calendar/api/get_teachinglist.dart';
-import 'package:uni_calendar/widgets/calendar_lesson_page.dart';
+import 'package:uni_calendar/calendar_lesson_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import './models/teaching.dart';
 import 'course_selection_page.dart';
@@ -92,7 +92,7 @@ class _LessonsPageState extends State<LessonsPage> {
       selectCourse();
     } else {
       setState(() {
-        courseCode = sharedPreferences!.getString('courseCode').toString()!;
+        courseCode = sharedPreferences!.getString('courseCode').toString();
         courseYearList = sharedPreferences!.getStringList('courseYear')!;
         courseYearCodeList =
             sharedPreferences!.getStringList('courseYearCode')!;

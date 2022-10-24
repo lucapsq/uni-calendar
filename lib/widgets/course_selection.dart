@@ -5,7 +5,9 @@ import 'package:uni_calendar/widgets/year_selection.dart';
 class CourseSelection extends StatefulWidget {
   List<Course> courses;
   List<String> years;
-  CourseSelection(this.courses, this.years, {super.key});
+  Image yearSelectionImage;
+  CourseSelection(this.courses, this.years, this.yearSelectionImage,
+      {super.key});
 
   @override
   State<CourseSelection> createState() => _CourseSelectionState();
@@ -31,7 +33,7 @@ class _CourseSelectionState extends State<CourseSelection> {
           alignment: Alignment.center,
           child: Text(
             "Che corso frequenti?",
-            style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
         DropdownButtonHideUnderline(
@@ -56,7 +58,10 @@ class _CourseSelectionState extends State<CourseSelection> {
                       context,
                       MaterialPageRoute<void>(
                         builder: (BuildContext context) => YearSelection(
-                            newValue, widget.courses, c.yearsList),
+                            newValue,
+                            widget.courses,
+                            c.yearsList,
+                            widget.yearSelectionImage),
                       ),
                     );
                     ;

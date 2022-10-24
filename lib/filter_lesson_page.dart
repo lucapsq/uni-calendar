@@ -91,19 +91,22 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
             return Column(
               children: [
                 Container(
-                    margin: EdgeInsets.symmetric(vertical: 10),
+                    margin: EdgeInsets.fromLTRB(0, 10, 0, 40),
                     height: MediaQuery.of(context).size.height * 0.25,
                     child: filterLessonsImage),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 30),
                   child: Align(
-                    alignment: Alignment.centerLeft,
+                    alignment: Alignment.center,
                     child: Text(
-                      "ciao",
+                      "Che materie vuoi visualizzare?",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
-                SizedBox(
+                Container(
+                  margin: EdgeInsets.only(top: 5),
                   height: MediaQuery.of(context).size.height * 0.4,
                   child: Card(
                     margin: EdgeInsets.fromLTRB(30, 0, 30, 10),

@@ -9,8 +9,10 @@ class YearSelection extends StatefulWidget {
   String selectedCourse;
   List<Course> courses;
   List<String> years;
+  Image yearSelectionImage;
 
-  YearSelection(this.selectedCourse, this.courses, this.years);
+  YearSelection(
+      this.selectedCourse, this.courses, this.years, this.yearSelectionImage);
 }
 
 class _YearSelectionState extends State<YearSelection> {
@@ -47,15 +49,16 @@ class _YearSelectionState extends State<YearSelection> {
         ),
         body: Column(
           children: [
-            SizedBox(
-              height: 100,
-            ),
+            Container(
+                margin: EdgeInsets.fromLTRB(0, 20, 0, 50),
+                width: MediaQuery.of(context).size.width * 0.35,
+                child: widget.yearSelectionImage),
             Text(
               "Che anni frequenti?",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.3,
+              height: MediaQuery.of(context).size.height * 0.25,
               child: Card(
                 margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
                 child: ListView.builder(
