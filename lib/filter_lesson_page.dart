@@ -22,10 +22,20 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
     }
   }
 
+  late Image filterLessonsImage;
+
+  @override
+  void didChangeDependencies() {
+    precacheImage(filterLessonsImage.image, context);
+    super.didChangeDependencies();
+  }
+
   @override
   void initState() {
     super.initState();
+
     getExcludedLessons();
+    filterLessonsImage = Image.asset("assets/filter-lessons.png");
   }
 
   Future<List<String>> fetchLessons() async {
@@ -80,10 +90,23 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
             var lessons = snapshot.data;
             return Column(
               children: [
+                Container(
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    height: MediaQuery.of(context).size.height * 0.25,
+                    child: filterLessonsImage),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 30),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "ciao",
+                    ),
+                  ),
+                ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.7,
+                  height: MediaQuery.of(context).size.height * 0.4,
                   child: Card(
-                    margin: EdgeInsets.fromLTRB(30, 100, 30, 10),
+                    margin: EdgeInsets.fromLTRB(30, 0, 30, 10),
                     child: ListView.builder(
                         itemCount: lessons!.length,
                         itemBuilder: (BuildContext context, int index) {

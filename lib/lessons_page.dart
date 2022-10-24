@@ -92,7 +92,7 @@ class _LessonsPageState extends State<LessonsPage> {
       selectCourse();
     } else {
       setState(() {
-        courseCode = sharedPreferences!.getString('courseCode').toString();
+        courseCode = sharedPreferences!.getString('courseCode').toString()!;
         courseYearList = sharedPreferences!.getStringList('courseYear')!;
         courseYearCodeList =
             sharedPreferences!.getStringList('courseYearCode')!;

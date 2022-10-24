@@ -54,7 +54,7 @@ class CalendarLessonsListView extends StatelessWidget {
                           calendarAppointmentDetails
                               .appointments.first.eventName,
                           style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.bold),
+                              fontSize: 15, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
                           height: 5,
