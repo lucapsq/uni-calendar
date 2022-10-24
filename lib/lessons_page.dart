@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:uni_calendar/utilities.dart';
-import 'package:uni_calendar/widgets/calendar_view.dart';
+import 'package:uni_calendar/api/get_teachinglist.dart';
+import 'package:uni_calendar/widgets/calendar_lesson_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import './models/teaching.dart';
-import './configuration_page.dart';
+import 'course_selection_page.dart';
 
-class LessonsCalendar extends StatefulWidget {
-  const LessonsCalendar({super.key});
+class LessonsPage extends StatefulWidget {
+  const LessonsPage({super.key});
 
   @override
-  State<LessonsCalendar> createState() => _LessonsCalendarState();
+  State<LessonsPage> createState() => _LessonsPageState();
 }
 
-class _LessonsCalendarState extends State<LessonsCalendar> {
+class _LessonsPageState extends State<LessonsPage> {
   String courseCode = '';
-  String courseYear = '';
-  String courseYearCode = '';
+  List<String> courseYearList = [];
+  List<String> courseYearCodeList = [];
+  List<String> excludedLessonList = [];
 
   SharedPreferences? sharedPreferences;
 
@@ -29,8 +30,9 @@ class _LessonsCalendarState extends State<LessonsCalendar> {
       today,
       nextWeek,
       courseCode,
-      courseYear,
-      courseYearCode,
+      courseYearList,
+      courseYearCodeList,
+      excludedLessonList,
     );
 
     String selectedDate = today;
@@ -65,14 +67,16 @@ class _LessonsCalendarState extends State<LessonsCalendar> {
   selectCourse() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const ConfigurationPage()),
+      MaterialPageRoute(builder: (context) => const CourseSelectionPage()),
     ).then((value) async {
       if (value != null) {
         setState(() {
           courseCode = sharedPreferences!.getString('courseCode').toString();
-          courseYear = sharedPreferences!.getString('courseYear').toString();
-          courseYearCode =
-              sharedPreferences!.getString('courseYearCode').toString();
+          courseYearList = sharedPreferences!.getStringList('courseYear')!;
+          courseYearCodeList =
+              sharedPreferences!.getStringList('courseYearCode')!;
+          excludedLessonList =
+              sharedPreferences!.getStringList('excludedLessonList')!;
         });
         fetchCalendar();
       }
@@ -89,9 +93,11 @@ class _LessonsCalendarState extends State<LessonsCalendar> {
     } else {
       setState(() {
         courseCode = sharedPreferences!.getString('courseCode').toString();
-        courseYear = sharedPreferences!.getString('courseYear').toString();
-        courseYearCode =
-            sharedPreferences!.getString('courseYearCode').toString();
+        courseYearList = sharedPreferences!.getStringList('courseYear')!;
+        courseYearCodeList =
+            sharedPreferences!.getStringList('courseYearCode')!;
+        excludedLessonList =
+            sharedPreferences!.getStringList('excludedLessonList')!;
       });
 
       fetchCalendar();
@@ -107,7 +113,7 @@ class _LessonsCalendarState extends State<LessonsCalendar> {
             Map? data = snapshot.data;
 
             return Container(
-              color: Colors.grey[300],
+              color: Colors.grey[100],
               child: CalendarView(data!),
             );
           }

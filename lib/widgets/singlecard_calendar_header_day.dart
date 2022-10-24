@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-//qui c'è la singola Card che crea il calendario in alto
 class CardCalendar extends StatefulWidget {
   DateTime d;
   DateTime selectedDay;

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uni_calendar/widgets/room_availability.dart';
-import 'configuration_page.dart';
-import 'lessons_calendar.dart';
+import 'package:uni_calendar/widgets/room_availability_page.dart';
+import 'lessons_page.dart';
 import 'settings_page.dart';
 
 void main() {
@@ -28,6 +27,20 @@ class _HomepageState extends State<Homepage> {
     });
   }
 
+  late Image settingsImage;
+
+  @override
+  void initState() {
+    super.initState();
+    settingsImage = Image.asset("assets/setting-preference.png");
+  }
+
+  @override
+  void didChangeDependencies() {
+    precacheImage(settingsImage.image, context);
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,10 +50,10 @@ class _HomepageState extends State<Homepage> {
       ),
       body: SafeArea(
           child: selectedPage == 0
-              ? LessonsCalendar()
+              ? LessonsPage()
               : selectedPage == 1
                   ? RoomAvailability()
-                  : SettingsPage()),
+                  : SettingsPage(settingsImage)),
       bottomNavigationBar: BottomNavigationBar(
         selectedIconTheme: IconThemeData(size: 35),
         iconSize: 28,

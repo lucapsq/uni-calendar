@@ -4,18 +4,26 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import './models/course.dart';
-import './widgets/dropdown_choice.dart';
+import 'widgets/course_selection.dart';
 
-class ConfigurationPage extends StatefulWidget {
-  const ConfigurationPage({super.key});
+class CourseSelectionPage extends StatefulWidget {
+  const CourseSelectionPage({super.key});
 
   @override
-  State<ConfigurationPage> createState() => _ConfigurationPageState();
+  State<CourseSelectionPage> createState() => _CourseSelectionPageState();
 }
 
-class _ConfigurationPageState extends State<ConfigurationPage> {
+class _CourseSelectionPageState extends State<CourseSelectionPage> {
   List<String> years = [];
   List<Course> courses = [];
+
+  late Image studentImage;
+
+  @override
+  void initState() {
+    super.initState();
+    studentImage = Image.asset("assets/student.png");
+  }
 
   Future<List<Course>> fetchCourses() async {
     var response = await http.get(Uri.parse(
@@ -69,16 +77,12 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                 child: Column(
                   children: [
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      child: const Image(
-                        image: AssetImage('assets/student.png'),
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        child: studentImage),
                     SizedBox(
                       height: MediaQuery.of(context).size.width * 0.07,
                     ),
-                    DropdownChoice(courses, years),
+                    CourseSelection(courses, years),
                   ],
                 ),
               );

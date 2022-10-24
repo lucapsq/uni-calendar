@@ -1,12 +1,51 @@
 import 'dart:convert';
 
-import 'models/teaching.dart';
+import '../models/teaching.dart';
 import 'package:http/http.dart' as http;
 
-Future<List<Teaching>> getTeachingsList(String today, String nextWeek,
-    String courseCode, String courseYear, String courseYearCode) async {
-  courseYear.replaceAll(' ', '+');
-  courseYearCode.replaceAll('|', '%7C');
+String getCourseYearString(List<String> courseYearList) {
+  String courseYear = "";
+
+  for (var c in courseYearList) {
+    c = c.replaceAll(' ', '+');
+  }
+
+  for (int i = 0; i < courseYearList.length; i++) {
+    courseYear = courseYear + courseYearList[i];
+
+    if (i + 1 < courseYearList.length) {
+      courseYear = courseYear + "%2C";
+    }
+  }
+
+  return courseYear;
+}
+
+String getCourseYearCodeString(List<String> courseYearCodeList) {
+  String courseYearCode = "";
+
+  for (var c in courseYearCodeList) c.replaceAll('|', '%7C');
+
+  for (int i = 0; i < courseYearCodeList.length; i++) {
+    courseYearCode = courseYearCode + courseYearCodeList[i];
+
+    if (i + 1 < courseYearCodeList.length) {
+      courseYearCode = courseYearCode + "&anno2%5B%5D=";
+    }
+  }
+
+  return courseYearCode;
+}
+
+Future<List<Teaching>> getTeachingsList(
+    String today,
+    String nextWeek,
+    String courseCode,
+    List<String> courseYearList,
+    List<String> courseYearCodeList,
+    List<String> excludedLessonList) async {
+  String courseYear = getCourseYearString(courseYearList);
+  String courseYearCode = getCourseYearCodeString(courseYearCodeList);
 
   String req1 =
       "view=easycourse&form-type=corso&include=corso&txtcurr=$courseYear&anno=2022&corso=$courseCode&anno2%5B%5D=$courseYearCode&date=$today&periodo_didattico=&_lang=it&list=&week_grid_type=-1&ar_codes_=&ar_select_=&col_cells=0&empty_box=0&only_grid=0&highlighted_date=0&all_events=0&faculty_group=0&_lang=it&all_events=0&txtcurr=";
@@ -41,7 +80,6 @@ Future<List<Teaching>> getTeachingsList(String today, String nextWeek,
         'sec-ch-ua-platform': '"Windows"',
       },
       body: req1);
-
   var responseNextWeek = await http.post(
       Uri.parse(
           "https://logistica.univr.it/PortaleStudentiUnivr/grid_call.php"),
@@ -79,22 +117,24 @@ Future<List<Teaching>> getTeachingsList(String today, String nextWeek,
 
   for (var c in dataList['celle']) {
     if (c['data'] == today || checkBefore) {
+      if (!excludedLessonList.contains(c['nome_insegnamento'])) {
+        teachingsList.add(Teaching(
+            name: c['nome_insegnamento'],
+            date: c['data'],
+            time: c['orario'],
+            classroom: c['aula']));
+        checkBefore = true;
+      }
+    }
+  }
+
+  for (var c in dataListNextWeek['celle']) {
+    if (!excludedLessonList.contains(c['nome_insegnamento']))
       teachingsList.add(Teaching(
           name: c['nome_insegnamento'],
           date: c['data'],
           time: c['orario'],
           classroom: c['aula']));
-      checkBefore = true;
-    }
   }
-
-  for (var c in dataListNextWeek['celle']) {
-    teachingsList.add(Teaching(
-        name: c['nome_insegnamento'],
-        date: c['data'],
-        time: c['orario'],
-        classroom: c['aula']));
-  }
-  print(teachingsList.length);
   return teachingsList;
 }

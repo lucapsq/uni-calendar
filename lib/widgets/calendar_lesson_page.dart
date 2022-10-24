@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uni_calendar/models/teaching.dart';
-import 'package:uni_calendar/widgets/calendar_listview.dart';
-import 'package:uni_calendar/widgets/card_calendar.dart';
+import 'package:uni_calendar/widgets/calendar_lessons_listview.dart';
+import 'package:uni_calendar/widgets/singlecard_calendar_header_day.dart';
 import 'package:uni_calendar/widgets/no_lessons.dart';
-import '../models/teaching.dart';
 import 'package:intl/intl.dart';
 
 class CalendarView extends StatefulWidget {
@@ -16,13 +14,19 @@ class CalendarView extends StatefulWidget {
 }
 
 class _CalendarViewState extends State<CalendarView> {
-  var nolessonImage;
+  late Image nolessonImage;
   @override
   initState() {
     nolessonImage = Image(
       image: AssetImage('assets/happy.png'),
       fit: BoxFit.fitWidth,
     );
+  }
+
+  @override
+  void didChangeDependencies() {
+    precacheImage(nolessonImage.image, context);
+    super.didChangeDependencies();
   }
 
   List<Teaching> getTeachingList() {
@@ -74,7 +78,7 @@ class _CalendarViewState extends State<CalendarView> {
         ),
         getTeachingList().length == 0
             ? NoLessons(nolessonImage)
-            : CalendarListView(getTeachingList)
+            : CalendarLessonsListView(getTeachingList, selectedDay)
       ],
     );
   }

@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:uni_calendar/configuration_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:uni_calendar/course_selection_page.dart';
+import 'package:uni_calendar/filter_lesson_page.dart';
 
 class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
+  Image settingsImage;
+
+  SettingsPage(this.settingsImage);
+
+  Future<void> resetPreferences() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    await prefs.remove('courseCode');
+    await prefs.remove('courseYear');
+    await prefs.remove('courseYearCode');
+    await prefs.remove('excludedLessonList');
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[300],
+      color: Colors.grey[100],
       child: Center(
         child: Column(
           children: [
@@ -18,7 +29,7 @@ class SettingsPage extends StatelessWidget {
             ),
             Container(
               width: MediaQuery.of(context).size.width * 0.7,
-              child: Image(image: AssetImage('assets/setting-preference.png')),
+              child: settingsImage,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.05,
@@ -28,7 +39,7 @@ class SettingsPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const ConfigurationPage()),
+                        builder: (context) => const CourseSelectionPage()),
                   );
                 },
                 child: Text("Cambia corso")),
@@ -37,10 +48,15 @@ class SettingsPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const ConfigurationPage()),
+                        builder: (context) => const FilterLessonPage()),
                   );
                 },
-                child: Text("Cambia sede")),
+                child: Text("Filtra lezioni")),
+            ElevatedButton(
+                onPressed: () async {
+                  await resetPreferences();
+                },
+                child: Text("Reset")),
           ],
         ),
       ),
