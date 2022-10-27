@@ -113,28 +113,31 @@ Future<List<Teaching>> getTeachingsList(
   var dataListNextWeek = jsonDecode(responseNextWeek.body.toString());
   List<Teaching> teachingsList = [];
 
-  bool checkBefore = false; //aggiungo solo gli insegnamenti da today in poi
+  //bool checkBefore = false; //aggiungo solo gli insegnamenti da today in poi
 
   for (var c in dataList['celle']) {
-    if (c['data'] == today || checkBefore) {
-      if (!excludedLessonList.contains(c['nome_insegnamento'])) {
+    //if (c['data'] == today || checkBefore) {
+    if (!excludedLessonList.contains(c['nome_insegnamento'])) {
+      if (c['nome_insegnamento'] != null)
         teachingsList.add(Teaching(
             name: c['nome_insegnamento'],
             date: c['data'],
             time: c['orario'],
             classroom: c['aula']));
-        checkBefore = true;
-      }
+      //checkBefore = true;
     }
+    //}
   }
 
   for (var c in dataListNextWeek['celle']) {
-    if (!excludedLessonList.contains(c['nome_insegnamento']))
+    if (!excludedLessonList
+        .contains(c['nome_insegnamento'])) if (c['nome_insegnamento'] != null)
       teachingsList.add(Teaching(
           name: c['nome_insegnamento'],
           date: c['data'],
           time: c['orario'],
           classroom: c['aula']));
   }
+
   return teachingsList;
 }

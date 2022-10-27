@@ -50,19 +50,23 @@ class CalendarLessonsListView extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          calendarAppointmentDetails
-                              .appointments.first.eventName,
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold),
+                        FittedBox(
+                          child: Text(
+                            calendarAppointmentDetails
+                                .appointments.first.eventName,
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
                         ),
-                        SizedBox(
+                        /*SizedBox(
                           height: 5,
-                        ),
-                        Text(
-                          calendarAppointmentDetails
-                              .appointments.first.classroom,
-                          style: TextStyle(fontSize: 16),
+                        ),*/
+                        FittedBox(
+                          child: Text(
+                            calendarAppointmentDetails
+                                .appointments.first.classroom,
+                            style: TextStyle(fontSize: 16),
+                          ),
                         )
                       ],
                     ),
@@ -75,8 +79,8 @@ class CalendarLessonsListView extends StatelessWidget {
                 selectedDay.year, selectedDay.month, selectedDay.day, 6, 0, 0),
             maxDate: DateTime(
                 selectedDay.year, selectedDay.month, selectedDay.day, 21, 0),
-            timeSlotViewSettings:
-                TimeSlotViewSettings(startHour: 6, endHour: 21),
+            timeSlotViewSettings: TimeSlotViewSettings(
+                startHour: 6, endHour: 21, timeIntervalHeight: 70),
             dataSource: LessonDataSource(_getDataSource())));
   }
 }

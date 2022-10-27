@@ -14,6 +14,31 @@ class LessonsPage extends StatefulWidget {
 }
 
 class _LessonsPageState extends State<LessonsPage> {
+  String getFormattedDate(DateTime now) {
+    String dayString = "";
+    String day = "";
+    String month = "";
+    String year = "";
+
+    if (now.day < 10) {
+      day = "0" + now.day.toString();
+    } else {
+      day = now.day.toString();
+    }
+
+    if (now.month < 10) {
+      month = "0" + now.month.toString();
+    } else {
+      month = now.month.toString();
+    }
+
+    year = now.year.toString();
+
+    dayString = "$day-$month-$year";
+
+    return dayString;
+  }
+
   String courseCode = '';
   List<String> courseYearList = [];
   List<String> courseYearCodeList = [];
@@ -23,9 +48,9 @@ class _LessonsPageState extends State<LessonsPage> {
 
   Future<Map> fetchCalendar() async {
     final now = DateTime.now();
-    String today = DateFormat('d-M-y').format(now);
-    String nextWeek =
-        DateFormat('d-M-y').format(now.add(const Duration(days: 7)));
+    String today = getFormattedDate(now);
+
+    String nextWeek = getFormattedDate(now.add(const Duration(days: 7)));
     List<Teaching> teachingsList = await getTeachingsList(
       today,
       nextWeek,
@@ -49,6 +74,7 @@ class _LessonsPageState extends State<LessonsPage> {
           selectedDate: dayTeachingList,
         };
         teachingsMap.addEntries(dayTeaching.entries);
+
         dayTeachingList = [];
         dayTeachingList.add(c);
         selectedDate = c.date;
@@ -114,7 +140,7 @@ class _LessonsPageState extends State<LessonsPage> {
 
             return Container(
               color: Colors.grey[100],
-              child: CalendarView(data!),
+              child: CalendarView(data!, getFormattedDate),
             );
           }
           return const Center(child: CircularProgressIndicator());

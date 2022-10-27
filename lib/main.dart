@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uni_calendar/widgets/room_availability_page.dart';
+import '/room_availability_page.dart';
 import 'lessons_page.dart';
 import 'settings_page.dart';
 

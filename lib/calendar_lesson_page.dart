@@ -7,7 +7,8 @@ import 'package:intl/intl.dart';
 
 class CalendarView extends StatefulWidget {
   Map data;
-  CalendarView(this.data);
+  Function getFormattedDate;
+  CalendarView(this.data, this.getFormattedDate);
 
   @override
   State<CalendarView> createState() => _CalendarViewState();
@@ -29,7 +30,7 @@ class _CalendarViewState extends State<CalendarView> {
   }
 
   List<Teaching> getTeachingList() {
-    String selectedDayString = DateFormat('d-M-y').format(selectedDay);
+    String selectedDayString = widget.getFormattedDate(selectedDay);
     if (widget.data[selectedDayString] == null) return [];
     return widget.data[selectedDayString];
   }
