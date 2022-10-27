@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:uni_calendar/api/get_teachinglist.dart';
 import 'package:uni_calendar/calendar_lesson_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -73,6 +72,7 @@ class _LessonsPageState extends State<LessonsPage> {
         final dayTeaching = <String, List<Teaching>>{
           selectedDate: dayTeachingList,
         };
+
         teachingsMap.addEntries(dayTeaching.entries);
 
         dayTeachingList = [];
@@ -80,7 +80,15 @@ class _LessonsPageState extends State<LessonsPage> {
         selectedDate = c.date;
       }
     }
+    final dayTeaching = <String, List<Teaching>>{
+      selectedDate: dayTeachingList,
+    };
 
+    teachingsMap.addEntries(dayTeaching.entries);
+
+    /*teachingsMap.forEach((key, value) {
+      print(key);
+    });*/
     return teachingsMap;
   }
 
@@ -122,8 +130,11 @@ class _LessonsPageState extends State<LessonsPage> {
         courseYearList = sharedPreferences!.getStringList('courseYear')!;
         courseYearCodeList =
             sharedPreferences!.getStringList('courseYearCode')!;
-        excludedLessonList =
-            sharedPreferences!.getStringList('excludedLessonList')!;
+        if (sharedPreferences?.getStringList('excludedLessonList') != null) {
+          excludedLessonList =
+              sharedPreferences!.getStringList('excludedLessonList')!;
+        } else
+          excludedLessonList = [];
       });
 
       fetchCalendar();

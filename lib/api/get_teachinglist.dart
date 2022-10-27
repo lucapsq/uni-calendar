@@ -113,10 +113,7 @@ Future<List<Teaching>> getTeachingsList(
   var dataListNextWeek = jsonDecode(responseNextWeek.body.toString());
   List<Teaching> teachingsList = [];
 
-  //bool checkBefore = false; //aggiungo solo gli insegnamenti da today in poi
-
   for (var c in dataList['celle']) {
-    //if (c['data'] == today || checkBefore) {
     if (!excludedLessonList.contains(c['nome_insegnamento'])) {
       if (c['nome_insegnamento'] != null)
         teachingsList.add(Teaching(
@@ -124,9 +121,7 @@ Future<List<Teaching>> getTeachingsList(
             date: c['data'],
             time: c['orario'],
             classroom: c['aula']));
-      //checkBefore = true;
     }
-    //}
   }
 
   for (var c in dataListNextWeek['celle']) {

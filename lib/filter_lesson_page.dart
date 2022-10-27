@@ -72,8 +72,10 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
 
   Future<void> savePreferences(List<String> checkedItems) async {
     final prefs = await SharedPreferences.getInstance();
-
-    await prefs.setStringList('excludedLessonList', checkedItems);
+    if (checkedItems != null)
+      await prefs.setStringList('excludedLessonList', checkedItems);
+    else
+      await prefs.setStringList('excludedLessonList', []);
   }
 
   @override
