@@ -19,22 +19,21 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
     return Container(
       color: Colors.grey[100],
       child: Center(
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.1,
-            ),
             Container(
+              padding: EdgeInsets.symmetric(vertical: 20),
               width: MediaQuery.of(context).size.width * 0.7,
               child: settingsImage,
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.05,
-            ),
-            ElevatedButton(
+              width: mediaQuery.size.height * 0.15,
+              height: mediaQuery.size.height * 0.09,
+              child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -42,21 +41,42 @@ class SettingsPage extends StatelessWidget {
                         builder: (context) => const CourseSelectionPage()),
                   );
                 },
-                child: Text("Modifica corso")),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const FilterLessonPage()),
-                  );
-                },
-                child: Text("Filtra lezioni")),
-            ElevatedButton(
-                onPressed: () async {
-                  await resetPreferences();
-                },
-                child: Text("Reset")),
+                child: Text(
+                  "Modifica corso",
+                  style: TextStyle(fontSize: 16),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            Container(
+                margin: EdgeInsets.symmetric(vertical: 10),
+                width: mediaQuery.size.height * 0.15,
+                height: mediaQuery.size.height * 0.09,
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const FilterLessonPage()),
+                      );
+                    },
+                    child: Text(
+                      "Filtra lezioni",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ))),
+            SizedBox(
+                width: mediaQuery.size.height * 0.15,
+                height: mediaQuery.size.height * 0.09,
+                child: ElevatedButton(
+                    onPressed: () async {
+                      await resetPreferences();
+                    },
+                    child: Text("Azzera App",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 16)))),
           ],
         ),
       ),

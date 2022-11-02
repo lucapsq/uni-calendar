@@ -1,16 +1,13 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import '../models/lessonEvent.dart';
 import '../models/lessonDataSource.dart';
-import 'package:intl/intl.dart';
 
 class CalendarLessonsListView extends StatelessWidget {
   Function getTeachingList;
   DateTime selectedDay;
 
-  CalendarLessonsListView(this.getTeachingList, this.selectedDay);
+  CalendarLessonsListView(this.getTeachingList, this.selectedDay, {super.key});
 
   List<LessonEvent> _getDataSource() {
     final List<LessonEvent> events = <LessonEvent>[];
@@ -30,8 +27,8 @@ class CalendarLessonsListView extends StatelessWidget {
       final DateTime endDate = DateTime(selectedDay.year, selectedDay.month,
           selectedDay.day, endHour, endMinute, 0);
 
-      events.add(LessonEvent(
-          e.name, e.classroom, startDate, endDate, Color(0xff5c6bc0), false));
+      events.add(
+          LessonEvent(e.name, e.classroom, startDate, endDate, e.color, false));
     }
 
     return events;
@@ -41,6 +38,7 @@ class CalendarLessonsListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: SfCalendar(
+            
             appointmentBuilder: (context, calendarAppointmentDetails) {
               return Container(
                   color:
@@ -54,18 +52,15 @@ class CalendarLessonsListView extends StatelessWidget {
                           child: Text(
                             calendarAppointmentDetails
                                 .appointments.first.eventName,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.bold),
                           ),
                         ),
-                        /*SizedBox(
-                          height: 5,
-                        ),*/
                         FittedBox(
                           child: Text(
                             calendarAppointmentDetails
                                 .appointments.first.classroom,
-                            style: TextStyle(fontSize: 16),
+                            style: const TextStyle(fontSize: 16),
                           ),
                         )
                       ],
@@ -79,7 +74,7 @@ class CalendarLessonsListView extends StatelessWidget {
                 selectedDay.year, selectedDay.month, selectedDay.day, 6, 0, 0),
             maxDate: DateTime(
                 selectedDay.year, selectedDay.month, selectedDay.day, 21, 0),
-            timeSlotViewSettings: TimeSlotViewSettings(
+            timeSlotViewSettings: const TimeSlotViewSettings(
                 startHour: 6, endHour: 21, timeIntervalHeight: 70),
             dataSource: LessonDataSource(_getDataSource())));
   }

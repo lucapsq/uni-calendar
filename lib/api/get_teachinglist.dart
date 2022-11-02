@@ -1,4 +1,7 @@
 import 'dart:convert';
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
 
 import '../models/teaching.dart';
 import 'package:http/http.dart' as http;
@@ -113,14 +116,42 @@ Future<List<Teaching>> getTeachingsList(
   var dataListNextWeek = jsonDecode(responseNextWeek.body.toString());
   List<Teaching> teachingsList = [];
 
+  int colorIndex = 0;
+
+  Map<String, Color> colorsMap = {};
+
+  Color getNextColor() {
+    String color = dataList['colori'][colorIndex];
+    color = "0xff" + color.substring(1);
+
+    int colorInt = int.parse(color);
+    colorIndex++;
+    return Color(colorInt);
+  }
+
+  for (var c in dataList['celle']) {
+    if (colorsMap[c['nome_insegnamento']] == null &&
+        c['nome_insegnamento'] != null) {
+      colorsMap.addAll({c['nome_insegnamento']: getNextColor()});
+    }
+  }
+  for (var c in dataListNextWeek['celle']) {
+    if (colorsMap[c['nome_insegnamento']] == null &&
+        c['nome_insegnamento'] != null) {
+      colorsMap.addAll({c['nome_insegnamento']: getNextColor()});
+    }
+  }
+
   for (var c in dataList['celle']) {
     if (!excludedLessonList.contains(c['nome_insegnamento'])) {
-      if (c['nome_insegnamento'] != null)
+      if (c['nome_insegnamento'] != null) {
         teachingsList.add(Teaching(
             name: c['nome_insegnamento'],
             date: c['data'],
             time: c['orario'],
-            classroom: c['aula']));
+            classroom: c['aula'],
+            color: colorsMap[c['nome_insegnamento']]!));
+      }
     }
   }
 
@@ -128,10 +159,12 @@ Future<List<Teaching>> getTeachingsList(
     if (!excludedLessonList
         .contains(c['nome_insegnamento'])) if (c['nome_insegnamento'] != null)
       teachingsList.add(Teaching(
-          name: c['nome_insegnamento'],
-          date: c['data'],
-          time: c['orario'],
-          classroom: c['aula']));
+        name: c['nome_insegnamento'],
+        date: c['data'],
+        time: c['orario'],
+        classroom: c['aula'],
+        color: colorsMap[c['nome_insegnamento']]!,
+      ));
   }
 
   return teachingsList;
