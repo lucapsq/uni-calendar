@@ -137,7 +137,7 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
                 ElevatedButton(
                   onPressed: () async {
                     await savePreferences(checkedItems);
-                    //Navigator.popUntil(context, (route) => route.isFirst);
+                    Navigator.popUntil(context, (route) => route.isFirst);
                   },
                   child: Text("Salva"),
                 ),

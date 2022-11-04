@@ -86,9 +86,6 @@ class _LessonsPageState extends State<LessonsPage> {
 
     teachingsMap.addEntries(dayTeaching.entries);
 
-    /*teachingsMap.forEach((key, value) {
-      print(key);
-    });*/
     return teachingsMap;
   }
 
@@ -133,8 +130,9 @@ class _LessonsPageState extends State<LessonsPage> {
         if (sharedPreferences?.getStringList('excludedLessonList') != null) {
           excludedLessonList =
               sharedPreferences!.getStringList('excludedLessonList')!;
-        } else
+        } else {
           excludedLessonList = [];
+        }
       });
 
       fetchCalendar();

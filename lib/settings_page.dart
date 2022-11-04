@@ -2,20 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uni_calendar/course_selection_page.dart';
 import 'package:uni_calendar/filter_lesson_page.dart';
+import 'package:uni_calendar/filter_zones_page.dart';
+import 'package:uni_calendar/widgets/reset_button.dart';
 
 class SettingsPage extends StatelessWidget {
   Image settingsImage;
 
   SettingsPage(this.settingsImage);
-
-  Future<void> resetPreferences() async {
-    final prefs = await SharedPreferences.getInstance();
-
-    await prefs.remove('courseCode');
-    await prefs.remove('courseYear');
-    await prefs.remove('courseYearCode');
-    await prefs.remove('excludedLessonList');
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,56 +20,88 @@ class SettingsPage extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.symmetric(vertical: 20),
-              width: MediaQuery.of(context).size.width * 0.7,
+              width: mediaQuery.size.width * 0.7,
               child: settingsImage,
             ),
-            SizedBox(
-              width: mediaQuery.size.height * 0.15,
-              height: mediaQuery.size.height * 0.09,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const CourseSelectionPage()),
-                  );
-                },
-                child: Text(
-                  "Modifica corso",
-                  style: TextStyle(fontSize: 16),
-                  textAlign: TextAlign.center,
+            Padding(padding: EdgeInsets.all(20)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: 30,
                 ),
-              ),
-            ),
-            Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
-                width: mediaQuery.size.height * 0.15,
-                height: mediaQuery.size.height * 0.09,
-                child: ElevatedButton(
+                SizedBox(
+                  width: mediaQuery.size.height * 0.15,
+                  height: mediaQuery.size.height * 0.09,
+                  child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const FilterLessonPage()),
+                            builder: (context) => const CourseSelectionPage()),
                       );
                     },
                     child: Text(
-                      "Filtra lezioni",
+                      "Modifica corso",
+                      style: TextStyle(fontSize: 16),
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
-                    ))),
-            SizedBox(
-                width: mediaQuery.size.height * 0.15,
-                height: mediaQuery.size.height * 0.09,
-                child: ElevatedButton(
-                    onPressed: () async {
-                      await resetPreferences();
-                    },
-                    child: Text("Azzera App",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16)))),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                    width: mediaQuery.size.height * 0.15,
+                    height: mediaQuery.size.height * 0.09,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const FilterZonesPage()),
+                          );
+                        },
+                        child: Text(
+                          "Filtra Sedi",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ))),
+                SizedBox(
+                  width: 30,
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: 30,
+                ),
+                Container(
+                    margin: EdgeInsets.symmetric(vertical: 20),
+                    width: mediaQuery.size.height * 0.15,
+                    height: mediaQuery.size.height * 0.09,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const FilterLessonPage()),
+                          );
+                        },
+                        child: Text(
+                          "Filtra Lezioni",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ))),
+                ResetButton(),
+                SizedBox(
+                  width: 30,
+                ),
+              ],
+            ),
           ],
         ),
       ),
