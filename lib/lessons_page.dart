@@ -115,6 +115,11 @@ class _LessonsPageState extends State<LessonsPage> {
           excludedLessonList = prefs.getStringList('excludedLessonList')!;
         });
       }
+      if (prefs.getString('courseCode') == null ||
+          prefs.getStringList('courseYear') == null ||
+          prefs.getStringList('courseYearCode') == null) {
+        selectCourse();
+      }
       fetchCalendar();
     });
   }

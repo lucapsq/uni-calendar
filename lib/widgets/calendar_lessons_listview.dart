@@ -38,7 +38,6 @@ class CalendarLessonsListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: SfCalendar(
-            
             appointmentBuilder: (context, calendarAppointmentDetails) {
               return Container(
                   color:
@@ -48,21 +47,23 @@ class CalendarLessonsListView extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        FittedBox(
-                          child: Text(
-                            calendarAppointmentDetails
-                                .appointments.first.eventName,
-                            style: const TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          ),
+                        Text(
+                          calendarAppointmentDetails
+                              .appointments.first.eventName,
+                          style: const TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold),
+                          maxLines: 5,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        FittedBox(
+                        Expanded(
                           child: Text(
                             calendarAppointmentDetails
                                 .appointments.first.classroom,
                             style: const TextStyle(fontSize: 16),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 5,
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ));

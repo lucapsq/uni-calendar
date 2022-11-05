@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uni_calendar/course_selection_page.dart';
 import 'package:uni_calendar/filter_lesson_page.dart';
 import 'package:uni_calendar/filter_zones_page.dart';
+import 'package:uni_calendar/widgets/filter_lessons_button.dart';
 import 'package:uni_calendar/widgets/reset_button.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -77,26 +78,8 @@ class SettingsPage extends StatelessWidget {
                 SizedBox(
                   width: 30,
                 ),
-                Container(
-                    margin: EdgeInsets.symmetric(vertical: 20),
-                    width: mediaQuery.size.height * 0.15,
-                    height: mediaQuery.size.height * 0.09,
-                    child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const FilterLessonPage()),
-                          );
-                        },
-                        child: Text(
-                          "Filtra Lezioni",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 16,
-                          ),
-                        ))),
-                ResetButton(),
+                FilterLessonButton(mediaQuery),
+                ResetButton(mediaQuery),
                 SizedBox(
                   width: 30,
                 ),

@@ -33,7 +33,9 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
     zonesMap = await getZones(); //sede:id
     await fetchCheckedItems(zonesMap);
     zonesMap.forEach((key, value) {
-      zones.add(value);
+      if (!zones.contains(value)) {
+        zones.add(value);
+      }
     });
 
     return zonesMap;
@@ -42,7 +44,7 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
   Future<void> savePreferences(List<String> checkedItems) async {
     final prefs = await SharedPreferences.getInstance();
     List<String> checkedId = [];
-    if (checkedItems != null) {
+    if (checkedItems.isNotEmpty) {
       zonesMap.forEach((key, value) {
         if (checkedItems.contains(value)) {
           checkedId.add(key);
@@ -60,7 +62,7 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
   Future<void> fetchCheckedItems(Map<String, String> zonesMap) async {
     final prefs = await SharedPreferences.getInstance();
 
-    if (prefs.getStringList('zonesList') != null) {
+    if (prefs.getStringList('zonesList') != null && checkedItems.isEmpty) {
       //print(prefs.getStringList('zonesList'));
       zonesMap.forEach((key, value) {
         if (prefs.getStringList('zonesList')!.contains(key)) {
@@ -72,7 +74,6 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
 
   @override
   Widget build(BuildContext context) {
-    //print("ricarico");
     return Scaffold(
       appBar: AppBar(
         title: Text("UniVR Calendar"),
@@ -88,7 +89,19 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
                     margin: EdgeInsets.fromLTRB(0, 10, 0, 20),
                     height: MediaQuery.of(context).size.height * 0.25,
                     child: filterLessonsImage),
-                SizedBox(
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 30),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Che sedi vuoi visualizzare?",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 5),
                   height: MediaQuery.of(context).size.height * 0.45,
                   child: Card(
                     margin: EdgeInsets.fromLTRB(30, 0, 30, 10),
