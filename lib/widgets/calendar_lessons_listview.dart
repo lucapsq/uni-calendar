@@ -38,6 +38,12 @@ class CalendarLessonsListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: SfCalendar(
+            initialDisplayDate: DateTime(
+              selectedDay.year,
+              selectedDay.month,
+              selectedDay.day,
+              selectedDay.subtract(Duration(hours: 2)).hour,
+            ),
             appointmentBuilder: (context, calendarAppointmentDetails) {
               return Container(
                   color:
