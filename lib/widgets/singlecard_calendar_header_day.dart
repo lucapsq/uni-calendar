@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class CardCalendar extends StatefulWidget {
-  DateTime d;
-  DateTime selectedDay;
+  final DateTime d;
+  final DateTime selectedDay;
 
-  CardCalendar(this.d, this.selectedDay);
+  const CardCalendar(this.d, this.selectedDay, {super.key});
   @override
   State<CardCalendar> createState() => _CardCalendarState();
 }
@@ -24,7 +24,8 @@ class _CardCalendarState extends State<CardCalendar> {
         color: isActive(widget.d) ? Colors.black : null,
         shape: RoundedRectangleBorder(
             side: BorderSide(
-                color: isActive(widget.d) ? Colors.black : Color(0xffe0e0e0),
+                color:
+                    isActive(widget.d) ? Colors.black : const Color(0xffe0e0e0),
                 width: 2),
             borderRadius: BorderRadius.circular(10)),
         child: Column(

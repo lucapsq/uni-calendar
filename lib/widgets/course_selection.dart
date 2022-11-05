@@ -3,10 +3,10 @@ import 'package:uni_calendar/models/course.dart';
 import 'package:uni_calendar/widgets/year_selection.dart';
 
 class CourseSelection extends StatefulWidget {
-  List<Course> courses;
-  List<String> years;
-  Image yearSelectionImage;
-  CourseSelection(this.courses, this.years, this.yearSelectionImage,
+  final List<Course> courses;
+  final List<String> years;
+  final Image yearSelectionImage;
+  const CourseSelection(this.courses, this.years, this.yearSelectionImage,
       {super.key});
 
   @override
@@ -29,7 +29,7 @@ class _CourseSelectionState extends State<CourseSelection> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Align(
+        const Align(
           alignment: Alignment.center,
           child: Text(
             "Che corso frequenti?",
@@ -39,7 +39,7 @@ class _CourseSelectionState extends State<CourseSelection> {
         DropdownButtonHideUnderline(
           child: DropdownButton(
             value: selectedCourse,
-            hint: Text("- Seleziona -"),
+            hint: const Text("- Seleziona -"),
             itemHeight: 60,
             isExpanded: true,
             items: widget.courses.map((Course value) {
@@ -64,7 +64,6 @@ class _CourseSelectionState extends State<CourseSelection> {
                             widget.yearSelectionImage),
                       ),
                     );
-                    ;
                   }
                 }
               });

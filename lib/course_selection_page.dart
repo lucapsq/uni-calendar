@@ -86,7 +86,7 @@ class _CourseSelectionPageState extends State<CourseSelectionPage> {
                 child: Column(
                   children: [
                     Container(
-                        margin: EdgeInsets.fromLTRB(0, 20, 0, 50),
+                        margin: const EdgeInsets.fromLTRB(0, 20, 0, 50),
                         width: MediaQuery.of(context).size.width * 0.5,
                         child: studentImage),
                     CourseSelection(courses, years, yearSelectionImage),

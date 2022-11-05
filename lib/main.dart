@@ -45,17 +45,17 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("UniVR Calendar"),
+        title: const Text("UniVR Calendar"),
         centerTitle: true,
       ),
       body: SafeArea(
           child: selectedPage == 0
-              ? LessonsPage()
+              ? const LessonsPage()
               : selectedPage == 1
-                  ? RoomAvailability()
+                  ? const RoomAvailability()
                   : SettingsPage(settingsImage)),
       bottomNavigationBar: BottomNavigationBar(
-        selectedIconTheme: IconThemeData(size: 35),
+        selectedIconTheme: const IconThemeData(size: 35),
         iconSize: 28,
         selectedFontSize: 17,
         items: const <BottomNavigationBarItem>[

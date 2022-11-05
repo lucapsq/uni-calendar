@@ -20,13 +20,13 @@ class _LessonsPageState extends State<LessonsPage> {
     String year = "";
 
     if (now.day < 10) {
-      day = "0" + now.day.toString();
+      day = "0${now.day}";
     } else {
       day = now.day.toString();
     }
 
     if (now.month < 10) {
-      month = "0" + now.month.toString();
+      month = "0${now.month}";
     } else {
       month = now.month.toString();
     }

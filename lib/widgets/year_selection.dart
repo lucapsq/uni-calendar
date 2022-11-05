@@ -6,13 +6,14 @@ import '../models/course.dart';
 class YearSelection extends StatefulWidget {
   @override
   State<YearSelection> createState() => _YearSelectionState();
-  String selectedCourse;
-  List<Course> courses;
-  List<String> years;
-  Image yearSelectionImage;
+  final String selectedCourse;
+  final List<Course> courses;
+  final List<String> years;
+  final Image yearSelectionImage;
 
-  YearSelection(
-      this.selectedCourse, this.courses, this.years, this.yearSelectionImage);
+  const YearSelection(
+      this.selectedCourse, this.courses, this.years, this.yearSelectionImage,
+      {super.key});
 }
 
 class _YearSelectionState extends State<YearSelection> {
@@ -44,23 +45,23 @@ class _YearSelectionState extends State<YearSelection> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("UniVR Calendar"),
+          title: const Text("UniVR Calendar"),
           centerTitle: true,
         ),
         body: Column(
           children: [
             Container(
-                margin: EdgeInsets.fromLTRB(0, 20, 0, 50),
+                margin: const EdgeInsets.fromLTRB(0, 20, 0, 50),
                 width: MediaQuery.of(context).size.width * 0.35,
                 child: widget.yearSelectionImage),
-            Text(
+            const Text(
               "Che anni frequenti?",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.25,
               child: Card(
-                margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
+                margin: const EdgeInsets.fromLTRB(30, 10, 30, 10),
                 child: ListView.builder(
                     itemCount: widget.years.length,
                     itemBuilder: (BuildContext context, int index) {
@@ -91,7 +92,7 @@ class _YearSelectionState extends State<YearSelection> {
                           widget.selectedCourse, checkedItems);
                       Navigator.popUntil(context, (route) => route.isFirst);
                     },
-              child: Text("Salva"),
+              child: const Text("Salva"),
             ),
           ],
         ));

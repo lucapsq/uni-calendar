@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ResetButton extends StatefulWidget {
-  var mediaQuery;
-  ResetButton(this.mediaQuery, {super.key});
+  final mediaQuery;
+  const ResetButton(this.mediaQuery, {super.key});
 
   @override
   State<ResetButton> createState() => _ResetButtonState();
@@ -21,7 +21,7 @@ class _ResetButtonState extends State<ResetButton> {
     setState(() {
       surePhrase = "Azzerata!";
     });
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     _pressCount = 0;
   }
 
@@ -54,6 +54,7 @@ class _ResetButtonState extends State<ResetButton> {
               }
             },
             child: Text(surePhrase,
-                textAlign: TextAlign.center, style: TextStyle(fontSize: 16))));
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 16))));
   }
 }

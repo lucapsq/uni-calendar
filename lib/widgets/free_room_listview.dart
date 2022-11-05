@@ -1,15 +1,12 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:intl/intl.dart';
 
 import '../models/event.dart';
 
 class FreeRoomsListview extends StatelessWidget {
-  List<Event> events;
+  final List<Event> events;
   List<String> rooms;
-  Image noDataImage;
+  final Image noDataImage;
   FreeRoomsListview(this.events, this.rooms, this.noDataImage, {super.key});
 
   int timeToSeconds(String time) {
@@ -116,16 +113,16 @@ class FreeRoomsListview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     orderRooms();
-    return rooms.length == 0
+    return rooms.isEmpty
         ? Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                    padding: EdgeInsets.fromLTRB(0, 100, 0, 30),
+                    padding: const EdgeInsets.fromLTRB(0, 100, 0, 30),
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: noDataImage),
-                Text(
+                const Text(
                   "Nessuna sede impostata!",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                 )
@@ -139,12 +136,13 @@ class FreeRoomsListview extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
-                Text(
+                const Text(
                   "Aule libere",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   height: MediaQuery.of(context).size.height * 0.65,
                   child: Card(
                     shape: RoundedRectangleBorder(

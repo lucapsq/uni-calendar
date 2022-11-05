@@ -59,11 +59,11 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
     for (var course in dataList) {
       if (course['valore'] == courseCode) {
         for (var v in course['elenco_anni']) {
-          if (courseYearList!.contains(v['label']))
+          if (courseYearList!.contains(v['label'])) {
             for (var i in v['elenco_insegnamenti']) {
-              lessons.add(i['label']); //materie
-
+              lessons.add(i['label']);
             }
+          }
         }
       }
     }
@@ -72,10 +72,11 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
 
   Future<void> savePreferences(List<String> checkedItems) async {
     final prefs = await SharedPreferences.getInstance();
-    if (checkedItems != null)
+    if (checkedItems.isNotEmpty) {
       await prefs.setStringList('excludedLessonList', checkedItems);
-    else
+    } else {
       await prefs.setStringList('excludedLessonList', []);
+    }
   }
 
   @override
@@ -83,7 +84,7 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("UniVR Calendar"),
+        title: const Text("UniVR Calendar"),
       ),
       body: FutureBuilder(
         future: fetchLessons(),
@@ -93,12 +94,12 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
             return Column(
               children: [
                 Container(
-                    margin: EdgeInsets.fromLTRB(0, 10, 0, 40),
+                    margin: const EdgeInsets.fromLTRB(0, 10, 0, 40),
                     height: MediaQuery.of(context).size.height * 0.25,
                     child: filterLessonsImage),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 30),
-                  child: Align(
+                  margin: const EdgeInsets.symmetric(horizontal: 30),
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       "Che materie vuoi visualizzare?",
@@ -108,10 +109,10 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 5),
+                  margin: const EdgeInsets.only(top: 5),
                   height: MediaQuery.of(context).size.height * 0.4,
                   child: Card(
-                    margin: EdgeInsets.fromLTRB(30, 0, 30, 10),
+                    margin: const EdgeInsets.fromLTRB(30, 0, 30, 10),
                     child: ListView.builder(
                         itemCount: lessons!.length,
                         itemBuilder: (BuildContext context, int index) {
@@ -139,12 +140,12 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
                     await savePreferences(checkedItems);
                     Navigator.popUntil(context, (route) => route.isFirst);
                   },
-                  child: Text("Salva"),
+                  child: const Text("Salva"),
                 ),
               ],
             );
           }
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         },
       ),
     );

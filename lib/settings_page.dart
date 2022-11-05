@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uni_calendar/course_selection_page.dart';
-import 'package:uni_calendar/filter_lesson_page.dart';
 import 'package:uni_calendar/filter_zones_page.dart';
 import 'package:uni_calendar/widgets/filter_lessons_button.dart';
 import 'package:uni_calendar/widgets/reset_button.dart';
 
 class SettingsPage extends StatelessWidget {
-  Image settingsImage;
+  final Image settingsImage;
 
-  SettingsPage(this.settingsImage);
+  const SettingsPage(this.settingsImage, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +18,15 @@ class SettingsPage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.symmetric(vertical: 20),
               width: mediaQuery.size.width * 0.7,
               child: settingsImage,
             ),
-            Padding(padding: EdgeInsets.all(20)),
+            const Padding(padding: EdgeInsets.all(20)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
                 SizedBox(
@@ -42,7 +40,7 @@ class SettingsPage extends StatelessWidget {
                             builder: (context) => const CourseSelectionPage()),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       "Modifica corso",
                       style: TextStyle(fontSize: 16),
                       textAlign: TextAlign.center,
@@ -60,14 +58,14 @@ class SettingsPage extends StatelessWidget {
                                 builder: (context) => const FilterZonesPage()),
                           );
                         },
-                        child: Text(
+                        child: const Text(
                           "Filtra Sedi",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 16,
                           ),
                         ))),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
               ],
@@ -75,12 +73,12 @@ class SettingsPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
                 FilterLessonButton(mediaQuery),
                 ResetButton(mediaQuery),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
               ],

@@ -3,12 +3,11 @@ import 'package:uni_calendar/models/teaching.dart';
 import 'package:uni_calendar/widgets/calendar_lessons_listview.dart';
 import 'package:uni_calendar/widgets/singlecard_calendar_header_day.dart';
 import 'package:uni_calendar/widgets/no_lessons.dart';
-import 'package:intl/intl.dart';
 
 class CalendarView extends StatefulWidget {
-  Map data;
-  Function getFormattedDate;
-  CalendarView(this.data, this.getFormattedDate);
+  final Map data;
+  final Function getFormattedDate;
+  const CalendarView(this.data, this.getFormattedDate, {super.key});
 
   @override
   State<CalendarView> createState() => _CalendarViewState();
@@ -18,7 +17,8 @@ class _CalendarViewState extends State<CalendarView> {
   late Image nolessonImage;
   @override
   initState() {
-    nolessonImage = Image(
+    super.initState();
+    nolessonImage = const Image(
       image: AssetImage('assets/happy.png'),
     );
   }
@@ -43,13 +43,13 @@ class _CalendarViewState extends State<CalendarView> {
     List<DateTime> weekView = [];
     for (int i = 0; i < 6; i++) {
       weekView.add(today);
-      today = today.add(Duration(days: 1));
+      today = today.add(const Duration(days: 1));
     }
 
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+          padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 0.12,
           decoration: const BoxDecoration(
@@ -76,7 +76,7 @@ class _CalendarViewState extends State<CalendarView> {
             ],
           ),
         ),
-        getTeachingList().length == 0
+        getTeachingList().isEmpty
             ? NoLessons(nolessonImage)
             : CalendarLessonsListView(getTeachingList, selectedDay)
       ],

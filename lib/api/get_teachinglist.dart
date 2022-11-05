@@ -17,7 +17,7 @@ String getCourseYearString(List<String> courseYearList) {
     courseYear = courseYear + courseYearList[i];
 
     if (i + 1 < courseYearList.length) {
-      courseYear = courseYear + "%2C";
+      courseYear = "$courseYear%2C";
     }
   }
 
@@ -27,13 +27,15 @@ String getCourseYearString(List<String> courseYearList) {
 String getCourseYearCodeString(List<String> courseYearCodeList) {
   String courseYearCode = "";
 
-  for (var c in courseYearCodeList) c.replaceAll('|', '%7C');
+  for (var c in courseYearCodeList) {
+    c.replaceAll('|', '%7C');
+  }
 
   for (int i = 0; i < courseYearCodeList.length; i++) {
     courseYearCode = courseYearCode + courseYearCodeList[i];
 
     if (i + 1 < courseYearCodeList.length) {
-      courseYearCode = courseYearCode + "&anno2%5B%5D=";
+      courseYearCode = "$courseYearCode&anno2%5B%5D=";
     }
   }
 
@@ -132,7 +134,7 @@ Future<List<Teaching>> getTeachingsList(
 
   Color getNextColor() {
     String color = dataList['colori'][colorIndex];
-    color = "0xff" + color.substring(1);
+    color = "0xff${color.substring(1)}";
 
     int colorInt = int.parse(color);
     colorIndex++;
@@ -166,17 +168,17 @@ Future<List<Teaching>> getTeachingsList(
   }
 
   for (var c in dataListNextWeek['celle']) {
-    if (!excludedLessonList
-        .contains(c['nome_insegnamento'])) if (c['nome_insegnamento'] !=
-            null &&
-        c['Annullato'] != '1')
-      teachingsList.add(Teaching(
-        name: c['nome_insegnamento'],
-        date: c['data'],
-        time: c['orario'],
-        classroom: c['aula'],
-        color: colorsMap[c['nome_insegnamento']]!,
-      ));
+    if (!excludedLessonList.contains(c['nome_insegnamento'])) {
+      if (c['nome_insegnamento'] != null && c['Annullato'] != '1') {
+        teachingsList.add(Teaching(
+          name: c['nome_insegnamento'],
+          date: c['data'],
+          time: c['orario'],
+          classroom: c['aula'],
+          color: colorsMap[c['nome_insegnamento']]!,
+        ));
+      }
+    }
   }
 
   return teachingsList;

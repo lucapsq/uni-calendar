@@ -12,7 +12,7 @@ import 'package:uni_calendar/lessons_page.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(LessonsPage());
+    await tester.pumpWidget(const LessonsPage());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

@@ -6,7 +6,7 @@ import 'package:uni_calendar/models/zone.dart';
 import 'package:uni_calendar/widgets/free_room_listview.dart';
 
 class RoomAvailability extends StatefulWidget {
-  RoomAvailability({super.key});
+  const RoomAvailability({super.key});
 
   @override
   State<RoomAvailability> createState() => _RoomAvailabilityState();
@@ -68,8 +68,9 @@ class _RoomAvailabilityState extends State<RoomAvailability> {
                 FreeRoomsListview(events, rooms, noDataImage),
               ],
             );
-          } else
-            return Center(child: CircularProgressIndicator());
+          } else {
+            return const Center(child: CircularProgressIndicator());
+          }
         });
   }
 }

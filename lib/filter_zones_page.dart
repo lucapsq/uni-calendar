@@ -76,7 +76,7 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("UniVR Calendar"),
+        title: const Text("UniVR Calendar"),
         centerTitle: true,
       ),
       body: FutureBuilder(
@@ -86,12 +86,12 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
             return Column(
               children: [
                 Container(
-                    margin: EdgeInsets.fromLTRB(0, 10, 0, 20),
+                    margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
                     height: MediaQuery.of(context).size.height * 0.25,
                     child: filterLessonsImage),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 30),
-                  child: Align(
+                  margin: const EdgeInsets.symmetric(horizontal: 30),
+                  child: const Align(
                     alignment: Alignment.center,
                     child: Text(
                       "Che sedi vuoi visualizzare?",
@@ -101,10 +101,10 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 5),
+                  margin: const EdgeInsets.only(top: 5),
                   height: MediaQuery.of(context).size.height * 0.45,
                   child: Card(
-                    margin: EdgeInsets.fromLTRB(30, 0, 30, 10),
+                    margin: const EdgeInsets.fromLTRB(30, 0, 30, 10),
                     child: ListView.builder(
                         itemCount: zones.length,
                         itemBuilder: (BuildContext context, int index) {
@@ -129,7 +129,7 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
                   ),
                 ),
                 ElevatedButton(
-                  child: Text("Salva"),
+                  child: const Text("Salva"),
                   onPressed: () async {
                     await savePreferences(checkedItems);
                     Navigator.popUntil(context, (route) => route.isFirst);
@@ -138,7 +138,7 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
               ],
             );
           }
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         },
       ),
     );

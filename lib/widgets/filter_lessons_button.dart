@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../filter_lesson_page.dart';
 
 class FilterLessonButton extends StatefulWidget {
-  var mediaQuery;
-  FilterLessonButton(this.mediaQuery, {super.key});
+  final mediaQuery;
+  const FilterLessonButton(this.mediaQuery, {super.key});
 
   @override
   State<FilterLessonButton> createState() => _FilterLessonButtonState();
@@ -14,7 +14,7 @@ class _FilterLessonButtonState extends State<FilterLessonButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.symmetric(vertical: 20),
+        margin: const EdgeInsets.symmetric(vertical: 20),
         width: widget.mediaQuery.size.height * 0.15,
         height: widget.mediaQuery.size.height * 0.09,
         child: ElevatedButton(
@@ -25,7 +25,7 @@ class _FilterLessonButtonState extends State<FilterLessonButton> {
                     builder: (context) => const FilterLessonPage()),
               );
             },
-            child: Text(
+            child: const Text(
               "Filtra Lezioni",
               textAlign: TextAlign.center,
               style: TextStyle(

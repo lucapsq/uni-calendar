@@ -4,10 +4,11 @@ import '../models/lessonEvent.dart';
 import '../models/lessonDataSource.dart';
 
 class CalendarLessonsListView extends StatelessWidget {
-  Function getTeachingList;
-  DateTime selectedDay;
+  final Function getTeachingList;
+  final DateTime selectedDay;
 
-  CalendarLessonsListView(this.getTeachingList, this.selectedDay, {super.key});
+  const CalendarLessonsListView(this.getTeachingList, this.selectedDay,
+      {super.key});
 
   List<LessonEvent> _getDataSource() {
     final List<LessonEvent> events = <LessonEvent>[];
@@ -42,7 +43,7 @@ class CalendarLessonsListView extends StatelessWidget {
               selectedDay.year,
               selectedDay.month,
               selectedDay.day,
-              selectedDay.subtract(Duration(hours: 2)).hour,
+              selectedDay.subtract(const Duration(hours: 2)).hour,
             ),
             appointmentBuilder: (context, calendarAppointmentDetails) {
               return Container(
