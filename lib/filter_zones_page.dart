@@ -30,7 +30,7 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
   Map<String, String> zonesMap = {};
 
   Future<Map<String, String>> searchZones() async {
-    zonesMap = await getZones();
+    zonesMap = await getZones(); //sede:id
     await fetchCheckedItems(zonesMap);
     zonesMap.forEach((key, value) {
       zones.add(value);
@@ -50,8 +50,9 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
       });
 
       await prefs.setStringList('zonesList', checkedId);
-    } else
+    } else {
       await prefs.setStringList('zonesList', []);
+    }
   }
 
   List<String> checkedItems = [];
@@ -60,6 +61,7 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
     final prefs = await SharedPreferences.getInstance();
 
     if (prefs.getStringList('zonesList') != null) {
+      //print(prefs.getStringList('zonesList'));
       zonesMap.forEach((key, value) {
         if (prefs.getStringList('zonesList')!.contains(key)) {
           checkedItems.add(value);
@@ -70,7 +72,7 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
 
   @override
   Widget build(BuildContext context) {
-    print("ricarico");
+    //print("ricarico");
     return Scaffold(
       appBar: AppBar(
         title: Text("UniVR Calendar"),
@@ -97,10 +99,12 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
                             value: checkedItems.contains(zones[index]),
                             onChanged: (newValue) {
                               if (checkedItems.contains(zones[index])) {
+                                //print("era presente!");
                                 setState(() {
                                   checkedItems.remove(zones[index]);
                                 });
                               } else if (!checkedItems.contains(zones[index])) {
+                                //print("non era presente!");
                                 setState(() {
                                   checkedItems.add(zones[index]);
                                 });

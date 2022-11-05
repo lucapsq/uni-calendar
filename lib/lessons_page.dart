@@ -100,17 +100,22 @@ class _LessonsPageState extends State<LessonsPage> {
       context,
       MaterialPageRoute(builder: (context) => const CourseSelectionPage()),
     ).then((value) async {
-      if (value != null) {
+      var prefs = await SharedPreferences.getInstance();
+
+      if (prefs.getString('courseCode') != null &&
+          prefs.getStringList('courseYear') != null) {
         setState(() {
-          courseCode = sharedPreferences!.getString('courseCode').toString();
-          courseYearList = sharedPreferences!.getStringList('courseYear')!;
-          courseYearCodeList =
-              sharedPreferences!.getStringList('courseYearCode')!;
-          excludedLessonList =
-              sharedPreferences!.getStringList('excludedLessonList')!;
+          courseCode = prefs.getString('courseCode').toString();
+          courseYearList = prefs.getStringList('courseYear')!;
+          courseYearCodeList = prefs.getStringList('courseYearCode')!;
         });
-        fetchCalendar();
       }
+      if (prefs.getStringList('excludedLessonList') != null) {
+        setState(() {
+          excludedLessonList = prefs.getStringList('excludedLessonList')!;
+        });
+      }
+      fetchCalendar();
     });
   }
 
