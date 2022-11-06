@@ -35,12 +35,23 @@ dependencies:
   intl: ^0.17.0
   shared_preferences: ^2.0.15
   syncfusion_flutter_calendar: ^20.3.50
+  flutter_launcher_icons: ^0.10.0
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   cron: ^0.5.0
+
+flutter_icons:
+  image_path: "assets/app-icon.png"
+  android: true # can specify file name here e.g. "ic_launcher"
+  ios: true # can specify file name here e.g. "My-Launcher-Icon"
+  adaptive_icon_background: "#ffffff" # only available for Android 8.0 devices and above
+  adaptive_icon_foreground: "assets/app-icon.png" # only available for Android 8.0 devices and above
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  remove_alpha_ios: true
+  
 
 dev_dependencies:
   flutter_test:
