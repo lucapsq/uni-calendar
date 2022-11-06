@@ -155,7 +155,7 @@ Future<List<Teaching>> getTeachingsList(
   }
 
   for (var c in dataList['celle']) {
-    if (!excludedLessonList.contains(c['nome_insegnamento'])) {
+    if (!excludedLessonList.contains(c['codice_insegnamento'])) {
       if (c['nome_insegnamento'] != null && c['Annullato'] != '1') {
         teachingsList.add(Teaching(
             name: c['nome_insegnamento'],
@@ -168,7 +168,7 @@ Future<List<Teaching>> getTeachingsList(
   }
 
   for (var c in dataListNextWeek['celle']) {
-    if (!excludedLessonList.contains(c['nome_insegnamento'])) {
+    if (!excludedLessonList.contains(c['codice_insegnamento'])) {
       if (c['nome_insegnamento'] != null && c['Annullato'] != '1') {
         teachingsList.add(Teaching(
           name: c['nome_insegnamento'],

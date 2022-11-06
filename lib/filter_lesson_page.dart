@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
+//devo aggiungere qui i codici
 class FilterLessonPage extends StatefulWidget {
   const FilterLessonPage({super.key});
 
@@ -38,7 +39,9 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
     filterLessonsImage = Image.asset("assets/filter-lessons.png");
   }
 
+  Map<String, String> lessonsMap = {};
   Future<List<String>> fetchLessons() async {
+    //getExcludedLessons();
     final prefs = await SharedPreferences.getInstance();
 
     String courseCode = prefs.getString('courseCode').toString();
@@ -62,18 +65,36 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
           if (courseYearList!.contains(v['label'])) {
             for (var i in v['elenco_insegnamenti']) {
               lessons.add(i['label']);
+              lessonsMap.addAll({i['label']: i['valore']});
             }
           }
         }
       }
     }
+    List<String> checkedLabel = [];
+
+    lessonsMap.forEach((label, value) {
+      if (checkedItems.contains(value) || checkedItems.contains(label)) {
+        checkedLabel.add(label);
+      }
+    });
+
+    checkedItems = checkedLabel;
+
     return lessons;
   }
 
   Future<void> savePreferences(List<String> checkedItems) async {
     final prefs = await SharedPreferences.getInstance();
+    List<String> checkedId = [];
     if (checkedItems.isNotEmpty) {
-      await prefs.setStringList('excludedLessonList', checkedItems);
+      lessonsMap.forEach((key, value) {
+        if (checkedItems.contains(key)) {
+          checkedId.add(value);
+        }
+      });
+
+      await prefs.setStringList('excludedLessonList', checkedId);
     } else {
       await prefs.setStringList('excludedLessonList', []);
     }
