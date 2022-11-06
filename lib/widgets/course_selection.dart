@@ -38,6 +38,7 @@ class _CourseSelectionState extends State<CourseSelection> {
         ),
         DropdownButtonHideUnderline(
           child: DropdownButton(
+            menuMaxHeight: MediaQuery.of(context).size.height * 0.5,
             value: selectedCourse,
             hint: const Text("- Seleziona -"),
             itemHeight: 60,
