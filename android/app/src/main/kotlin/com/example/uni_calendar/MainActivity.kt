@@ -1,4 +1,4 @@
-package com.lucapsq.univr_calendar
+package com.lucapsq.unicalendar
 
 import io.flutter.embedding.android.FlutterActivity
 
