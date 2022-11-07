@@ -63,11 +63,7 @@ class _RoomAvailabilityState extends State<RoomAvailability> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<Event> events = snapshot.data!;
-            return Column(
-              children: [
-                FreeRoomsListview(events, rooms, noDataImage),
-              ],
-            );
+            return FreeRoomsListview(events, rooms, noDataImage);
           } else {
             return const Center(child: CircularProgressIndicator());
           }

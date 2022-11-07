@@ -50,7 +50,7 @@ class CalendarLessonsListView extends StatelessWidget {
                   color:
                       calendarAppointmentDetails.appointments.first.background,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -59,7 +59,7 @@ class CalendarLessonsListView extends StatelessWidget {
                               .appointments.first.eventName,
                           style: const TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold),
-                          maxLines: 5,
+                          maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                         ),
                         Expanded(
@@ -68,7 +68,7 @@ class CalendarLessonsListView extends StatelessWidget {
                                 .appointments.first.classroom,
                             style: const TextStyle(fontSize: 16),
                             overflow: TextOverflow.ellipsis,
-                            maxLines: 5,
+                            maxLines: 3,
                           ),
                         ),
                       ],
@@ -83,7 +83,7 @@ class CalendarLessonsListView extends StatelessWidget {
             maxDate: DateTime(
                 selectedDay.year, selectedDay.month, selectedDay.day, 21, 0),
             timeSlotViewSettings: const TimeSlotViewSettings(
-                startHour: 6, endHour: 21, timeIntervalHeight: 70),
+                startHour: 6, endHour: 21, timeIntervalHeight: 75),
             dataSource: LessonDataSource(_getDataSource())));
   }
 }
