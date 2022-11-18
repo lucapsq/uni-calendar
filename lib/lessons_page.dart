@@ -158,7 +158,6 @@ class _LessonsPageState extends State<LessonsPage> {
             Map? data = snapshot.data;
 
             return Container(
-              color: Colors.grey[100],
               child: CalendarView(data!, getFormattedDate),
             );
           }

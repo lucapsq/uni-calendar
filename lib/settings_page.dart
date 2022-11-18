@@ -13,7 +13,6 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context);
     return Container(
-      color: Colors.grey[100],
       child: Center(
         child: Column(
           children: [

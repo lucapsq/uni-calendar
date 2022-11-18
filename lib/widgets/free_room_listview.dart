@@ -122,9 +122,9 @@ class FreeRoomsListview extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(0, 100, 0, 30),
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: noDataImage),
-                const Text(
+                Text(
                   "Nessuna sede impostata!",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+                  style: Theme.of(context).textTheme.headline6,
                 )
               ],
             ),
@@ -136,9 +136,9 @@ class FreeRoomsListview extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
-                const Text(
+                Text(
                   "Aule libere",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                  style: Theme.of(context).textTheme.headline5,
                 ),
                 Container(
                   padding:
@@ -155,12 +155,10 @@ class FreeRoomsListview extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    rooms[i],
-                                    style: const TextStyle(
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.w400),
-                                  ),
+                                  Text(rooms[i],
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyText1),
                                   Text(
                                     isRoomAvailable(rooms[i]),
                                     style: TextStyle(

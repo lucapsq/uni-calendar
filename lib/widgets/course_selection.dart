@@ -29,24 +29,31 @@ class _CourseSelectionState extends State<CourseSelection> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Align(
+        Align(
           alignment: Alignment.center,
           child: Text(
             "Che corso frequenti?",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.headline6,
           ),
         ),
         DropdownButtonHideUnderline(
           child: DropdownButton(
+            dropdownColor: Theme.of(context).primaryColor,
             menuMaxHeight: MediaQuery.of(context).size.height * 0.5,
             value: selectedCourse,
-            hint: const Text("- Seleziona -"),
+            hint: Text(
+              "- Seleziona -",
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
             itemHeight: 60,
             isExpanded: true,
             items: widget.courses.map((Course value) {
               return DropdownMenuItem<String>(
                 value: value.name,
-                child: Text(value.name),
+                child: Text(
+                  value.name,
+                  style: Theme.of(context).textTheme.subtitle1,
+                ),
               );
             }).toList(),
             onChanged: (newValue) {

@@ -77,7 +77,6 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("UniVR Calendar"),
-        centerTitle: true,
       ),
       body: FutureBuilder(
         future: searchZones(),
@@ -91,12 +90,11 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
                     child: filterLessonsImage),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 30),
-                  child: const Align(
+                  child: Align(
                     alignment: Alignment.center,
                     child: Text(
                       "Che sedi vuoi visualizzare?",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.headline6,
                     ),
                   ),
                 ),

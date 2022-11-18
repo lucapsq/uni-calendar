@@ -39,6 +39,8 @@ class CalendarLessonsListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: SfCalendar(
+            cellBorderColor: Theme.of(context).primaryColorDark,
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             initialDisplayDate: DateTime(
               selectedDay.year,
               selectedDay.month,
@@ -58,7 +60,9 @@ class CalendarLessonsListView extends StatelessWidget {
                           calendarAppointmentDetails
                               .appointments.first.eventName,
                           style: const TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold),
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -82,8 +86,11 @@ class CalendarLessonsListView extends StatelessWidget {
                 selectedDay.year, selectedDay.month, selectedDay.day, 6, 0, 0),
             maxDate: DateTime(
                 selectedDay.year, selectedDay.month, selectedDay.day, 21, 0),
-            timeSlotViewSettings: const TimeSlotViewSettings(
-                startHour: 6, endHour: 21, timeIntervalHeight: 75),
+            timeSlotViewSettings: TimeSlotViewSettings(
+                startHour: 6,
+                endHour: 21,
+                timeIntervalHeight: 75,
+                timeTextStyle: Theme.of(context).textTheme.caption),
             dataSource: LessonDataSource(_getDataSource())));
   }
 }

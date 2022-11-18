@@ -52,12 +52,12 @@ class _CalendarViewState extends State<CalendarView> {
           padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 0.12,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(15),
               bottomRight: Radius.circular(15),
             ),
-            color: Colors.white,
+            color: Theme.of(context).primaryColor,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

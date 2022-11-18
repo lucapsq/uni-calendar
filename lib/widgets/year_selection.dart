@@ -46,7 +46,6 @@ class _YearSelectionState extends State<YearSelection> {
     return Scaffold(
         appBar: AppBar(
           title: const Text("UniVR Calendar"),
-          centerTitle: true,
         ),
         body: Column(
           children: [
@@ -54,9 +53,9 @@ class _YearSelectionState extends State<YearSelection> {
                 margin: const EdgeInsets.fromLTRB(0, 20, 0, 50),
                 width: MediaQuery.of(context).size.width * 0.35,
                 child: widget.yearSelectionImage),
-            const Text(
+            Text(
               "Che anni frequenti?",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.headline6,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.25,

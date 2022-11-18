@@ -19,9 +19,9 @@ class NoLessons extends StatelessWidget {
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.03,
         ),
-        const Text(
+        Text(
           'Ottime notizie!\nNon hai impegni per oggi!',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.headline6,
           textAlign: TextAlign.center,
         ),
       ],

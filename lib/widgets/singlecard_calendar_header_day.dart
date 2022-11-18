@@ -11,7 +11,7 @@ class CardCalendar extends StatefulWidget {
 }
 
 class _CardCalendarState extends State<CardCalendar> {
-  bool isActive(DateTime d) {
+  bool isSelected(DateTime d) {
     if (DateFormat('d-M-y').format(d) ==
         DateFormat('d-M-y').format(widget.selectedDay)) return true;
     return false;
@@ -21,11 +21,12 @@ class _CardCalendarState extends State<CardCalendar> {
   @override
   Widget build(BuildContext context) {
     return Card(
-        color: isActive(widget.d) ? Colors.black : null,
+        color: isSelected(widget.d) ? Theme.of(context).backgroundColor : null,
         shape: RoundedRectangleBorder(
             side: BorderSide(
-                color:
-                    isActive(widget.d) ? Colors.black : const Color(0xffe0e0e0),
+                color: isSelected(widget.d)
+                    ? Colors.black
+                    : const Color(0xffbdbdbd),
                 width: 2),
             borderRadius: BorderRadius.circular(10)),
         child: Column(
@@ -36,7 +37,9 @@ class _CardCalendarState extends State<CardCalendar> {
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: isActive(widget.d) ? Colors.white : null),
+                  color: isSelected(widget.d)
+                      ? Theme.of(context).scaffoldBackgroundColor
+                      : Theme.of(context).backgroundColor),
               textAlign: TextAlign.center,
             ),
             Text(

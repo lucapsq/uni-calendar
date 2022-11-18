@@ -120,17 +120,16 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
                     child: filterLessonsImage),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 30),
-                  child: const Align(
+                  child: Align(
                     alignment: Alignment.center,
                     child: Text(
                       "Che materie vuoi visualizzare?",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.headline6,
                     ),
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 5),
+                  margin: const EdgeInsets.only(top: 10),
                   height: MediaQuery.of(context).size.height * 0.4,
                   child: Card(
                     margin: const EdgeInsets.fromLTRB(30, 0, 30, 10),
