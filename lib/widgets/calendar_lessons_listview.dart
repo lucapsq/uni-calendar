@@ -60,6 +60,7 @@ class CalendarLessonsListView extends StatelessWidget {
                           calendarAppointmentDetails
                               .appointments.first.eventName,
                           style: const TextStyle(
+                            color: Colors.black,
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
@@ -70,7 +71,10 @@ class CalendarLessonsListView extends StatelessWidget {
                           child: Text(
                             calendarAppointmentDetails
                                 .appointments.first.classroom,
-                            style: const TextStyle(fontSize: 16),
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                            ),
                             overflow: TextOverflow.ellipsis,
                             maxLines: 3,
                           ),

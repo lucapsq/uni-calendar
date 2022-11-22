@@ -38,6 +38,7 @@ void main() {
         cardColor: Colors.white, //colore interno delle card
       ),
       darkTheme: ThemeData(
+        brightness: Brightness.dark,
         appBarTheme: AppBarTheme(
             backgroundColor: Colors.blue[900],
             centerTitle: true,

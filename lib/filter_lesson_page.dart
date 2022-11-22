@@ -137,6 +137,7 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
                         itemCount: lessons!.length,
                         itemBuilder: (BuildContext context, int index) {
                           return CheckboxListTile(
+                            activeColor: Colors.blue,
                             value: !checkedItems.contains(lessons[index]),
                             onChanged: (newValue) {
                               if (checkedItems.contains(lessons[index])) {

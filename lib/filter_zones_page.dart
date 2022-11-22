@@ -107,6 +107,7 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
                         itemCount: zones.length,
                         itemBuilder: (BuildContext context, int index) {
                           return CheckboxListTile(
+                            activeColor: Colors.blue,
                             value: checkedItems.contains(zones[index]),
                             onChanged: (newValue) {
                               if (checkedItems.contains(zones[index])) {

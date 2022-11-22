@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uni_calendar/course_selection_page.dart';
 import 'package:uni_calendar/filter_zones_page.dart';
+import 'package:uni_calendar/widgets/advanced_settings_button.dart';
 import 'package:uni_calendar/widgets/filter_lessons_button.dart';
 import 'package:uni_calendar/widgets/reset_button.dart';
 
@@ -76,7 +77,7 @@ class SettingsPage extends StatelessWidget {
                   width: 30,
                 ),
                 FilterLessonButton(mediaQuery),
-                ResetButton(mediaQuery),
+                AdvancedSettingsButton(mediaQuery),
                 const SizedBox(
                   width: 30,
                 ),

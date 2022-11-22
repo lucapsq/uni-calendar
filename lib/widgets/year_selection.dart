@@ -65,6 +65,7 @@ class _YearSelectionState extends State<YearSelection> {
                     itemCount: widget.years.length,
                     itemBuilder: (BuildContext context, int index) {
                       return CheckboxListTile(
+                        activeColor: Colors.blue,
                         value: checkedItems.contains(widget.years[index]),
                         onChanged: (newValue) {
                           if (checkedItems.contains(widget.years[index])) {

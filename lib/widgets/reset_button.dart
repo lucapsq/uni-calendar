@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ResetButton extends StatefulWidget {
-  final mediaQuery;
-  const ResetButton(this.mediaQuery, {super.key});
+  const ResetButton({super.key});
 
   @override
   State<ResetButton> createState() => _ResetButtonState();
@@ -28,11 +27,13 @@ class _ResetButtonState extends State<ResetButton> {
   Color sureColor = Colors.blue;
   int _pressCount = 0;
   String surePhrase = "Azzera App";
+
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
     return SizedBox(
-        width: widget.mediaQuery.size.height * 0.15,
-        height: widget.mediaQuery.size.height * 0.09,
+        width: mediaQuery.size.height * 0.15,
+        height: mediaQuery.size.height * 0.09,
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: sureColor,
