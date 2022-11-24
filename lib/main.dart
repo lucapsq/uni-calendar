@@ -1,11 +1,59 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '/room_availability_page.dart';
 import 'lessons_page.dart';
 import 'settings_page.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  ThemeMode themeMode = prefs.getInt('themeMode') == 0
+      ? ThemeMode.light
+      : prefs.getInt('themeMode') == 2
+          ? ThemeMode.dark
+          : ThemeMode.system;
+
+  runApp(MyApp(themeMode));
+}
+
+class MyApp extends StatefulWidget {
+  final ThemeMode _themeMode;
+  const MyApp(this._themeMode, {super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+
+  static _MyAppState of(BuildContext context) =>
+      context.findAncestorStateOfType<_MyAppState>()!;
+}
+
+class _MyAppState extends State<MyApp> {
+  ThemeMode _themeMode = ThemeMode.system;
+
+  void changeTheme() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    ThemeMode themeMode = prefs.getInt('themeMode') == 0
+        ? ThemeMode.light
+        : prefs.getInt('themeMode') == 2
+            ? ThemeMode.dark
+            : ThemeMode.system;
+
+    setState(() {
+      _themeMode = themeMode;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _themeMode = widget._themeMode;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       theme: ThemeData(
         appBarTheme: AppBarTheme(
             backgroundColor: Colors.blue,
@@ -72,11 +120,11 @@ void main() {
         ),
         cardColor: Colors.black, //colore interno delle card
       ),
-      themeMode: ThemeMode.system,
+      themeMode: _themeMode,
       debugShowCheckedModeBanner: false,
       home: Homepage(),
-    ),
-  );
+    );
+  }
 }
 
 class Homepage extends StatefulWidget {

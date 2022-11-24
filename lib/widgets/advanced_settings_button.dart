@@ -15,7 +15,7 @@ class AdvancedSettingsButton extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const AdvancedSettingsPage()));
+                      builder: (context) => AdvancedSettingsPage(mediaQuery)));
             },
             child: Text("Avanzate",
                 textAlign: TextAlign.center,

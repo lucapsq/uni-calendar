@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:uni_calendar/main.dart';
 
 class ResetButton extends StatefulWidget {
   const ResetButton({super.key});
@@ -17,6 +18,8 @@ class _ResetButtonState extends State<ResetButton> {
     await prefs.remove('courseYearCode');
     await prefs.remove('excludedLessonList');
     await prefs.remove('zonesList');
+    await prefs.remove('themeMode');
+    MyApp.of(context).changeTheme();
     setState(() {
       surePhrase = "Azzerata!";
     });
@@ -33,7 +36,7 @@ class _ResetButtonState extends State<ResetButton> {
     var mediaQuery = MediaQuery.of(context);
     return SizedBox(
         width: mediaQuery.size.height * 0.15,
-        height: mediaQuery.size.height * 0.09,
+        height: mediaQuery.size.height * 0.06,
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: sureColor,
@@ -56,6 +59,6 @@ class _ResetButtonState extends State<ResetButton> {
             },
             child: Text(surePhrase,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 16))));
+                style: const TextStyle(fontSize: 15))));
   }
 }
