@@ -28,8 +28,10 @@ class CalendarLessonsListView extends StatelessWidget {
       final DateTime endDate = DateTime(selectedDay.year, selectedDay.month,
           selectedDay.day, endHour, endMinute, 0);
 
-      events.add(
-          LessonEvent(e.name, e.classroom, startDate, endDate, e.color, false));
+      int duration = endDate.difference(startDate).inHours;
+
+      events.add(LessonEvent(
+          e.name, e.classroom, startDate, endDate, duration, e.color));
     }
 
     return events;
@@ -48,6 +50,8 @@ class CalendarLessonsListView extends StatelessWidget {
               selectedDay.subtract(const Duration(hours: 2)).hour,
             ),
             appointmentBuilder: (context, calendarAppointmentDetails) {
+              int duration =
+                  calendarAppointmentDetails.appointments.first.duration;
               return Container(
                   color:
                       calendarAppointmentDetails.appointments.first.background,
@@ -64,7 +68,11 @@ class CalendarLessonsListView extends StatelessWidget {
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
-                          maxLines: 3,
+                          maxLines: duration == 1
+                              ? 1
+                              : duration == 2
+                                  ? 3
+                                  : 5,
                           overflow: TextOverflow.ellipsis,
                         ),
                         Expanded(
@@ -76,7 +84,7 @@ class CalendarLessonsListView extends StatelessWidget {
                               color: Colors.black,
                             ),
                             overflow: TextOverflow.ellipsis,
-                            maxLines: 3,
+                            maxLines: 5,
                           ),
                         ),
                       ],
