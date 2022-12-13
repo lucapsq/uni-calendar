@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:uni_calendar/api/get_events.dart';
 import 'package:uni_calendar/models/event.dart';
+import 'package:uni_calendar/models/eventDataSource.dart';
+import 'package:uni_calendar/models/room.dart';
 import 'package:uni_calendar/models/zone.dart';
+import 'package:uni_calendar/widgets/current_rooms.dart';
 import 'package:uni_calendar/widgets/free_room_listview.dart';
 
 class RoomAvailability extends StatefulWidget {
@@ -12,46 +16,20 @@ class RoomAvailability extends StatefulWidget {
   State<RoomAvailability> createState() => _RoomAvailabilityState();
 }
 
+// Image.asset("assets/no-data.png");
 class _RoomAvailabilityState extends State<RoomAvailability> {
-  late Image noDataImage;
-  @override
-  void initState() {
-    super.initState();
-    noDataImage = Image.asset("assets/no-data.png");
-  }
-
-  @override
-  void didChangeDependencies() {
-    precacheImage(noDataImage.image, context);
-    super.didChangeDependencies();
-  }
-
-  List<Event> events = [];
-
-  List<String> get rooms {
-    return events.map((e) => e.room).toSet().toList();
-  }
-
-  List<String> checkedId = [];
-  Future<void> fetchCheckedItems() async {
+  Future<List<Room>> searchRooms() async {
     final prefs = await SharedPreferences.getInstance();
 
+    List<String> zones = [];
     if (prefs.getStringList('zonesList') != null) {
-      checkedId = prefs.getStringList('zonesList')!;
-    }
-  }
-
-  Future<List<Event>> searchEvents() async {
-    await fetchCheckedItems();
-    List<Event> result = [];
-    for (var z in checkedId) {
-      Zone zone = Zone(id: z, name: "Borgo Roma - Ca' Vignal 2");
-      result += await getEvents(zone);
+      zones = prefs.getStringList('zonesList')!;
     }
 
-    setState(() {
-      events = result;
-    });
+    List<Room> result = [];
+    for (var z in zones) {
+      result += await getRoomsById(z);
+    }
 
     return result;
   }
@@ -59,11 +37,11 @@ class _RoomAvailabilityState extends State<RoomAvailability> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: searchEvents(),
+        future: searchRooms(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            List<Event> events = snapshot.data!;
-            return FreeRoomsListview(events, rooms, noDataImage);
+            List<Room> events = snapshot.data!;
+            return CurrentRoomsCalendar(rooms: events);
           } else {
             return const Center(child: CircularProgressIndicator());
           }
