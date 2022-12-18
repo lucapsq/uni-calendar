@@ -72,13 +72,15 @@ class _MyAppState extends State<MyApp> {
         ),
         textTheme: TextTheme(
             bodyText1: TextStyle(
-                color: Colors.black, fontSize: 17, fontWeight: FontWeight.w400),
-            headline5:
-                TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
-            headline6:
-                TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-            subtitle1: TextStyle(color: Colors.black, fontSize: 17),
-            caption: TextStyle(color: Colors.grey[850], fontSize: 12)),
+                color: Colors.black,
+                fontSize: 17,
+                fontWeight: FontWeight.w400), //17
+            headline5: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.w600), //24
+            headline6: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.bold), //20
+            subtitle1: TextStyle(color: Colors.black, fontSize: 17), //17
+            caption: TextStyle(color: Colors.grey[850], fontSize: 12)), //12
 
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(),

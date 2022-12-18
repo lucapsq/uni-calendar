@@ -3,7 +3,6 @@ import 'package:uni_calendar/course_selection_page.dart';
 import 'package:uni_calendar/filter_zones_page.dart';
 import 'package:uni_calendar/widgets/advanced_settings_button.dart';
 import 'package:uni_calendar/widgets/filter_lessons_button.dart';
-import 'package:uni_calendar/widgets/reset_button.dart';
 
 class SettingsPage extends StatelessWidget {
   final Image settingsImage;
