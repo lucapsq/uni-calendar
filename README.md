@@ -6,6 +6,9 @@ UniCalendar is a useful app for keeping track of class schedules related, for no
 bla
 
 ## Features
+-view class schedules for your course
+-filter individual subjects to remove subjects that you do not want to take or that you have already passed
+-view free classrooms available for study according to the location of your department
 
 ## Screenshots
 
