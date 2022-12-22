@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:uni_calendar/models/teaching.dart';
 import 'package:uni_calendar/widgets/calendar_lessons_listview.dart';
-import 'package:uni_calendar/widgets/singlecard_calendar_header_day.dart';
+import 'package:uni_calendar/widgets/month_header.dart';
+import 'package:uni_calendar/widgets/week_header.dart';
 import 'package:uni_calendar/widgets/no_lessons.dart';
 
 class CalendarView extends StatefulWidget {
   final Map data;
   final Function getFormattedDate;
-  const CalendarView(this.data, this.getFormattedDate, {super.key});
+  DateTime selectedDay;
+  Function updateDate;
+  CalendarView(
+      this.data, this.getFormattedDate, this.updateDate, this.selectedDay,
+      {super.key});
 
   @override
   State<CalendarView> createState() => _CalendarViewState();
@@ -15,12 +20,15 @@ class CalendarView extends StatefulWidget {
 
 class _CalendarViewState extends State<CalendarView> {
   late Image nolessonImage;
+  late DateTime selectedDay;
+
   @override
   initState() {
     super.initState();
     nolessonImage = const Image(
       image: AssetImage('assets/happy.png'),
     );
+    selectedDay = widget.selectedDay;
   }
 
   @override
@@ -35,45 +43,56 @@ class _CalendarViewState extends State<CalendarView> {
     return widget.data[selectedDayString];
   }
 
-  DateTime selectedDay = DateTime.now();
+  var _first = CrossFadeState.showFirst;
 
   @override
   Widget build(BuildContext context) {
-    DateTime today = DateTime.now();
+    DateTime today = widget.selectedDay;
     List<DateTime> weekView = [];
+
     for (int i = 0; i < 6; i++) {
-      weekView.add(today);
-      today = today.add(const Duration(days: 1));
+      weekView.add(today.add(Duration(days: i)));
     }
 
     return Column(
       children: [
-        Container(
-          padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * 0.12,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(15),
-              bottomRight: Radius.circular(15),
+        GestureDetector(
+          onPanUpdate: (details) {
+            if (details.delta.dy > 5) {
+              setState(() {
+                _first = CrossFadeState.showSecond;
+              });
+            }
+            if (details.delta.dy < -5) {
+              setState(() {
+                _first = CrossFadeState.showFirst;
+              });
+            }
+          },
+          child: AnimatedCrossFade(
+            firstChild: WeekHeader(
+              weekView,
+              (DateTime sd) {
+                setState(() {
+                  selectedDay = sd;
+                  today = sd;
+                });
+              },
+              selectedDay,
             ),
-            color: Theme.of(context).primaryColor,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              for (var d in weekView)
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedDay = d;
-                      });
-                    },
-                    child: CardCalendar(d, selectedDay),
-                  ),
-                ),
-            ],
+            secondChild: MonthHeader(
+              selectedDay,
+              (DateTime sd) {
+                setState(() {
+                  widget.updateDate(sd);
+                  selectedDay = sd;
+                  today = sd;
+                  _first = CrossFadeState.showFirst;
+                });
+              },
+            ),
+            duration: Duration(milliseconds: 80),
+            crossFadeState: _first,
           ),
         ),
         getTeachingList().isEmpty

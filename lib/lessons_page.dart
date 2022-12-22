@@ -45,8 +45,8 @@ class _LessonsPageState extends State<LessonsPage> {
 
   SharedPreferences? sharedPreferences;
 
-  Future<Map> fetchCalendar() async {
-    final now = DateTime.now();
+  Future<Map> fetchCalendar(DateTime now) async {
+    //final now = DateTime.now();
     String today = getFormattedDate(now);
 
     String nextWeek = getFormattedDate(now.add(const Duration(days: 7)));
@@ -120,7 +120,7 @@ class _LessonsPageState extends State<LessonsPage> {
           prefs.getStringList('courseYearCode') == null) {
         selectCourse();
       }
-      fetchCalendar();
+      fetchCalendar(DateTime.now().subtract(Duration(days: 7)));
     });
   }
 
@@ -145,22 +145,42 @@ class _LessonsPageState extends State<LessonsPage> {
         }
       });
 
-      fetchCalendar();
+      fetchCalendar(DateTime.now().subtract(Duration(days: 7)));
     }
   }
+
+  DateTime date = DateTime.now().subtract(Duration(days: 7));
+
+  bool containsSelectedDay(Map data) {
+    for (var key in data.keys) {
+      if (key == getFormattedDate(date)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  DateTime selectedDate = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: fetchCalendar(),
+        future: fetchCalendar(date),
         builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            Map? data = snapshot.data;
+          Map? data = snapshot.data;
 
+          if (snapshot.hasData && containsSelectedDay(data!)) {
+            data = snapshot.data;
             return Container(
-              child: CalendarView(data!, getFormattedDate),
+              child: CalendarView(data!, getFormattedDate, (DateTime sd) {
+                selectedDate = sd;
+                setState(() {
+                  date = sd;
+                });
+              }, selectedDate),
             );
           }
+
           return const Center(child: CircularProgressIndicator());
         });
   }

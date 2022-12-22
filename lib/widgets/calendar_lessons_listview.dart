@@ -37,18 +37,31 @@ class CalendarLessonsListView extends StatelessWidget {
     return events;
   }
 
+  bool _isSameDay(DateTime date1, DateTime date2) {
+    return date1.year == date2.year &&
+        date1.month == date2.month &&
+        date1.day == date2.day;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
         child: SfCalendar(
             cellBorderColor: Theme.of(context).primaryColorDark,
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-            initialDisplayDate: DateTime(
-              selectedDay.year,
-              selectedDay.month,
-              selectedDay.day,
-              selectedDay.subtract(const Duration(hours: 2)).hour,
-            ),
+            initialDisplayDate: _isSameDay(selectedDay, DateTime.now())
+                ? DateTime(
+                    selectedDay.year,
+                    selectedDay.month,
+                    selectedDay.day,
+                    selectedDay.subtract(const Duration(hours: 2)).hour,
+                  )
+                : DateTime(
+                    selectedDay.year,
+                    selectedDay.month,
+                    selectedDay.day,
+                    6,
+                  ),
             appointmentBuilder: (context, calendarAppointmentDetails) {
               int duration =
                   calendarAppointmentDetails.appointments.first.duration;

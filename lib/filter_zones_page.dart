@@ -63,7 +63,6 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
     final prefs = await SharedPreferences.getInstance();
 
     if (prefs.getStringList('zonesList') != null && checkedItems.isEmpty) {
-      //print(prefs.getStringList('zonesList'));
       zonesMap.forEach((key, value) {
         if (prefs.getStringList('zonesList')!.contains(key)) {
           checkedItems.add(value);
@@ -111,12 +110,10 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
                             value: checkedItems.contains(zones[index]),
                             onChanged: (newValue) {
                               if (checkedItems.contains(zones[index])) {
-                                //print("era presente!");
                                 setState(() {
                                   checkedItems.remove(zones[index]);
                                 });
                               } else if (!checkedItems.contains(zones[index])) {
-                                //print("non era presente!");
                                 setState(() {
                                   checkedItems.add(zones[index]);
                                 });
