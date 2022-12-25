@@ -14,24 +14,23 @@ class MonthHeader extends StatefulWidget {
 class _MonthHeaderState extends State<MonthHeader> {
   List<Widget> cardMonthWidget = [];
   List<DateTime> monthView = [];
+  late DateTime selectedDayInMonth;
+  void initState() {
+    super.initState();
+    selectedDayInMonth = widget.selectedDay;
+  }
 
   void fillMonthDays() {
-    int dayInt = widget.selectedDay.day;
-    int monthInt = widget.selectedDay.month;
+    int monthInt = selectedDayInMonth.month;
 
-    String dayString = dayInt.toString();
     String monthString = monthInt.toString();
-
-    if (dayInt < 10) {
-      dayString = "0" + dayString;
-    }
 
     if (monthInt < 10) {
       monthString = "0" + monthString;
     }
 
     DateTime day = DateTime.parse(
-        widget.selectedDay.year.toString() + "-" + monthString + "-01");
+        selectedDayInMonth.year.toString() + "-" + monthString + "-01");
     if (monthView.isEmpty)
       while (day.month == monthInt) {
         monthView.add(day);
@@ -88,44 +87,94 @@ class _MonthHeaderState extends State<MonthHeader> {
   Widget build(BuildContext context) {
     fillMonthDays();
 
-    return Column(
-      children: [
-        Container(
-          width: MediaQuery.of(context).size.width,
-          color: Theme.of(context).primaryColor,
-          padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-          child: Text(_getMonthTitle(),
-              style: Theme.of(context).textTheme.headline5,
-              textAlign: TextAlign.center),
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.43,
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(15),
+          bottomRight: Radius.circular(15),
         ),
-        Container(
-          padding: const EdgeInsets.fromLTRB(0, 5, 0, 10),
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * 0.35,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(15),
-              bottomRight: Radius.circular(15),
-            ),
+      ),
+      child: Column(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
             color: Theme.of(context).primaryColor,
-          ),
-          child: GridView.count(
-              physics: NeverScrollableScrollPhysics(),
-              primary: true,
-              crossAxisSpacing: 0,
-              mainAxisSpacing: 0,
-              crossAxisCount: 7,
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                for (var d in monthView)
-                  GestureDetector(
-                    onTap: () {
-                      widget.selectedDayChanged(d);
-                    },
-                    child: CardCalendar(d, widget.selectedDay),
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      monthView.clear();
+                      selectedDayInMonth =
+                          selectedDayInMonth.subtract(Duration(days: 31));
+                    });
+                  },
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                    //size: 20,
                   ),
-              ]),
-        ),
-      ],
+                ),
+                Text(
+                  _getMonthTitle(),
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      monthView.clear();
+                      selectedDayInMonth = selectedDayInMonth.add(Duration(
+                          days:
+                              31)); //todo fix this, it's not always 31 days in a month
+                    });
+                  },
+                  icon: Icon(
+                    Icons.arrow_forward_ios,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.35,
+            //color: Colors.red,
+            /*decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
+              ),
+            ),*/
+            child: GridView.count(
+                physics: NeverScrollableScrollPhysics(),
+                primary: true,
+                crossAxisSpacing: 0,
+                mainAxisSpacing: 0,
+                crossAxisCount: 7,
+                children: [
+                  for (var d in monthView)
+                    GestureDetector(
+                      onTap: () {
+                        widget.selectedDayChanged(d);
+                      },
+                      child: CardCalendar(d, widget.selectedDay),
+                    ),
+                ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(7)),
+              color: Colors.grey[350],
+            ),
+            height: 5,
+            width: 45,
+          )
+        ],
+      ),
     );
   }
 }

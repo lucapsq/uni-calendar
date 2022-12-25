@@ -16,9 +16,9 @@ class _WeekHeaderState extends State<WeekHeader> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+      padding: const EdgeInsets.fromLTRB(0, 8, 0, 5),
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height * 0.12,
+      height: MediaQuery.of(context).size.height * 0.13,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(15),
@@ -26,18 +26,34 @@ class _WeekHeaderState extends State<WeekHeader> {
         ),
         color: Theme.of(context).primaryColor,
       ),
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          for (var d in widget.weekView)
-            Expanded(
-              child: GestureDetector(
-                onTap: () {
-                  widget.selectedDayChanged(d);
-                },
-                child: CardCalendar(d, widget.selectedDay),
-              ),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.1,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                for (var d in widget.weekView)
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        widget.selectedDayChanged(d);
+                      },
+                      child: CardCalendar(d, widget.selectedDay),
+                    ),
+                  ),
+              ],
             ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(7)),
+              color: Colors.grey[350],
+            ),
+            height: 5,
+            width: 45,
+          )
         ],
       ),
     );

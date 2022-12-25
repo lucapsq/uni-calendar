@@ -43,6 +43,7 @@ String getCourseYearCodeString(List<String> courseYearCodeList) {
 }
 
 Future<List<Teaching>> getTeachingsList(
+    DateTime todayDateTime,
     String today,
     String nextWeek,
     String courseCode,
@@ -54,12 +55,10 @@ Future<List<Teaching>> getTeachingsList(
 
   String year = "";
 
-  DateTime now = DateTime.now();
-
-  if (now.month >= 9 && now.month <= 12) {
-    year = now.year.toString();
+  if (todayDateTime.month >= 9 && todayDateTime.month <= 12) {
+    year = todayDateTime.year.toString();
   } else {
-    year = (now.year - 1).toString();
+    year = (todayDateTime.year - 1).toString();
   }
 
   String req1 =

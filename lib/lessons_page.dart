@@ -51,6 +51,7 @@ class _LessonsPageState extends State<LessonsPage> {
 
     String nextWeek = getFormattedDate(now.add(const Duration(days: 7)));
     List<Teaching> teachingsList = await getTeachingsList(
+      now,
       today,
       nextWeek,
       courseCode,
