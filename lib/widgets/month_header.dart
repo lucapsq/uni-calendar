@@ -83,6 +83,26 @@ class _MonthHeaderState extends State<MonthHeader> {
     return monthTitle + " " + monthView[0].year.toString();
   }
 
+  DateTime getDayOfNextMonth(DateTime selectedDayInMonth) {
+    int selectedMonth = selectedDayInMonth.month;
+
+    while (selectedMonth == selectedDayInMonth.month) {
+      selectedDayInMonth = selectedDayInMonth.add(Duration(days: 1));
+    }
+
+    return selectedDayInMonth;
+  }
+
+  DateTime getDayOfPreviousMonth(DateTime selectedDayInMonth) {
+    int selectedMonth = selectedDayInMonth.month;
+
+    while (selectedMonth == selectedDayInMonth.month) {
+      selectedDayInMonth = selectedDayInMonth.subtract(Duration(days: 1));
+    }
+
+    return selectedDayInMonth;
+  }
+
   @override
   Widget build(BuildContext context) {
     fillMonthDays();
@@ -110,7 +130,7 @@ class _MonthHeaderState extends State<MonthHeader> {
                     setState(() {
                       monthView.clear();
                       selectedDayInMonth =
-                          selectedDayInMonth.subtract(Duration(days: 31));
+                          getDayOfPreviousMonth(selectedDayInMonth);
                     });
                   },
                   icon: Icon(
@@ -126,9 +146,8 @@ class _MonthHeaderState extends State<MonthHeader> {
                   onPressed: () {
                     setState(() {
                       monthView.clear();
-                      selectedDayInMonth = selectedDayInMonth.add(Duration(
-                          days:
-                              31)); //todo fix this, it's not always 31 days in a month
+                      selectedDayInMonth =
+                          getDayOfNextMonth(selectedDayInMonth);
                     });
                   },
                   icon: Icon(

@@ -172,8 +172,8 @@ class _HomepageState extends State<Homepage> {
                   ? const RoomAvailability()
                   : SettingsPage(settingsImage)),
       bottomNavigationBar: BottomNavigationBar(
-        selectedIconTheme: const IconThemeData(size: 35),
-        iconSize: 28,
+        selectedIconTheme: const IconThemeData(size: 30),
+        iconSize: 25,
         selectedFontSize: 17,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
