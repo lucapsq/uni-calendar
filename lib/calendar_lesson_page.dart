@@ -54,8 +54,12 @@ class _CalendarViewState extends State<CalendarView> {
       weekView.add(today.add(Duration(days: i)));
     }
 
-    return Column(
+    return Stack(
+      alignment: AlignmentDirectional.topCenter,
       children: [
+        getTeachingList().isEmpty
+            ? NoLessons(nolessonImage)
+            : CalendarLessonsListView(getTeachingList, selectedDay),
         GestureDetector(
           onPanUpdate: (details) {
             if (details.delta.dy > 5) {
@@ -95,9 +99,6 @@ class _CalendarViewState extends State<CalendarView> {
             crossFadeState: _first,
           ),
         ),
-        getTeachingList().isEmpty
-            ? NoLessons(nolessonImage)
-            : CalendarLessonsListView(getTeachingList, selectedDay)
       ],
     );
   }

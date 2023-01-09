@@ -120,8 +120,9 @@ class _MonthHeaderState extends State<MonthHeader> {
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.06,
             color: Theme.of(context).primaryColor,
-            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 7, 0, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -160,16 +161,9 @@ class _MonthHeaderState extends State<MonthHeader> {
           Container(
             padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 0.35,
-            //color: Colors.red,
-            /*decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(15),
-                bottomRight: Radius.circular(15),
-              ),
-            ),*/
+            height: MediaQuery.of(context).size.height * 0.34,
             child: GridView.count(
-                physics: NeverScrollableScrollPhysics(),
+                //physics: NeverScrollableScrollPhysics(),
                 primary: true,
                 crossAxisSpacing: 0,
                 mainAxisSpacing: 0,
@@ -185,12 +179,15 @@ class _MonthHeaderState extends State<MonthHeader> {
                 ]),
           ),
           Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(7)),
-              color: Colors.grey[350],
+            padding: const EdgeInsets.fromLTRB(0, 12, 0, 0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(7)),
+                color: Colors.grey[350],
+              ),
+              height: 5,
+              width: 45,
             ),
-            height: 5,
-            width: 45,
           )
         ],
       ),

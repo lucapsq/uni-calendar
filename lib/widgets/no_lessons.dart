@@ -10,7 +10,7 @@ class NoLessons extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.1,
+          height: MediaQuery.of(context).size.height * 0.2,
         ),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.8,

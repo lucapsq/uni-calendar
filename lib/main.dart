@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '/room_availability_page.dart';
 import 'lessons_page.dart';
 import 'settings_page.dart';
+import 'package:flutter/services.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +14,10 @@ Future<void> main() async {
       : prefs.getInt('themeMode') == 2
           ? ThemeMode.dark
           : ThemeMode.system;
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
 
   runApp(MyApp(themeMode));
 }
