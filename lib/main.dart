@@ -1,9 +1,11 @@
+import 'package:app_install_date/app_install_date.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '/room_availability_page.dart';
 import 'lessons_page.dart';
 import 'settings_page.dart';
 import 'package:flutter/services.dart';
+import 'package:in_app_review/in_app_review.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -152,9 +154,47 @@ class _HomepageState extends State<Homepage> {
 
   late Image settingsImage;
 
+  Future<void> checkReview() async {
+    late DateTime installDate;
+    int launchTimes = 0;
+    int reviewRequest = 0;
+    installDate = await AppInstallDate().installDate;
+
+    var prefs = await SharedPreferences.getInstance();
+
+    prefs.getInt('reviewRequest') == null
+        ? await prefs.setInt('reviewRequest', 0)
+        : reviewRequest = prefs.getInt('reviewRequest')!;
+
+    if (reviewRequest < 2) {
+      if (prefs.getInt('launchTimes') == null) {
+        await prefs.setInt('launchTimes', 1);
+      } else {
+        launchTimes = prefs.getInt('launchTimes')!;
+        launchTimes++;
+        await prefs.setInt('launchTimes', launchTimes);
+      }
+
+      if (launchTimes > 5 &&
+          DateTime.now().difference(installDate).inDays > 20) {
+        await Future.delayed(const Duration(seconds: 10));
+
+        final InAppReview inAppReview = InAppReview.instance;
+        if (await inAppReview.isAvailable()) {
+          inAppReview.requestReview();
+          await prefs.setInt('launchTimes', 0);
+          reviewRequest++;
+          await prefs.setInt('reviewRequest', reviewRequest);
+        }
+      }
+    }
+  }
+
   @override
   void initState() {
     super.initState();
+    checkReview();
+
     settingsImage = Image.asset("assets/setting-preference.png");
   }
 
