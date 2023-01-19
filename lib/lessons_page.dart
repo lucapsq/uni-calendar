@@ -50,6 +50,8 @@ class _LessonsPageState extends State<LessonsPage> {
     String today = getFormattedDate(now);
 
     String nextWeek = getFormattedDate(now.add(const Duration(days: 7)));
+
+    print("today: $today, nextWeek: $nextWeek");
     List<Teaching> teachingsList = await getTeachingsList(
       now,
       today,
@@ -121,7 +123,7 @@ class _LessonsPageState extends State<LessonsPage> {
           prefs.getStringList('courseYearCode') == null) {
         selectCourse();
       }
-      fetchCalendar(DateTime.now().subtract(Duration(days: 7)));
+      fetchCalendar(DateTime.now() /*.subtract(Duration(days: 7))*/);
     });
   }
 
@@ -146,11 +148,11 @@ class _LessonsPageState extends State<LessonsPage> {
         }
       });
 
-      fetchCalendar(DateTime.now().subtract(Duration(days: 7)));
+      fetchCalendar(DateTime.now() /*.subtract(Duration(days: 7))*/);
     }
   }
 
-  DateTime date = DateTime.now().subtract(Duration(days: 7));
+  DateTime date = DateTime.now() /*.subtract(Duration(days: 7))*/;
 
   bool containsSelectedDay(Map data) {
     for (var key in data.keys) {
