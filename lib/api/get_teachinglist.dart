@@ -55,8 +55,6 @@ Future<List<Teaching>> getTeachingsList(
 
   String year = "";
 
-  //print(today + "\n" + nextWeek);
-
   if (todayDateTime.month >= 9 && todayDateTime.month <= 12) {
     year = todayDateTime.year.toString();
   } else {

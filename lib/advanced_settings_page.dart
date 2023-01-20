@@ -10,7 +10,7 @@ class AdvancedSettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("UniVR Calendar")),
+      appBar: AppBar(title: Text("Avanzate")),
       body: Container(
         width: mediaQuery.size.width,
         child: Column(

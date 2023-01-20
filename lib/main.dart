@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:app_install_date/app_install_date.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -208,7 +210,20 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("UniVR Calendar"),
+        title: selectedPage == 0
+            ? const Text(
+                "Calendario",
+                style: TextStyle(fontSize: 22),
+              )
+            : selectedPage == 1
+                ? const Text(
+                    "Aule libere",
+                    style: TextStyle(fontSize: 22),
+                  )
+                : const Text(
+                    "Impostazioni",
+                    style: TextStyle(fontSize: 22),
+                  ),
       ),
       body: SafeArea(
           child: selectedPage == 0

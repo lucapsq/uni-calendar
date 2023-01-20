@@ -105,7 +105,7 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("UniVR Calendar"),
+        title: const Text("Filtra corsi"),
       ),
       body: FutureBuilder(
         future: fetchLessons(),
@@ -123,7 +123,7 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
                   child: Align(
                     alignment: Alignment.center,
                     child: Text(
-                      "Che materie vuoi visualizzare?",
+                      "Che corsi vuoi visualizzare?",
                       style: Theme.of(context).textTheme.headline6,
                     ),
                   ),

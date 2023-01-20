@@ -70,7 +70,7 @@ class _CourseSelectionPageState extends State<CourseSelectionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("UniVR Calendar"),
+        title: const Text("Seleziona corso"),
       ),
       body: FutureBuilder(
           future: fetchCourses(),

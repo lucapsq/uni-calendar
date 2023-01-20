@@ -21,7 +21,6 @@ Future<List<Event>> getEvents(Zone zone) async {
   List<Event> events = [];
   for (var event in jsonDecode(response.body)['events']) {
     events.add(Event.fromJson(event));
-    //print(event['NomeAula'] + " " + event['from'] + " " + event['to']);
   }
 
   return events;

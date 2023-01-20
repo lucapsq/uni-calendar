@@ -75,7 +75,7 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("UniVR Calendar"),
+        title: const Text("Filtra sedi"),
       ),
       body: FutureBuilder(
         future: searchZones(),

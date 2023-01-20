@@ -45,7 +45,7 @@ class _YearSelectionState extends State<YearSelection> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("UniVR Calendar"),
+          title: const Text("Seleziona anno"),
         ),
         body: Column(
           children: [
