@@ -1,6 +1,6 @@
 class Event {
   const Event({
-    required this.id,
+    //required this.id,
     required this.start,
     required this.end,
     required this.name,
@@ -8,7 +8,7 @@ class Event {
     required this.zone,
   });
 
-  final String id;
+  //final String id;
   final String start;
   final String end;
   final String name;
@@ -17,7 +17,7 @@ class Event {
 
   factory Event.fromJson(Map<String, dynamic> parsedJson) {
     return Event(
-      id: parsedJson['id'],
+      //id: parsedJson['id'],
       start: (parsedJson['from'] as String).substring(0, 5),
       end: (parsedJson['to'] as String).substring(0, 5),
       name: parsedJson['name'],

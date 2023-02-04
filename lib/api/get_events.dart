@@ -17,11 +17,23 @@ Future<List<Event>> getEvents(Zone zone) async {
   };
 
   http.Response response = await http.post(uri, body: map);
+  var data = jsonDecode(response.body);
 
   List<Event> events = [];
-  for (var event in jsonDecode(response.body)['events']) {
+  for (var event in data['events']) {
     events.add(Event.fromJson(event));
   }
+
+  Map<String, dynamic> allRooms = data['area_rooms'][zone.id];
+
+  allRooms.forEach((key, value) {
+    events.add(Event(
+        start: '00:00',
+        end: '00:00',
+        name: '',
+        room: value['room_name'],
+        zone: zone.name));
+  });
 
   return events;
 }
