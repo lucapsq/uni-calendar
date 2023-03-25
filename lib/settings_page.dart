@@ -40,7 +40,7 @@ class SettingsPage extends StatelessWidget {
                       );
                     },
                     child: const Text(
-                      "Modifica corso",
+                      "Modifica Corso",
                       style: TextStyle(fontSize: 16),
                       textAlign: TextAlign.center,
                     ),

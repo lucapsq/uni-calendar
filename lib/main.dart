@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:app_install_date/app_install_date.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';

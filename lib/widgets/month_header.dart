@@ -14,6 +14,9 @@ class MonthHeader extends StatefulWidget {
 class _MonthHeaderState extends State<MonthHeader> {
   List<Widget> cardMonthWidget = [];
   List<DateTime> monthView = [];
+  List<DateTime> previousMonthView = [];
+  List<DateTime> nextMonthView = [];
+
   late DateTime selectedDayInMonth;
   void initState() {
     super.initState();
@@ -31,11 +34,30 @@ class _MonthHeaderState extends State<MonthHeader> {
 
     DateTime day = DateTime.parse(
         selectedDayInMonth.year.toString() + "-" + monthString + "-01");
+
+    if (day.weekday != 1 && previousMonthView.isEmpty) {
+      DateTime previousDay = day.subtract(Duration(days: day.weekday - 1));
+
+      while (previousDay.day != day.day) {
+        previousMonthView.add(previousDay);
+        previousDay = previousDay.add(Duration(days: 1));
+      }
+    }
+
     if (monthView.isEmpty)
       while (day.month == monthInt) {
         monthView.add(day);
         day = day.add(Duration(days: 1));
       }
+
+    if (day.weekday != 7 && nextMonthView.isEmpty) {
+      day = monthView.last;
+
+      while (day.weekday != 7) {
+        day = day.add(Duration(days: 1));
+        nextMonthView.add(day);
+      }
+    }
   }
 
   String _getMonthTitle() {
@@ -129,7 +151,9 @@ class _MonthHeaderState extends State<MonthHeader> {
                 IconButton(
                   onPressed: () {
                     setState(() {
+                      previousMonthView.clear();
                       monthView.clear();
+                      nextMonthView.clear();
                       selectedDayInMonth =
                           getDayOfPreviousMonth(selectedDayInMonth);
                     });
@@ -146,7 +170,9 @@ class _MonthHeaderState extends State<MonthHeader> {
                 IconButton(
                   onPressed: () {
                     setState(() {
+                      previousMonthView.clear();
                       monthView.clear();
+                      nextMonthView.clear();
                       selectedDayInMonth =
                           getDayOfNextMonth(selectedDayInMonth);
                     });
@@ -158,6 +184,10 @@ class _MonthHeaderState extends State<MonthHeader> {
               ],
             ),
           ),
+          /*Container(
+            height: MediaQuery.of(context).size.height * 0.01,
+            color: Colors.black,
+          ),*/
           Container(
             padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
             width: MediaQuery.of(context).size.width,
@@ -169,7 +199,21 @@ class _MonthHeaderState extends State<MonthHeader> {
                 mainAxisSpacing: 0,
                 crossAxisCount: 7,
                 children: [
+                  for (var d in previousMonthView)
+                    GestureDetector(
+                      onTap: () {
+                        widget.selectedDayChanged(d);
+                      },
+                      child: CardCalendar(d, widget.selectedDay),
+                    ),
                   for (var d in monthView)
+                    GestureDetector(
+                      onTap: () {
+                        widget.selectedDayChanged(d);
+                      },
+                      child: CardCalendar(d, widget.selectedDay),
+                    ),
+                  for (var d in nextMonthView)
                     GestureDetector(
                       onTap: () {
                         widget.selectedDayChanged(d);
