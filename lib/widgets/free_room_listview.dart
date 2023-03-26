@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
+import '../filter_zones_page.dart';
 import '../models/event.dart';
 
 class FreeRoomsListview extends StatefulWidget {
@@ -182,7 +183,28 @@ class _FreeRoomsListviewState extends State<FreeRoomsListview> {
                 Text(
                   "Nessuna sede impostata!",
                   style: Theme.of(context).textTheme.headline6,
-                )
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                SizedBox(
+                    width: MediaQuery.of(context).size.height * 0.18,
+                    height: MediaQuery.of(context).size.height * 0.08,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const FilterZonesPage()),
+                          );
+                        },
+                        child: const Text(
+                          "Aggiungi Sede",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ))),
               ],
             ),
           )
