@@ -58,7 +58,7 @@ class SettingsPage extends StatelessWidget {
                           );
                         },
                         child: const Text(
-                          "Modifica Sedi",
+                          "Modifica Sede",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 16,

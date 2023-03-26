@@ -40,7 +40,7 @@ class _WeekHeaderState extends State<WeekHeader> {
                       onTap: () {
                         widget.selectedDayChanged(d);
                       },
-                      child: CardCalendar(d, widget.selectedDay),
+                      child: CardCalendar(d, widget.selectedDay, true),
                     ),
                   ),
               ],

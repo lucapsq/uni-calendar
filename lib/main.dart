@@ -165,7 +165,6 @@ class _HomepageState extends State<Homepage> {
     prefs.getInt('reviewRequest') == null
         ? await prefs.setInt('reviewRequest', 0)
         : reviewRequest = prefs.getInt('reviewRequest')!;
-
     if (reviewRequest < 2) {
       if (prefs.getInt('launchTimes') == null) {
         await prefs.setInt('launchTimes', 1);
@@ -177,7 +176,7 @@ class _HomepageState extends State<Homepage> {
 
       if (launchTimes > 5 &&
           DateTime.now().difference(installDate).inDays > 20) {
-        await Future.delayed(const Duration(seconds: 10));
+        await Future.delayed(const Duration(seconds: 5));
 
         final InAppReview inAppReview = InAppReview.instance;
         if (await inAppReview.isAvailable()) {

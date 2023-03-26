@@ -204,21 +204,21 @@ class _MonthHeaderState extends State<MonthHeader> {
                       onTap: () {
                         widget.selectedDayChanged(d);
                       },
-                      child: CardCalendar(d, widget.selectedDay),
+                      child: CardCalendar(d, widget.selectedDay, false),
                     ),
                   for (var d in monthView)
                     GestureDetector(
                       onTap: () {
                         widget.selectedDayChanged(d);
                       },
-                      child: CardCalendar(d, widget.selectedDay),
+                      child: CardCalendar(d, widget.selectedDay, true),
                     ),
                   for (var d in nextMonthView)
                     GestureDetector(
                       onTap: () {
                         widget.selectedDayChanged(d);
                       },
-                      child: CardCalendar(d, widget.selectedDay),
+                      child: CardCalendar(d, widget.selectedDay, false),
                     ),
                 ]),
           ),

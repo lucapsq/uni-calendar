@@ -4,8 +4,9 @@ import 'package:intl/intl.dart';
 class CardCalendar extends StatefulWidget {
   final DateTime d;
   final DateTime selectedDay;
+  final bool sameMonth;
 
-  const CardCalendar(this.d, this.selectedDay, {super.key});
+  const CardCalendar(this.d, this.selectedDay, this.sameMonth, {super.key});
   @override
   State<CardCalendar> createState() => _CardCalendarState();
 }
@@ -21,7 +22,11 @@ class _CardCalendarState extends State<CardCalendar> {
   @override
   Widget build(BuildContext context) {
     return Card(
-        color: isSelected(widget.d) ? Theme.of(context).backgroundColor : null,
+        color: isSelected(widget.d)
+            ? Theme.of(context).backgroundColor
+            : widget.sameMonth
+                ? null
+                : Theme.of(context).primaryColorDark, //350-700
         shape: RoundedRectangleBorder(
             side: BorderSide(
                 color: isSelected(widget.d)
