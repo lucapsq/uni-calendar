@@ -105,7 +105,7 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Filtra corsi"),
+        title: const Text("Filtra lezioni"),
       ),
       body: FutureBuilder(
         future: fetchLessons(),

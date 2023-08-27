@@ -35,8 +35,16 @@ class _CourseSelectionPageState extends State<CourseSelectionPage> {
   }
 
   Future<List<Course>> fetchCourses() async {
+    DateTime todayDateTime = DateTime.now();
+    var year;
+    if (todayDateTime.month >= 8 && todayDateTime.month <= 12) {
+      year = todayDateTime.year.toString();
+    } else {
+      year = (todayDateTime.year - 1).toString();
+    }
+
     var response = await http.get(Uri.parse(
-        "https://logistica.univr.it/PortaleStudentiUnivr/combo.php?sw=ec_&aa=2022&page=corsi&_="));
+        "https://logistica.univr.it/PortaleStudentiUnivr/combo.php?sw=ec_&aa=$year&page=corsi&_="));
     String data = response.body.toString();
 
     data = data.substring(19);

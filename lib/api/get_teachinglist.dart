@@ -55,7 +55,7 @@ Future<List<Teaching>> getTeachingsList(
 
   String year = "";
 
-  if (todayDateTime.month >= 9 && todayDateTime.month <= 12) {
+  if (todayDateTime.month >= 8 && todayDateTime.month <= 12) {
     year = todayDateTime.year.toString();
   } else {
     year = (todayDateTime.year - 1).toString();
@@ -63,7 +63,6 @@ Future<List<Teaching>> getTeachingsList(
 
   String req1 =
       "view=easycourse&form-type=corso&include=corso&txtcurr=$courseYear&anno=$year&corso=$courseCode&anno2%5B%5D=$courseYearCode&date=$today&periodo_didattico=&_lang=it&list=&week_grid_type=-1&ar_codes_=&ar_select_=&col_cells=0&empty_box=0&only_grid=0&highlighted_date=0&all_events=0&faculty_group=0&_lang=it&all_events=0&txtcurr=";
-
   String req2 =
       "view=easycourse&form-type=corso&include=corso&txtcurr=$courseYear&anno=$year&corso=$courseCode&anno2%5B%5D=$courseYearCode&date=$nextWeek&periodo_didattico=&_lang=it&list=&week_grid_type=-1&ar_codes_=&ar_select_=&col_cells=0&empty_box=0&only_grid=0&highlighted_date=0&all_events=0&faculty_group=0&_lang=it&all_events=0&txtcurr=";
 
