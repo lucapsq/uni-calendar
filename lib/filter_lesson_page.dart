@@ -47,8 +47,17 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
     String courseCode = prefs.getString('courseCode').toString();
     List<String>? courseYearList = prefs.getStringList('courseYear');
 
+    String year = "";
+    var todayDateTime = DateTime.now();
+
+    if (todayDateTime.month >= 8 && todayDateTime.month <= 12) {
+      year = todayDateTime.year.toString();
+    } else {
+      year = (todayDateTime.year - 1).toString();
+    }
+
     var response = await http.get(Uri.parse(
-        "https://logistica.univr.it/PortaleStudentiUnivr/combo.php?sw=ec_&aa=2022&page=corsi&_="));
+        "https://logistica.univr.it/PortaleStudentiUnivr/combo.php?sw=ec_&aa=$year&page=corsi&_="));
     String data = response.body.toString();
 
     data = data.substring(19);
