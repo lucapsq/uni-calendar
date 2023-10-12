@@ -152,10 +152,8 @@ Future<List<Teaching>> getTeachingsList(
       colorsMap.addAll({c['nome_insegnamento']: getNextColor()});
     }
   }
-  print("Excluded salvati:");
-  print(excludedLessonList);
+
   for (var c in dataList['celle']) {
-    print(c['codice_insegnamento']);
     if (!excludedLessonList.contains(c['codice_insegnamento'])) {
       if (c['nome_insegnamento'] != null && c['Annullato'] != '1') {
         teachingsList.add(Teaching(
