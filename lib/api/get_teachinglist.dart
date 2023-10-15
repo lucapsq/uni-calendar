@@ -63,8 +63,7 @@ Future<List<Teaching>> getTeachingsList(
 
   String req =
       "view=easycourse&form-type=corso&include=corso&txtcurr=$courseYear&anno=$year&corso=$courseCode&anno2%5B%5D=$courseYearCode&date=$today&periodo_didattico=&_lang=it&list=&week_grid_type=-1&ar_codes_=&ar_select_=&col_cells=0&empty_box=0&only_grid=0&highlighted_date=0&all_events=1&faculty_group=0&_lang=it&all_events=1&txtcurr=";
-  String req1 =
-      "view=easycourse&include=corso&anno=2023&corso=420&anno2%5B%5D=999%7C2&visualizzazione_orario=cal&date=15-10-2023&_lang=it&list=1&highlighted_date=0&all_events=1&&_lang=it&all_events=1&txtcurr=2 - UNICO";
+
   var response = await http.post(
       Uri.parse(
           "https://logistica.univr.it/PortaleStudentiUnivr/grid_call.php"),
@@ -130,7 +129,9 @@ Future<List<Teaching>> getTeachingsList(
       }
     }
   }
-  print(teachingsList.length);
+  for (var c in teachingsList) {
+    print(c.name + " " + c.date + " " + c.time);
+  }
 
   return teachingsList;
 }
