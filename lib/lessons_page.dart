@@ -49,12 +49,9 @@ class _LessonsPageState extends State<LessonsPage> {
     //final now = DateTime.now();
     String today = getFormattedDate(now);
 
-    String nextWeek = getFormattedDate(now.add(const Duration(days: 7)));
-
     List<Teaching> teachingsList = await getTeachingsList(
       now,
       today,
-      nextWeek,
       courseCode,
       courseYearList,
       courseYearCodeList,
@@ -122,7 +119,7 @@ class _LessonsPageState extends State<LessonsPage> {
           prefs.getStringList('courseYearCode') == null) {
         selectCourse();
       }
-      fetchCalendar(DateTime.now() /*.subtract(Duration(days: 7))*/);
+      fetchCalendar(DateTime.now());
     });
   }
 

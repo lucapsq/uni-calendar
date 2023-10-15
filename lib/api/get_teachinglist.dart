@@ -45,7 +45,6 @@ String getCourseYearCodeString(List<String> courseYearCodeList) {
 Future<List<Teaching>> getTeachingsList(
     DateTime todayDateTime,
     String today,
-    String nextWeek,
     String courseCode,
     List<String> courseYearList,
     List<String> courseYearCodeList,
