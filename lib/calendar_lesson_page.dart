@@ -58,7 +58,8 @@ class _CalendarViewState extends State<CalendarView> {
       alignment: AlignmentDirectional.topCenter,
       children: [
         getTeachingList().isEmpty
-            ? NoLessons(nolessonImage)
+            ? NoLessons(
+                nolessonImage) //TODO potrebbe signfiicare internet non funzionante
             : CalendarLessonsListView(getTeachingList, selectedDay),
         GestureDetector(
           onPanUpdate: (details) {
