@@ -46,7 +46,6 @@ class _LessonsPageState extends State<LessonsPage> {
   SharedPreferences? sharedPreferences;
 
   Future<Map> fetchCalendar(DateTime now) async {
-    //final now = DateTime.now();
     String today = getFormattedDate(now);
 
     List<Teaching> teachingsList = await getTeachingsList(
