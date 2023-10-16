@@ -128,9 +128,6 @@ Future<List<Teaching>> getTeachingsList(
       }
     }
   }
-  for (var c in teachingsList) {
-    print(c.name + " " + c.date + " " + c.time);
-  }
 
   return teachingsList;
 }

@@ -39,7 +39,10 @@ class _CalendarViewState extends State<CalendarView> {
 
   List<Teaching> getTeachingList() {
     String selectedDayString = widget.getFormattedDate(selectedDay);
-    if (widget.data[selectedDayString] == null) return [];
+
+    if (widget.data[selectedDayString] == null)
+      return []; //TODO qui i dati non ci sono, quindi non arrivano
+
     return widget.data[selectedDayString];
   }
 
@@ -58,8 +61,7 @@ class _CalendarViewState extends State<CalendarView> {
       alignment: AlignmentDirectional.topCenter,
       children: [
         getTeachingList().isEmpty
-            ? NoLessons(
-                nolessonImage) //TODO potrebbe signfiicare internet non funzionante
+            ? NoLessons(nolessonImage)
             : CalendarLessonsListView(getTeachingList, selectedDay),
         GestureDetector(
           onPanUpdate: (details) {
