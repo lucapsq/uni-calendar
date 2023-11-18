@@ -48,21 +48,30 @@ class _LessonsPageState extends State<LessonsPage> {
   Future<Map> fetchCalendar(DateTime now) async {
     String today = getFormattedDate(now);
 
-    List<Teaching> teachingsList = await getTeachingsList(
-      now,
-      today,
-      courseCode,
-      courseYearList,
-      courseYearCodeList,
-      excludedLessonList,
-    );
+    List<Teaching> teachingsList = await getTeachingsList(now, today,
+        courseCode, courseYearList, courseYearCodeList, excludedLessonList);
 
     String selectedDate = today;
     List<Teaching> dayTeachingList = [];
     Map teachingsMap = <String, List<Teaching>>{};
 
     for (var c in teachingsList) {
-      if (c.date == selectedDate) {
+      selectedDate = c.date;
+
+      for (var elem in teachingsList) {
+        if (elem.date == selectedDate && !dayTeachingList.contains(elem)) {
+          dayTeachingList.add(elem);
+        }
+      }
+      final dayTeaching = <String, List<Teaching>>{
+        selectedDate: dayTeachingList,
+      };
+      dayTeachingList = [];
+
+      teachingsMap.addEntries(dayTeaching.entries);
+    }
+
+    /*if (c.date == selectedDate) {
         dayTeachingList.add(c);
       }
 
@@ -83,10 +92,12 @@ class _LessonsPageState extends State<LessonsPage> {
     };
 
     teachingsMap.addEntries(dayTeaching.entries);
-
+    print("---test---");
     teachingsMap.forEach((key, value) {
       print('Key: $key, $value');
     });
+
+    print(teachingsMap["20-10-2023"]);*/
 
     return teachingsMap;
   }
@@ -122,7 +133,7 @@ class _LessonsPageState extends State<LessonsPage> {
           prefs.getStringList('courseYearCode') == null) {
         selectCourse();
       }
-      fetchCalendar(DateTime.now());
+      fetchCalendar(DateTime.now() /*.subtract(Duration(days: 7))*/);
     });
   }
 
@@ -147,20 +158,20 @@ class _LessonsPageState extends State<LessonsPage> {
         }
       });
 
-      fetchCalendar(DateTime.now() /*.subtract(Duration(days: 7))*/);
+      fetchCalendar(DateTime.now());
     }
   }
 
-  DateTime date = DateTime.now() /*.subtract(Duration(days: 7))*/;
+  DateTime date = DateTime.now();
 
-  bool containsSelectedDay(Map data) {
+  /*bool containsSelectedDay(Map data) {
     for (var key in data.keys) {
       if (key == getFormattedDate(date)) {
         return true;
       }
     }
     return false;
-  }
+  }*/
 
   DateTime selectedDate = DateTime.now();
 
@@ -171,9 +182,8 @@ class _LessonsPageState extends State<LessonsPage> {
         builder: (context, snapshot) {
           Map? data = snapshot.data;
 
-          if (snapshot.hasData && containsSelectedDay(data!)) {
+          if (snapshot.hasData /* && containsSelectedDay(data!)*/) {
             data = snapshot.data;
-
             return Container(
               child: CalendarView(data!, getFormattedDate, (DateTime sd) {
                 selectedDate = sd;

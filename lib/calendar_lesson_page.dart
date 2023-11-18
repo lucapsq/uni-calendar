@@ -40,8 +40,7 @@ class _CalendarViewState extends State<CalendarView> {
   List<Teaching> getTeachingList() {
     String selectedDayString = widget.getFormattedDate(selectedDay);
 
-    if (widget.data[selectedDayString] == null)
-      return []; //TODO qui i dati non ci sono, quindi non arrivano
+    if (widget.data[selectedDayString] == null) return [];
 
     return widget.data[selectedDayString];
   }
