@@ -84,6 +84,10 @@ class _LessonsPageState extends State<LessonsPage> {
 
     teachingsMap.addEntries(dayTeaching.entries);
 
+    teachingsMap.forEach((key, value) {
+      print('Key: $key, $value');
+    });
+
     return teachingsMap;
   }
 
@@ -169,6 +173,7 @@ class _LessonsPageState extends State<LessonsPage> {
 
           if (snapshot.hasData && containsSelectedDay(data!)) {
             data = snapshot.data;
+
             return Container(
               child: CalendarView(data!, getFormattedDate, (DateTime sd) {
                 selectedDate = sd;
