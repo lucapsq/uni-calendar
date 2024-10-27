@@ -60,9 +60,12 @@ class _CourseSelectionPageState extends State<CourseSelectionPage> {
       Map<String, String> yearsvalues = {};
 
       for (var v in course['elenco_anni']) {
-        years.add(v['label']);
+        //print(v['label'] + v['valore']); 1 - Lingua tedesca B2 TEDB2|1
+        if (!years.contains(v['label'])) years.add(v['label']);
+
         yearsvalues.addAll({v['label']: v['valore']});
       }
+      //print(course['label'] + course['valore']);
 
       courses.add(Course(
           id: course['valore'],

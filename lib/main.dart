@@ -62,6 +62,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        useMaterial3: false,
         appBarTheme: AppBarTheme(
             backgroundColor: Colors.blue,
             centerTitle: true,
@@ -95,6 +96,7 @@ class _MyAppState extends State<MyApp> {
         cardColor: Colors.white, //colore interno delle card
       ),
       darkTheme: ThemeData(
+        useMaterial3: false,
         brightness: Brightness.dark,
         appBarTheme: AppBarTheme(
             backgroundColor: Colors.blue[900],
