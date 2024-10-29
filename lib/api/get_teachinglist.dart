@@ -42,6 +42,22 @@ String getCourseYearCodeString(List<String> courseYearCodeList) {
   return courseYearCode;
 }
 
+bool checkPariDispari(String teachingName, String courseYear) {
+  teachingName = teachingName.toLowerCase();
+  courseYear = courseYear.toLowerCase();
+
+  if (!courseYear.contains("matricole dispari") &&
+      !courseYear.contains("matricole pari")) return true;
+
+  if ((teachingName.contains("matricole dispari") &&
+          courseYear.contains("matricole dispari")) ||
+      (teachingName.contains("matricole pari") &&
+          courseYear.contains("matricole pari"))) {
+    return true;
+  }
+  return false;
+}
+
 Future<List<Teaching>> getTeachingsList(
     DateTime todayDateTime,
     String today,
@@ -65,7 +81,6 @@ Future<List<Teaching>> getTeachingsList(
       "view=easycourse&form-type=corso&include=corso&txtcurr=$courseYear&anno=$year&corso=$courseCode&anno2%5B%5D=$courseYearCode&date=$today&periodo_didattico=&_lang=it&list=&week_grid_type=-1&ar_codes_=&ar_select_=&col_cells=0&empty_box=0&only_grid=0&highlighted_date=0&all_events=0&faculty_group=0&_lang=it&all_events=0&txtcurr=";
   String req2 =
       "view=easycourse&form-type=corso&include=corso&txtcurr=$courseYear&anno=$year&corso=$courseCode&anno2%5B%5D=$courseYearCode&date=$nextWeek&periodo_didattico=&_lang=it&list=&week_grid_type=-1&ar_codes_=&ar_select_=&col_cells=0&empty_box=0&only_grid=0&highlighted_date=0&all_events=0&faculty_group=0&_lang=it&all_events=0&txtcurr=";
-
   var response = await http.post(
       Uri.parse(
           "https://logistica.univr.it/PortaleStudentiUnivr/grid_call.php"),
@@ -155,7 +170,9 @@ Future<List<Teaching>> getTeachingsList(
 
   for (var c in dataList['celle']) {
     if (!excludedLessonList.contains(c['codice_insegnamento'])) {
-      if (c['nome_insegnamento'] != null && c['Annullato'] != '1') {
+      if (c['nome_insegnamento'] != null &&
+          c['Annullato'] != '1' &&
+          checkPariDispari(c['nome_insegnamento'], courseYear)) {
         teachingsList.add(Teaching(
             name: c['nome_insegnamento'],
             date: c['data'],
@@ -167,7 +184,9 @@ Future<List<Teaching>> getTeachingsList(
   }
   for (var c in dataListNextWeek['celle']) {
     if (!excludedLessonList.contains(c['codice_insegnamento'])) {
-      if (c['nome_insegnamento'] != null && c['Annullato'] != '1') {
+      if (c['nome_insegnamento'] != null &&
+          c['Annullato'] != '1' &&
+          checkPariDispari(c['nome_insegnamento'], courseYear)) {
         teachingsList.add(Teaching(
           name: c['nome_insegnamento'],
           date: c['data'],
