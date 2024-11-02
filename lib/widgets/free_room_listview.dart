@@ -182,7 +182,7 @@ class _FreeRoomsListviewState extends State<FreeRoomsListview> {
                     child: widget.noDataImage),
                 Text(
                   "Nessuna sede impostata!",
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
@@ -290,7 +290,7 @@ class _FreeRoomsListviewState extends State<FreeRoomsListview> {
                                         Text(widget.rooms[i],
                                             style: Theme.of(context)
                                                 .textTheme
-                                                .bodyText1),
+                                                .bodyLarge),
                                         Text(
                                           isRoomAvailable(widget.rooms[i]),
                                           style: TextStyle(

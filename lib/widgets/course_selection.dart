@@ -33,7 +33,7 @@ class _CourseSelectionState extends State<CourseSelection> {
           alignment: Alignment.center,
           child: Text(
             "Che corso frequenti?",
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         DropdownButtonHideUnderline(
@@ -43,7 +43,7 @@ class _CourseSelectionState extends State<CourseSelection> {
             value: selectedCourse,
             hint: Text(
               "- Seleziona -",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             itemHeight: 60,
             isExpanded: true,
@@ -52,7 +52,7 @@ class _CourseSelectionState extends State<CourseSelection> {
                 value: value.name,
                 child: Text(
                   value.name,
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
               );
             }).toList(),

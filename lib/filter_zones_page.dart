@@ -93,7 +93,7 @@ class _FilterZonesPageState extends State<FilterZonesPage> {
                     alignment: Alignment.center,
                     child: Text(
                       "Che sedi vuoi visualizzare?",
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                   ),
                 ),

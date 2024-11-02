@@ -23,7 +23,7 @@ class _CardCalendarState extends State<CardCalendar> {
   Widget build(BuildContext context) {
     return Card(
         color: isSelected(widget.d)
-            ? Theme.of(context).backgroundColor
+            ? Theme.of(context).colorScheme.background
             : widget.sameMonth
                 ? null
                 : Theme.of(context).primaryColorDark, //350-700
@@ -44,7 +44,7 @@ class _CardCalendarState extends State<CardCalendar> {
                   fontWeight: FontWeight.bold,
                   color: isSelected(widget.d)
                       ? Theme.of(context).scaffoldBackgroundColor
-                      : Theme.of(context).backgroundColor),
+                      : Theme.of(context).colorScheme.background),
               textAlign: TextAlign.center,
             ),
             Text(

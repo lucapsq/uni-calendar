@@ -133,7 +133,7 @@ class _FilterLessonPageState extends State<FilterLessonPage> {
                     alignment: Alignment.center,
                     child: Text(
                       "Che corsi vuoi visualizzare?",
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                   ),
                 ),

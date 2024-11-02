@@ -49,7 +49,7 @@ class NoLessons extends StatelessWidget {
         ),
         Text(
           'Ottime notizie!\nNon hai impegni per oggi!',
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
           textAlign: TextAlign.center,
         ),
         SizedBox(

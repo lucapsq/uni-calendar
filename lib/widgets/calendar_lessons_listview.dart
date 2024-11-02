@@ -110,7 +110,7 @@ class CalendarLessonsListView extends StatelessWidget {
             startHour: 5,
             endHour: 21,
             timeIntervalHeight: 75,
-            timeTextStyle: Theme.of(context).textTheme.caption),
+            timeTextStyle: Theme.of(context).textTheme.bodySmall),
         dataSource: LessonDataSource(_getDataSource()));
   }
 }

@@ -55,7 +55,7 @@ class _YearSelectionState extends State<YearSelection> {
                 child: widget.yearSelectionImage),
             Text(
               "Che anni frequenti?",
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.25,

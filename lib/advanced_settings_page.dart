@@ -24,7 +24,7 @@ class AdvancedSettingsPage extends StatelessWidget {
             ),
             Text(
               "Che tema preferisci usare?",
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             DarkModeSwitch(),
             SizedBox(

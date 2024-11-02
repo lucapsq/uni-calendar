@@ -63,15 +63,14 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: ThemeData(
         useMaterial3: false,
+        //brightness: Brightness.light,
         appBarTheme: AppBarTheme(
             backgroundColor: Colors.blue,
             centerTitle: true,
             titleTextStyle:
                 TextStyle(fontWeight: FontWeight.w500, fontSize: 20)),
         primaryColor: Colors.white,
-        primaryColorDark: Colors.grey[350],
-        backgroundColor: Colors.black,
-        primarySwatch: Colors.blue, //colore di tasti e animazioni
+        primaryColorDark: Colors.grey[350], //colore di tasti e animazioni
         scaffoldBackgroundColor: Colors.grey[100], //colore di scaffold
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Colors.white,
@@ -79,35 +78,36 @@ class _MyAppState extends State<MyApp> {
           unselectedItemColor: Colors.grey,
         ),
         textTheme: TextTheme(
-            bodyText1: TextStyle(
+            bodyLarge: TextStyle(
                 color: Colors.black,
                 fontSize: 17,
                 fontWeight: FontWeight.w400), //17
-            headline5: TextStyle(
+            headlineSmall: TextStyle(
                 color: Colors.black, fontWeight: FontWeight.w600), //24
-            headline6: TextStyle(
+            titleLarge: TextStyle(
                 color: Colors.black, fontWeight: FontWeight.bold), //20
-            subtitle1: TextStyle(color: Colors.black, fontSize: 17), //17
-            caption: TextStyle(color: Colors.grey[850], fontSize: 12)), //12
+            titleMedium: TextStyle(color: Colors.black, fontSize: 17), //17
+            bodySmall: TextStyle(color: Colors.grey[850], fontSize: 12)), //12
 
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(),
         ),
-        cardColor: Colors.white, //colore interno delle card
+        cardColor: Colors.white,
+        colorScheme:
+            ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(
+          background: Colors.black,
+          brightness: Brightness.light,
+        ), //colore interno delle card
       ),
       darkTheme: ThemeData(
         useMaterial3: false,
-        brightness: Brightness.dark,
         appBarTheme: AppBarTheme(
             backgroundColor: Colors.blue[900],
             centerTitle: true,
             titleTextStyle:
                 TextStyle(fontWeight: FontWeight.w500, fontSize: 20)),
         primaryColor: Colors.black,
-        primaryColorDark: Colors.grey[800],
-
-        backgroundColor: Colors.grey[100],
-        primarySwatch: Colors.blue, //colore di tasti e animazioni
+        primaryColorDark: Colors.grey[800], //colore di tasti e animazioni
         scaffoldBackgroundColor: Color(0xff121212), //colore di scaffold
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Colors.black,
@@ -115,21 +115,26 @@ class _MyAppState extends State<MyApp> {
           unselectedItemColor: Colors.grey,
         ),
         textTheme: TextTheme(
-            bodyText1: TextStyle(
+            bodyLarge: TextStyle(
                 color: Colors.grey[100],
                 fontSize: 17,
                 fontWeight: FontWeight.w400),
-            headline5:
+            headlineSmall:
                 TextStyle(color: Colors.grey[100], fontWeight: FontWeight.w600),
-            headline6:
+            titleLarge:
                 TextStyle(color: Colors.grey[100], fontWeight: FontWeight.bold),
-            subtitle1: TextStyle(color: Colors.grey[100], fontSize: 17),
-            caption: TextStyle(color: Colors.grey[350], fontSize: 12)),
+            titleMedium: TextStyle(color: Colors.grey[100], fontSize: 17),
+            bodySmall: TextStyle(color: Colors.grey[350], fontSize: 12)),
 
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(),
         ),
-        cardColor: Colors.black, //colore interno delle card
+        cardColor: Colors.black,
+        colorScheme:
+            ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(
+          background: Colors.grey[100],
+          brightness: Brightness.dark,
+        ), //colore interno delle card
       ),
       themeMode: _themeMode,
       debugShowCheckedModeBanner: false,
