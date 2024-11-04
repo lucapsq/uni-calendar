@@ -49,6 +49,11 @@ bool checkPariDispari(String teachingName, String courseYear) {
   if (!courseYear.contains("matricole dispari") &&
       !courseYear.contains("matricole pari")) return true;
 
+  if (!teachingName.contains("matricole pari") &&
+      !teachingName.contains("matricole dispari")) {
+    return true;
+  }
+
   if ((teachingName.contains("matricole dispari") &&
           courseYear.contains("matricole dispari")) ||
       (teachingName.contains("matricole pari") &&
@@ -170,6 +175,7 @@ Future<List<Teaching>> getTeachingsList(
 
   for (var c in dataList['celle']) {
     if (!excludedLessonList.contains(c['codice_insegnamento'])) {
+      print(c['nome_insegnamento']);
       if (c['nome_insegnamento'] != null &&
           c['Annullato'] != '1' &&
           checkPariDispari(c['nome_insegnamento'], courseYear)) {
